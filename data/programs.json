@@ -1,0 +1,640 @@
+{
+  "countries": {
+    "china": {
+      "name": "China",
+      "flag": "🇨🇳",
+      "color": "primary",
+      "programCount": 50,
+      "categories": [
+        {
+          "name": "Medicine & Health",
+          "programs": [
+            {
+              "id": "china-mbbs",
+              "majorName": "MBBS (Bachelor of Medicine)",
+              "degreeLevel": "Bachelor's",
+              "duration": "6 years",
+              "language": "English/Chinese",
+              "fee": "$3,000-5,000",
+              "description": "Comprehensive medical program covering all aspects of modern medicine with clinical training."
+            },
+            {
+              "id": "china-clinical-medicine",
+              "majorName": "Clinical Medicine",
+              "degreeLevel": "Bachelor's",
+              "duration": "5 years",
+              "language": "Chinese",
+              "fee": "$2,500-4,000",
+              "description": "Traditional Chinese medicine program with modern clinical applications."
+            },
+            {
+              "id": "china-dentistry",
+              "majorName": "Dentistry",
+              "degreeLevel": "Bachelor's",
+              "duration": "5 years",
+              "language": "English/Chinese",
+              "fee": "$3,500-5,500",
+              "description": "Complete dental education program with hands-on clinical experience."
+            },
+            {
+              "id": "china-pharmacy",
+              "majorName": "Pharmacy",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "English/Chinese",
+              "fee": "$2,800-4,200",
+              "description": "Comprehensive pharmacy program covering drug development and patient care."
+            },
+            {
+              "id": "china-nursing",
+              "majorName": "Nursing",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "English/Chinese",
+              "fee": "$2,000-3,500",
+              "description": "Professional nursing program with clinical rotations and patient care training."
+            },
+            {
+              "id": "china-tcm",
+              "majorName": "Traditional Chinese Medicine",
+              "degreeLevel": "Bachelor's",
+              "duration": "5 years",
+              "language": "Chinese",
+              "fee": "$2,500-4,000",
+              "description": "Ancient healing arts combined with modern medical practices."
+            }
+          ]
+        },
+        {
+          "name": "Engineering & Technology",
+          "programs": [
+            {
+              "id": "china-cs",
+              "majorName": "Computer Science & Technology",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "English/Chinese",
+              "fee": "$3,200-4,800",
+              "description": "Cutting-edge computer science program with AI and machine learning focus."
+            },
+            {
+              "id": "china-se",
+              "majorName": "Software Engineering",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "English/Chinese",
+              "fee": "$3,500-5,000",
+              "description": "Professional software development program with industry partnerships."
+            },
+            {
+              "id": "china-ee",
+              "majorName": "Electrical Engineering",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "English/Chinese",
+              "fee": "$3,000-4,500",
+              "description": "Advanced electrical engineering with renewable energy specialization."
+            },
+            {
+              "id": "china-me",
+              "majorName": "Mechanical Engineering",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "English/Chinese",
+              "fee": "$3,200-4,700",
+              "description": "Comprehensive mechanical engineering with robotics and automation."
+            },
+            {
+              "id": "china-ce",
+              "majorName": "Civil Engineering",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "English/Chinese",
+              "fee": "$3,000-4,500",
+              "description": "Infrastructure development and sustainable construction engineering."
+            },
+            {
+              "id": "china-che",
+              "majorName": "Chemical Engineering",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "English/Chinese",
+              "fee": "$3,200-4,800",
+              "description": "Chemical processes and industrial applications engineering."
+            }
+          ]
+        },
+        {
+          "name": "Business & Economics",
+          "programs": [
+            {
+              "id": "china-ba",
+              "majorName": "Business Administration",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "English/Chinese",
+              "fee": "$2,800-4,200",
+              "description": "Comprehensive business management program with global perspective."
+            },
+            {
+              "id": "china-ib",
+              "majorName": "International Business",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "English",
+              "fee": "$3,000-4,500",
+              "description": "Global business strategies and international trade management."
+            },
+            {
+              "id": "china-finance",
+              "majorName": "Finance",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "English/Chinese",
+              "fee": "$2,900-4,300",
+              "description": "Financial markets, investment analysis, and risk management."
+            },
+            {
+              "id": "china-economics",
+              "majorName": "Economics",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "English/Chinese",
+              "fee": "$2,700-4,000",
+              "description": "Economic theory, policy analysis, and quantitative methods."
+            },
+            {
+              "id": "china-mba",
+              "majorName": "Master of Business Administration",
+              "degreeLevel": "Master's",
+              "duration": "2 years",
+              "language": "English",
+              "fee": "$8,000-15,000",
+              "description": "Advanced business leadership and strategic management program."
+            }
+          ]
+        },
+        {
+          "name": "Arts & Humanities",
+          "programs": [
+            {
+              "id": "china-chinese-lit",
+              "majorName": "Chinese Language & Literature",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "Chinese",
+              "fee": "$2,000-3,500",
+              "description": "Classical and modern Chinese literature and linguistic studies."
+            },
+            {
+              "id": "china-ir",
+              "majorName": "International Relations",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "English/Chinese",
+              "fee": "$2,500-4,000",
+              "description": "Global politics, diplomacy, and international cooperation."
+            },
+            {
+              "id": "china-journalism",
+              "majorName": "Journalism & Communication",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "English/Chinese",
+              "fee": "$2,400-3,800",
+              "description": "Media studies, digital communication, and journalism ethics."
+            },
+            {
+              "id": "china-fine-arts",
+              "majorName": "Fine Arts",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "Chinese",
+              "fee": "$2,500-4,200",
+              "description": "Traditional and contemporary Chinese art forms and techniques."
+            }
+          ]
+        },
+        {
+          "name": "Sciences",
+          "programs": [
+            {
+              "id": "china-physics",
+              "majorName": "Physics",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "English/Chinese",
+              "fee": "$2,500-4,000",
+              "description": "Theoretical and applied physics with research opportunities."
+            },
+            {
+              "id": "china-chemistry",
+              "majorName": "Chemistry",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "English/Chinese",
+              "fee": "$2,600-4,100",
+              "description": "Chemical sciences with laboratory and research experience."
+            },
+            {
+              "id": "china-biology",
+              "majorName": "Biology",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "English/Chinese",
+              "fee": "$2,500-4,000",
+              "description": "Life sciences with biotechnology and environmental focus."
+            }
+          ]
+        },
+        {
+          "name": "Architecture & Design",
+          "programs": [
+            {
+              "id": "china-architecture",
+              "majorName": "Architecture",
+              "degreeLevel": "Bachelor's",
+              "duration": "5 years",
+              "language": "English/Chinese",
+              "fee": "$3,500-5,500",
+              "description": "Architectural design with sustainable and innovative approaches."
+            },
+            {
+              "id": "china-urban-planning",
+              "majorName": "Urban Planning",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "English/Chinese",
+              "fee": "$3,200-4,800",
+              "description": "City development, urban design, and sustainable planning."
+            }
+          ]
+        }
+      ]
+    },
+    "hungary": {
+      "name": "Hungary",
+      "flag": "🇭🇺",
+      "color": "green",
+      "programCount": 45,
+      "categories": [
+        {
+          "name": "Medicine & Health",
+          "programs": [
+            {
+              "id": "hungary-mbbs",
+              "majorName": "General Medicine (MBBS)",
+              "degreeLevel": "Bachelor's",
+              "duration": "6 years",
+              "language": "English",
+              "fee": "€8,000-12,000",
+              "description": "European medical degree with clinical rotations and research opportunities."
+            },
+            {
+              "id": "hungary-dentistry",
+              "majorName": "Dentistry",
+              "degreeLevel": "Bachelor's",
+              "duration": "5 years",
+              "language": "English",
+              "fee": "€8,500-12,500",
+              "description": "Advanced dental education with modern equipment and techniques."
+            },
+            {
+              "id": "hungary-pharmacy",
+              "majorName": "Pharmacy",
+              "degreeLevel": "Bachelor's",
+              "duration": "5 years",
+              "language": "English",
+              "fee": "€7,500-11,000",
+              "description": "Pharmaceutical sciences with clinical pharmacy and research."
+            }
+          ]
+        },
+        {
+          "name": "Engineering & Technology",
+          "programs": [
+            {
+              "id": "hungary-cs",
+              "majorName": "Computer Science",
+              "degreeLevel": "Bachelor's",
+              "duration": "3.5 years",
+              "language": "English",
+              "fee": "€4,000-6,000",
+              "description": "Advanced computer science with AI, cybersecurity, and software development."
+            },
+            {
+              "id": "hungary-se",
+              "majorName": "Software Engineering",
+              "degreeLevel": "Bachelor's",
+              "duration": "3.5 years",
+              "language": "English",
+              "fee": "€4,200-6,200",
+              "description": "Professional software engineering with industry partnerships."
+            },
+            {
+              "id": "hungary-me",
+              "majorName": "Mechanical Engineering",
+              "degreeLevel": "Bachelor's",
+              "duration": "3.5 years",
+              "language": "English",
+              "fee": "€4,500-6,500",
+              "description": "Mechanical engineering with automotive and manufacturing focus."
+            }
+          ]
+        },
+        {
+          "name": "Business & Economics",
+          "programs": [
+            {
+              "id": "hungary-ba",
+              "majorName": "Business Administration",
+              "degreeLevel": "Bachelor's",
+              "duration": "3.5 years",
+              "language": "English",
+              "fee": "€3,500-5,500",
+              "description": "European business management with international perspective."
+            },
+            {
+              "id": "hungary-ib",
+              "majorName": "International Business",
+              "degreeLevel": "Bachelor's",
+              "duration": "3.5 years",
+              "language": "English",
+              "fee": "€3,800-5,800",
+              "description": "Global business strategies and EU market expertise."
+            },
+            {
+              "id": "hungary-mba",
+              "majorName": "Master of Business Administration",
+              "degreeLevel": "Master's",
+              "duration": "2 years",
+              "language": "English",
+              "fee": "€6,000-10,000",
+              "description": "Executive MBA program with European business focus."
+            }
+          ]
+        },
+        {
+          "name": "Arts & Humanities",
+          "programs": [
+            {
+              "id": "hungary-fine-arts",
+              "majorName": "Fine Arts",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "English/Hungarian",
+              "fee": "€3,000-5,000",
+              "description": "European fine arts with traditional and contemporary techniques."
+            },
+            {
+              "id": "hungary-music",
+              "majorName": "Music",
+              "degreeLevel": "Bachelor's",
+              "duration": "4 years",
+              "language": "English/Hungarian",
+              "fee": "€3,500-5,500",
+              "description": "Classical and contemporary music education with performance opportunities."
+            },
+            {
+              "id": "hungary-design",
+              "majorName": "Graphic Design",
+              "degreeLevel": "Bachelor's",
+              "duration": "3.5 years",
+              "language": "English",
+              "fee": "€3,500-5,500",
+              "description": "Modern graphic design with digital media and branding."
+            }
+          ]
+        },
+        {
+          "name": "Tourism & Hospitality",
+          "programs": [
+            {
+              "id": "hungary-tourism",
+              "majorName": "Tourism Management",
+              "degreeLevel": "Bachelor's",
+              "duration": "3.5 years",
+              "language": "English",
+              "fee": "€3,500-5,500",
+              "description": "Tourism industry management with European market focus."
+            },
+            {
+              "id": "hungary-hotel",
+              "majorName": "Hotel Management",
+              "degreeLevel": "Bachelor's",
+              "duration": "3.5 years",
+              "language": "English",
+              "fee": "€3,500-5,500",
+              "description": "Hospitality management with luxury hotel operations."
+            }
+          ]
+        }
+      ]
+    },
+    "italy": {
+      "name": "Italy",
+      "flag": "🇮🇹",
+      "color": "blue",
+      "programCount": 60,
+      "categories": [
+        {
+          "name": "Medicine & Health",
+          "programs": [
+            {
+              "id": "italy-medicine",
+              "majorName": "Medicine & Surgery",
+              "degreeLevel": "Bachelor's",
+              "duration": "6 years",
+              "language": "English/Italian",
+              "fee": "€3,500-4,500",
+              "description": "Italian medical education with European standards and clinical training."
+            },
+            {
+              "id": "italy-dentistry",
+              "majorName": "Dentistry",
+              "degreeLevel": "Bachelor's",
+              "duration": "6 years",
+              "language": "English/Italian",
+              "fee": "€3,500-4,500",
+              "description": "Advanced dental education with aesthetic and implant dentistry."
+            },
+            {
+              "id": "italy-pharmacy",
+              "majorName": "Pharmacy",
+              "degreeLevel": "Bachelor's",
+              "duration": "5 years",
+              "language": "English/Italian",
+              "fee": "€3,000-4,000",
+              "description": "Pharmaceutical sciences with Italian pharmaceutical industry focus."
+            }
+          ]
+        },
+        {
+          "name": "Engineering & Technology",
+          "programs": [
+            {
+              "id": "italy-cs",
+              "majorName": "Computer Engineering",
+              "degreeLevel": "Bachelor's",
+              "duration": "3 years",
+              "language": "English/Italian",
+              "fee": "€2,500-3,500",
+              "description": "Computer engineering with AI, robotics, and embedded systems."
+            },
+            {
+              "id": "italy-me",
+              "majorName": "Mechanical Engineering",
+              "degreeLevel": "Bachelor's",
+              "duration": "3 years",
+              "language": "English/Italian",
+              "fee": "€2,500-3,500",
+              "description": "Mechanical engineering with automotive and aerospace specialization."
+            },
+            {
+              "id": "italy-ae",
+              "majorName": "Aerospace Engineering",
+              "degreeLevel": "Bachelor's",
+              "duration": "3 years",
+              "language": "English/Italian",
+              "fee": "€2,800-3,800",
+              "description": "Aerospace engineering with Italian aviation industry connections."
+            }
+          ]
+        },
+        {
+          "name": "Business & Economics",
+          "programs": [
+            {
+              "id": "italy-ba",
+              "majorName": "Business Administration",
+              "degreeLevel": "Bachelor's",
+              "duration": "3 years",
+              "language": "English/Italian",
+              "fee": "€2,500-3,500",
+              "description": "Italian business management with luxury brand expertise."
+            },
+            {
+              "id": "italy-fashion",
+              "majorName": "Fashion Business",
+              "degreeLevel": "Bachelor's",
+              "duration": "3 years",
+              "language": "English/Italian",
+              "fee": "€3,500-5,500",
+              "description": "Fashion industry management with Italian luxury fashion focus."
+            },
+            {
+              "id": "italy-luxury",
+              "majorName": "Luxury Management",
+              "degreeLevel": "Bachelor's",
+              "duration": "3 years",
+              "language": "English/Italian",
+              "fee": "€4,000-6,000",
+              "description": "Luxury brand management with Italian luxury goods expertise."
+            }
+          ]
+        },
+        {
+          "name": "Arts & Design",
+          "programs": [
+            {
+              "id": "italy-fine-arts",
+              "majorName": "Fine Arts",
+              "degreeLevel": "Bachelor's",
+              "duration": "3 years",
+              "language": "English/Italian",
+              "fee": "€2,500-4,000",
+              "description": "Classical and contemporary Italian art with Renaissance heritage."
+            },
+            {
+              "id": "italy-fashion-design",
+              "majorName": "Fashion Design",
+              "degreeLevel": "Bachelor's",
+              "duration": "3 years",
+              "language": "English/Italian",
+              "fee": "€3,500-6,000",
+              "description": "Fashion design with Italian haute couture and ready-to-wear."
+            },
+            {
+              "id": "italy-interior",
+              "majorName": "Interior Design",
+              "degreeLevel": "Bachelor's",
+              "duration": "3 years",
+              "language": "English/Italian",
+              "fee": "€2,800-4,500",
+              "description": "Interior design with Italian style and luxury residential projects."
+            }
+          ]
+        },
+        {
+          "name": "Architecture",
+          "programs": [
+            {
+              "id": "italy-architecture",
+              "majorName": "Architecture",
+              "degreeLevel": "Bachelor's",
+              "duration": "5 years",
+              "language": "English/Italian",
+              "fee": "€3,500-4,500",
+              "description": "Architectural design with Italian Renaissance and modern influences."
+            },
+            {
+              "id": "italy-urban",
+              "majorName": "Urban Planning",
+              "degreeLevel": "Bachelor's",
+              "duration": "3 years",
+              "language": "English/Italian",
+              "fee": "€2,500-3,500",
+              "description": "Urban planning with Italian historical city preservation expertise."
+            }
+          ]
+        },
+        {
+          "name": "Culinary Arts",
+          "programs": [
+            {
+              "id": "italy-gastronomy",
+              "majorName": "Gastronomy",
+              "degreeLevel": "Bachelor's",
+              "duration": "3 years",
+              "language": "English/Italian",
+              "fee": "€3,500-5,500",
+              "description": "Italian culinary arts with traditional and modern gastronomy techniques."
+            },
+            {
+              "id": "italy-wine",
+              "majorName": "Wine Studies",
+              "degreeLevel": "Bachelor's",
+              "duration": "3 years",
+              "language": "English/Italian",
+              "fee": "€3,000-4,500",
+              "description": "Wine production, tasting, and sommelier training with Italian wines."
+            }
+          ]
+        },
+        {
+          "name": "Humanities",
+          "programs": [
+            {
+              "id": "italy-history",
+              "majorName": "History",
+              "degreeLevel": "Bachelor's",
+              "duration": "3 years",
+              "language": "English/Italian",
+              "fee": "€2,000-3,000",
+              "description": "Italian and European history with Renaissance and modern periods."
+            },
+            {
+              "id": "italy-heritage",
+              "majorName": "Cultural Heritage",
+              "degreeLevel": "Bachelor's",
+              "duration": "3 years",
+              "language": "English/Italian",
+              "fee": "€2,300-3,300",
+              "description": "Cultural heritage preservation with Italian art and archaeology."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

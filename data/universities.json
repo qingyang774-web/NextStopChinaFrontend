@@ -1,0 +1,486 @@
+{
+  "universities": [
+    {
+      "id": "tsinghua-university",
+      "name": "Tsinghua University",
+      "location": "Beijing",
+      "founded": 1911,
+      "students": 50000,
+      "specialty": "Engineering",
+      "image": "",
+      "description": "China's top engineering and technology university, ranked #1 in Asia with world-class research facilities",
+      "ranking": "1st in Asia",
+      "programs": [
+        {
+          "name": "Bachelor of Engineering",
+          "duration": "4 years",
+          "language": "English/Chinese",
+          "tuition": "$3000/year",
+          "Masters": "Master of Science, Master of Engineering, Master of Business Administration"
+        },
+        {
+          "name": "Master of Science",
+          "duration": "2 years", 
+          "language": "English/Chinese",
+          "tuition": "$4000/year"
+        },
+        {
+          "name": "PhD Programs",
+          "duration": "3-4 years",
+          "language": "English/Chinese", 
+          "tuition": "$5000/year"
+        }
+      ],
+      "scholarships": [
+        {
+          "name": "Chinese Government Scholarship",
+          "type": "Full Scholarship",
+          "coverage": "Tuition + Living Allowance",
+          "requirements": "High academic performance, IELTS 6.5+",
+          "deadline": "March 31"
+        },
+        {
+          "name": "Tsinghua University Scholarship",
+          "type": "Partial Scholarship", 
+          "coverage": "50% Tuition",
+          "requirements": "Good academic record, recommendation letter",
+          "deadline": "April 15"
+        }
+      ],
+      "requirements": {
+        "bachelor": {
+          "academic": "High school diploma with 80%+ marks",
+          "language": "IELTS 6.0+ or HSK 4+",
+          "documents": ["Transcripts", "Passport", "Personal Statement", "Recommendation Letters"]
+        },
+        "master": {
+          "academic": "Bachelor degree with 75%+ marks",
+          "language": "IELTS 6.5+ or HSK 5+",
+          "documents": ["Bachelor Transcripts", "Passport", "Research Proposal", "Recommendation Letters"]
+        },
+        "phd": {
+          "academic": "Master degree with 80%+ marks",
+          "language": "IELTS 7.0+ or HSK 6+",
+          "title": "hahahhaha",
+          "documents": ["Master Transcripts", "Passport", "Research Proposal", "Publications", "Recommendation Letters"]
+        }
+      }
+    },
+    {
+      "id": "peking-university",
+      "name": "Peking University",
+      "location": "Beijing",
+      "founded": 1898,
+      "students": 45000,
+      "specialty": "Liberal Arts",
+      "image": "/peking-university-campus.jpg",
+      "description": "Premier comprehensive university with strong liberal arts, sciences, and humanities programs",
+      "ranking": "2nd in Asia",
+      "programs": [
+        {
+          "name": "Bachelor of Arts",
+          "duration": "4 years",
+          "language": "English/Chinese",
+          "tuition": "$2800/year"
+        },
+        {
+          "name": "Master of Arts",
+          "duration": "2 years",
+          "language": "English/Chinese", 
+          "tuition": "$3500/year"
+        }
+      ],
+      "scholarships": [
+        {
+          "name": "Peking University Scholarship",
+          "type": "Full Scholarship",
+          "coverage": "Tuition + Living Allowance",
+          "requirements": "Excellent academic performance, IELTS 6.5+",
+          "deadline": "March 15"
+        }
+      ],
+      "requirements": {
+        "bachelor": {
+          "academic": "High school diploma with 85%+ marks",
+          "language": "IELTS 6.5+ or HSK 5+",
+          "documents": ["Transcripts", "Passport", "Personal Statement", "Recommendation Letters"]
+        },
+        "master": {
+          "academic": "Bachelor degree with 80%+ marks",
+          "language": "IELTS 7.0+ or HSK 6+",
+          "documents": ["Bachelor Transcripts", "Passport", "Research Proposal", "Recommendation Letters"]
+        }
+      }
+    },
+    {
+      "id": "fudan-university",
+      "name": "Fudan University",
+      "location": "Shanghai",
+      "founded": 1905,
+      "students": 35000,
+      "specialty": "Business",
+      "image": "/fudan-university-campus.jpg",
+      "description": "Leading research university in Shanghai with excellent business, medicine, and international programs",
+      "ranking": "3rd in Asia",
+      "programs": [
+        {
+          "name": "MBA Program",
+          "duration": "2 years",
+          "language": "English",
+          "tuition": "$8000/year"
+        },
+        {
+          "name": "Master of Business",
+          "duration": "2 years",
+          "language": "English/Chinese",
+          "tuition": "$4500/year"
+        }
+      ],
+      "scholarships": [
+        {
+          "name": "Fudan Business School Scholarship",
+          "type": "Partial Scholarship",
+          "coverage": "30% Tuition",
+          "requirements": "GMAT 650+, IELTS 6.5+",
+          "deadline": "April 30"
+        }
+      ],
+      "requirements": {
+        "master": {
+          "academic": "Bachelor degree with 75%+ marks",
+          "language": "IELTS 6.5+ or HSK 5+",
+          "documents": ["Bachelor Transcripts", "Passport", "GMAT/GRE Scores", "Recommendation Letters"]
+        }
+      }
+    },
+    {
+      "id": "capital-medical-university",
+      "name": "Capital Medical University",
+      "location": "Beijing",
+      "founded": 1960,
+      "students": 15000,
+      "specialty": "Medicine",
+      "image": "/capital-medical-university.jpg",
+      "description": "Premier medical university offering world-class MBBS and advanced medical programs",
+      "ranking": "Top 10 Medical Schools in China",
+      "programs": [
+        {
+          "name": "MBBS Program",
+          "duration": "6 years",
+          "language": "English",
+          "tuition": "$6000/year"
+        },
+        {
+          "name": "Master of Medicine",
+          "duration": "3 years",
+          "language": "English/Chinese",
+          "tuition": "$5000/year"
+        }
+      ],
+      "scholarships": [
+        {
+          "name": "Medical Excellence Scholarship",
+          "type": "Full Scholarship",
+          "coverage": "Tuition + Living Allowance",
+          "requirements": "High school 90%+ marks, IELTS 6.0+",
+          "deadline": "March 20"
+        }
+      ],
+      "requirements": {
+        "bachelor": {
+          "academic": "High school diploma with 90%+ marks in Science",
+          "language": "IELTS 6.0+ or TOEFL 80+",
+          "documents": ["High School Transcripts", "Passport", "Medical Certificate", "Recommendation Letters"]
+        }
+      }
+    },
+    {
+      "id": "shanghai-jiao-tong-university",
+      "name": "Shanghai Jiao Tong University",
+      "location": "Shanghai",
+      "founded": 1896,
+      "students": 40000,
+      "specialty": "Technology",
+      "image": "/shanghai-jiao-tong-university.jpg",
+      "description": "Top engineering and business school with strong international partnerships and exchange programs",
+      "ranking": "4th in Asia",
+      "programs": [
+        {
+          "name": "Bachelor of Technology",
+          "duration": "4 years",
+          "language": "English/Chinese",
+          "tuition": "$3200/year"
+        },
+        {
+          "name": "Master of Engineering",
+          "duration": "2 years",
+          "language": "English/Chinese",
+          "tuition": "$4000/year"
+        }
+      ],
+      "scholarships": [
+        {
+          "name": "Technology Innovation Scholarship",
+          "type": "Partial Scholarship",
+          "coverage": "40% Tuition",
+          "requirements": "Strong technical background, IELTS 6.0+",
+          "deadline": "April 10"
+        }
+      ],
+      "requirements": {
+        "bachelor": {
+          "academic": "High school diploma with 80%+ marks",
+          "language": "IELTS 6.0+ or HSK 4+",
+          "documents": ["Transcripts", "Passport", "Personal Statement", "Recommendation Letters"]
+        }
+      }
+    },
+    {
+      "id": "zhejiang-university",
+      "name": "Zhejiang University",
+      "location": "Hangzhou",
+      "founded": 1897,
+      "students": 55000,
+      "specialty": "Innovation",
+      "image": "/zhejiang-university-campus.jpg",
+      "description": "Comprehensive research university known for innovation, technology, and entrepreneurship programs",
+      "ranking": "5th in Asia",
+      "programs": [
+        {
+          "name": "Bachelor of Innovation",
+          "duration": "4 years",
+          "language": "English/Chinese",
+          "tuition": "$3000/year"
+        },
+        {
+          "name": "Master of Innovation",
+          "duration": "2 years",
+          "language": "English/Chinese",
+          "tuition": "$3800/year"
+        }
+      ],
+      "scholarships": [
+        {
+          "name": "Innovation Excellence Scholarship",
+          "type": "Full Scholarship",
+          "coverage": "Tuition + Living Allowance",
+          "requirements": "Innovation portfolio, IELTS 6.5+",
+          "deadline": "March 25"
+        }
+      ],
+      "requirements": {
+        "bachelor": {
+          "academic": "High school diploma with 80%+ marks",
+          "language": "IELTS 6.0+ or HSK 4+",
+          "documents": ["Transcripts", "Passport", "Innovation Portfolio", "Recommendation Letters"]
+        }
+      }
+    },
+    {
+      "id": "nanjing-university",
+      "name": "Nanjing University",
+      "location": "Nanjing",
+      "founded": 1902,
+      "students": 30000,
+      "specialty": "Humanities",
+      "image": "/nanjing-university-campus.jpg",
+      "description": "Historic university with strong programs in humanities, sciences, and international studies",
+      "ranking": "6th in Asia",
+      "programs": [
+        {
+          "name": "Bachelor of Humanities",
+          "duration": "4 years",
+          "language": "English/Chinese",
+          "tuition": "$2500/year"
+        },
+        {
+          "name": "Master of Arts",
+          "duration": "2 years",
+          "language": "English/Chinese",
+          "tuition": "$3000/year"
+        }
+      ],
+      "scholarships": [
+        {
+          "name": "Humanities Excellence Scholarship",
+          "type": "Partial Scholarship",
+          "coverage": "50% Tuition",
+          "requirements": "Strong writing skills, IELTS 6.5+",
+          "deadline": "April 5"
+        }
+      ],
+      "requirements": {
+        "bachelor": {
+          "academic": "High school diploma with 80%+ marks",
+          "language": "IELTS 6.5+ or HSK 5+",
+          "documents": ["Transcripts", "Passport", "Writing Sample", "Recommendation Letters"]
+        }
+      }
+    },
+    {
+      "id": "sun-yat-sen-university",
+      "name": "Sun Yat-sen University",
+      "location": "Guangzhou",
+      "founded": 1924,
+      "students": 50000,
+      "specialty": "Management",
+      "image": "/sun-yat-sen-university.jpg",
+      "description": "Leading comprehensive university in southern China with excellent medical and business programs",
+      "ranking": "7th in Asia",
+      "programs": [
+        {
+          "name": "Bachelor of Management",
+          "duration": "4 years",
+          "language": "English/Chinese",
+          "tuition": "$2800/year"
+        },
+        {
+          "name": "Master of Management",
+          "duration": "2 years",
+          "language": "English/Chinese",
+          "tuition": "$3500/year"
+        }
+      ],
+      "scholarships": [
+        {
+          "name": "Management Excellence Scholarship",
+          "type": "Full Scholarship",
+          "coverage": "Tuition + Living Allowance",
+          "requirements": "Leadership experience, IELTS 6.5+",
+          "deadline": "March 30"
+        }
+      ],
+      "requirements": {
+        "bachelor": {
+          "academic": "High school diploma with 80%+ marks",
+          "language": "IELTS 6.5+ or HSK 5+",
+          "documents": ["Transcripts", "Passport", "Leadership Portfolio", "Recommendation Letters"]
+        }
+      }
+    },
+    {
+      "id": "semmelweis-university",
+      "name": "Semmelweis University",
+      "location": "Budapest, Hungary",
+      "founded": 1769,
+      "students": 11000,
+      "specialty": "Medicine",
+      "image": "/semmelweis-university.jpg",
+      "description": "Hungary's premier medical university with world-class MBBS and dental programs",
+      "ranking": "Top Medical School in Hungary",
+      "programs": [
+        {
+          "name": "MBBS Program",
+          "duration": "6 years",
+          "language": "English",
+          "tuition": "€16,000/year"
+        },
+        {
+          "name": "BDS Program",
+          "duration": "5 years",
+          "language": "English",
+          "tuition": "€16,000/year"
+        }
+      ],
+      "scholarships": [
+        {
+          "name": "Stipendium Hungaricum",
+          "type": "Full Scholarship",
+          "coverage": "Tuition + Living Allowance + Accommodation",
+          "requirements": "High academic performance, English proficiency",
+          "deadline": "January 15"
+        }
+      ],
+      "requirements": {
+        "bachelor": {
+          "academic": "High school diploma with Biology, Chemistry, Physics",
+          "language": "IELTS 6.0+ or TOEFL 80+",
+          "documents": ["Transcripts", "Passport", "Medical Certificate", "Motivation Letter"]
+        }
+      }
+    },
+    {
+      "id": "university-of-bologna",
+      "name": "University of Bologna",
+      "location": "Bologna, Italy",
+      "founded": 1088,
+      "students": 86000,
+      "specialty": "Humanities",
+      "image": "/university-of-bologna.jpg",
+      "description": "The world's oldest university with excellent programs in humanities, law, and sciences",
+      "ranking": "1st in Italy, 166th Worldwide",
+      "programs": [
+        {
+          "name": "Bachelor of Arts",
+          "duration": "3 years",
+          "language": "English/Italian",
+          "tuition": "€2,500/year"
+        },
+        {
+          "name": "Master of Arts",
+          "duration": "2 years",
+          "language": "English/Italian",
+          "tuition": "€2,500/year"
+        }
+      ],
+      "scholarships": [
+        {
+          "name": "Italian Government Scholarship",
+          "type": "Full Scholarship",
+          "coverage": "Tuition + Monthly Stipend + Insurance",
+          "requirements": "Academic excellence, Italian language proficiency",
+          "deadline": "April 30"
+        }
+      ],
+      "requirements": {
+        "bachelor": {
+          "academic": "High school diploma with good grades",
+          "language": "IELTS 6.0+ or Italian B2",
+          "documents": ["Transcripts", "Passport", "Motivation Letter", "Language Certificate"]
+        }
+      }
+    },
+    {
+      "id": "sapienza-university-rome",
+      "name": "Sapienza University of Rome",
+      "location": "Rome, Italy",
+      "founded": 1303,
+      "students": 100000,
+      "specialty": "Medicine",
+      "image": "/sapienza-university.jpg",
+      "description": "Italy's largest university with excellent programs in medicine, engineering, and business",
+      "ranking": "1st in Italy for Medicine",
+      "programs": [
+        {
+          "name": "MBBS Program",
+          "duration": "6 years",
+          "language": "English",
+          "tuition": "€3,000/year"
+        },
+        {
+          "name": "Bachelor of Engineering",
+          "duration": "3 years",
+          "language": "English/Italian",
+          "tuition": "€2,500/year"
+        }
+      ],
+      "scholarships": [
+        {
+          "name": "Sapienza Excellence Scholarship",
+          "type": "Full Scholarship",
+          "coverage": "Tuition + Living Allowance",
+          "requirements": "Outstanding academic record, English proficiency",
+          "deadline": "March 15"
+        }
+      ],
+      "requirements": {
+        "bachelor": {
+          "academic": "High school diploma with relevant subjects",
+          "language": "IELTS 6.5+ or Italian B2",
+          "documents": ["Transcripts", "Passport", "Medical Certificate", "Recommendation Letters"]
+        }
+      }
+    }
+  ]
+}
+

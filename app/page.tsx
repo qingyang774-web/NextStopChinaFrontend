@@ -1,0 +1,1943 @@
+"use client"
+
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import { GraduationCap, Users, Award, Phone, Mail, MessageCircle, ArrowRight, Globe, BookOpen, Star, TrendingUp, CheckCircle, UserCheck, Mail as MailIcon, ChevronLeft, ChevronRight, CheckCircle2, FileText, Languages, Stethoscope, X, Facebook, Instagram, Clock, Calendar } from "lucide-react"
+import Link from "next/link"
+import { useState, useEffect } from "react"
+import { useNewsletterSubmission } from "@/hooks/useFormSubmission"
+import Header from "@/components/layout/Header"
+import Footer from "@/components/layout/Footer"
+
+export default function HomePage() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [newsletterEmail, setNewsletterEmail] = useState("")
+  
+  const { isSubmitting, submitError, submitSuccess, subscribeToNewsletter } = useNewsletterSubmission({
+    onSuccess: () => {
+      setNewsletterEmail("")
+    },
+  })
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (newsletterEmail.trim()) {
+      await subscribeToNewsletter({ email: newsletterEmail.trim(), source: 'homepage' })
+    }
+  }
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const [isAnimating, setIsAnimating] = useState(false)
+  const [isFABExpanded, setIsFABExpanded] = useState(false)
+  
+  const slides = [
+    {
+      badge: "🇨🇳 Study in China",
+      title: "World-Class Education in China",
+      description: "Your gateway to top Chinese universities with scholarships. We help students secure bachelor's, master's, and PhD scholarships with expert guidance and proven success.",
+      primaryButton: { text: "Explore China", href: "/universities" },
+      secondaryButton: { text: "China Scholarships", href: "/scholarships" },
+      image: "/chinese-university-campus-with-international-stude.jpg",
+      alt: "Students studying at Chinese university"
+    },
+    {
+      badge: "🇭🇺 Study in Hungary",
+      title: "Affordable European Education",
+      description: "Discover Hungary's prestigious universities with low tuition fees and high-quality education. Experience European culture while pursuing your academic dreams.",
+      primaryButton: { text: "Explore Hungary", href: "/universities" },
+      secondaryButton: { text: "Hungary Programs", href: "/scholarships" },
+      image: "https://study-eu.s3.eu-west-1.amazonaws.com/uploads/image/path/283/wide_fullhd_webp_hungary-budapest.webp",
+      alt: "Students studying at Hungarian university"
+    },
+    {
+      badge: "🇮🇹 Study in Italy",
+      title: "Historic Excellence in Education",
+      description: "Study at Italy's world-renowned universities with rich history and cutting-edge research. Experience la dolce vita while advancing your career.",
+      primaryButton: { text: "Explore Italy", href: "/universities" },
+      secondaryButton: { text: "Italy Opportunities", href: "/scholarships" },
+      image: "https://blog.remitforex.com/wp-content/uploads/2023/03/Italy-university-feature.webp",
+      alt: "Students studying at Italian university"
+    }
+  ]
+
+  useEffect(() => {
+    if (!isAutoPlaying) return
+    
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length)
+    }, 5000) // Change slide every 5 seconds
+
+    return () => clearInterval(interval)
+  }, [isAutoPlaying, slides.length])
+
+  const goToSlide = (index: number) => {
+    if (index === currentSlide) return
+    setIsAnimating(true)
+    setCurrentSlide(index)
+    setTimeout(() => setIsAnimating(false), 700)
+  }
+
+  const nextSlide = () => {
+    setIsAnimating(true)
+    setCurrentSlide((prev) => (prev + 1) % slides.length)
+    setTimeout(() => setIsAnimating(false), 700)
+  }
+
+  const prevSlide = () => {
+    setIsAnimating(true)
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+    setTimeout(() => setIsAnimating(false), 700)
+  }
+
+  // Contact functions - UPDATE THESE WITH YOUR ACTUAL CONTACT DETAILS
+  const openWhatsApp = () => {
+    // Replace 1234567890 with your WhatsApp number (include country code, no + sign)
+    // Example: 919876543210 for India, 1234567890 for US
+    window.open('https://wa.me/923464876094?text=Hi, I am interested in studying abroad with Next Stop Global', '_blank')
+  }
+
+  const openTelegram = () => {
+    // Replace 'nextstopglobal' with your actual Telegram username
+    window.open('https://t.me/nextstopglobal', '_blank')
+  }
+
+  const openFacebook = () => {
+    // Replace 'nextstopglobal' with your actual Facebook page username
+    window.open('https://facebook.com/nextstopglobal', '_blank')
+  }
+
+  const openInstagram = () => {
+    // Replace 'nextstopglobal' with your actual Instagram username
+    window.open('https://instagram.com/nextstopglobal', '_blank')
+  }
+
+  const openEmail = () => {
+    // Replace 'info@nextstopglobal.com' with your actual email address
+    window.open('mailto:info@nextstopglobal.com?subject=Inquiry about studying abroad', '_blank')
+  }
+
+  return (
+    <div className="min-h-screen bg-white">
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @keyframes typing {
+          from {
+            width: 0;
+          }
+          to {
+            width: 100%;
+          }
+        }
+        
+        @keyframes blink {
+          50% {
+            border-color: transparent;
+          }
+        }
+        
+        @keyframes glow {
+          0%, 100% {
+            text-shadow: 0 0 5px rgba(59, 130, 246, 0.5), 0 0 10px rgba(59, 130, 246, 0.3), 0 0 15px rgba(59, 130, 246, 0.2);
+          }
+          50% {
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.8), 0 0 20px rgba(59, 130, 246, 0.5), 0 0 30px rgba(59, 130, 246, 0.3);
+          }
+        }
+        
+        .animate-fade-in-up {
+          animation: fadeInUp 0.8s ease-out forwards;
+          opacity: 0;
+        }
+        
+        .typing-animation {
+          overflow: hidden;
+          border-right: 2px solid #fbbf24;
+          white-space: nowrap;
+          animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+        }
+        
+        .glow-text {
+          animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        .hero-gradient {
+          background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%,rgb(15, 96, 50) 100%);
+        }
+        
+        .floating {
+          animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+      `}</style>
+      <Header />
+
+      {/* Hero Section - Beautiful Carousel with University Images */}
+      <section className="relative overflow-hidden h-[85vh]">
+        <div
+          className="relative w-full h-full overflow-hidden group"
+            onMouseEnter={() => setIsAutoPlaying(false)}
+            onMouseLeave={() => setIsAutoPlaying(true)}
+          >
+            {/* Slides Container */}
+
+          <div className="flex h-[85vh] mb-[250px] transition-transform duration-700 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              {slides.map((slide, index) => (
+              <div key={index} className="w-full flex-shrink-0 relative h-full">
+                {/* Background Image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                  style={{
+                    backgroundImage: `url(${slide.image})`,
+                    filter: 'brightness(0.6)'
+                  }}
+                />
+
+
+                {/* Content */}
+                <div className="relative z-10 h-full flex items-center">
+                  <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                    <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    {/* Text Content - Left Side */}
+                      <div className="space-y-8 max-w-2xl">
+                        <div className="space-y-6">
+                        <Badge 
+                          variant="secondary" 
+                            className="w-fit bg-primary/90 text-white border-primary backdrop-blur-sm px-4 py-2 text-sm font-medium"
+                        >
+                          {slide.badge}
+                        </Badge>
+                          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-balance leading-tight text-white drop-shadow-2xl">
+                          {slide.title}
+                        </h1>
+                          <p className="text-lg sm:text-xl text-white/90 text-pretty leading-relaxed drop-shadow-lg max-w-xl">
+                          {slide.description}
+                        </p>
+                      </div>
+                      <div className="flex flex-col sm:flex-row gap-4">
+                          <Button size="lg" asChild className="bg-primary text-white hover:bg-primary/90 shadow-xl px-8 py-4 text-lg font-semibold">
+                          <Link href={slide.primaryButton.href}>
+                            {slide.primaryButton.text} <ArrowRight className="ml-2 h-5 w-5" />
+                          </Link>
+                        </Button>
+                          <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white hover:text-gray-900 bg-white/10 backdrop-blur-sm px-8 py-4 text-lg font-semibold">
+                          <Link href={slide.secondaryButton.href}>{slide.secondaryButton.text}</Link>
+                        </Button>
+                      </div>
+                    </div>
+                    
+                      {/* University Cards - Right Side
+                      <div className="space-y-6">
+                        <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-8 border border-white/30 hover:bg-white/90 hover:backdrop-blur-2xl transition-all duration-300">
+                          <div className="text-center space-y-6">
+                            <div className="w-24 h-24 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto backdrop-blur-sm">
+                              <div className="text-4xl">
+                                {index === 0 ? "🇨🇳" : index === 1 ? "🇭🇺" : "🇮🇹"}
+                              </div>
+                            </div>
+                            <div>
+                              <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                                {index === 0 ? "China" : index === 1 ? "Hungary" : "Italy"}
+                              </h3>
+                              <p className="text-gray-600 leading-relaxed text-lg">
+                                {index === 0 
+                                  ? "World-class education with affordable tuition fees and extensive scholarship opportunities."
+                                  : index === 1 
+                                  ? "European education with Stipendium Hungaricum scholarships and low living costs."
+                                  : "Historic universities with Italian government scholarships and rich cultural heritage."
+                                }
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div> */}
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          {/* Navigation Arrows */}
+            <button
+              onClick={prevSlide}
+            className="absolute left-6 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm border-2 border-gray-200 hover:bg-white hover:border-primary transition-all duration-300 rounded-full p-4 z-20 shadow-lg hover:shadow-xl"
+            >
+              <ChevronLeft className="h-6 w-6 text-primary" />
+            </button>
+            <button
+              onClick={nextSlide}
+            className="absolute right-6 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm border-2 border-gray-200 hover:bg-white hover:border-primary transition-all duration-300 rounded-full p-4 z-20 shadow-lg hover:shadow-xl"
+            >
+              <ChevronRight className="h-6 w-6 text-primary" />
+            </button>
+
+            {/* Dot Indicators */}
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-4 z-20">
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                className={`w-4 h-4 rounded-full transition-all duration-300 ${index === currentSlide
+                    ? 'bg-primary scale-125 shadow-lg shadow-primary/50'
+                    : 'bg-white/80 hover:bg-white hover:scale-110'
+                  }`}
+                />
+              ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Service Cards */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center space-y-6 mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-balance text-gray-900 leading-tight">
+              Our <span className="text-primary">Quick Services</span>
+            </h2>
+            <p className="text-xl text-gray-600 text-pretty max-w-3xl mx-auto leading-relaxed">
+              Get instant access to our most popular services designed to make your study abroad journey seamless
+            </p>
+          </div>
+
+          {/* Service Cards Container */}
+          <div className="bg-primary rounded-3xl shadow-2xl relative overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-10 left-10 w-32 h-32 border-2 border-white rounded-full"></div>
+              <div className="absolute top-32 right-20 w-24 h-24 border-2 border-white rounded-full"></div>
+              <div className="absolute bottom-20 left-32 w-40 h-40 border-2 border-white rounded-full"></div>
+              <div className="absolute bottom-32 right-10 w-28 h-28 border-2 border-white rounded-full"></div>
+            </div>
+
+            <div className="relative z-10 p-12">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {/* Student Visa */}
+                <div className="group bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3">
+                  <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300 backdrop-blur-sm">
+                    <div className="text-4xl text-white">✈️</div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">Free Consultancy</h3>
+                  <p className="text-white/90 leading-relaxed mb-4 text-sm">
+                  Get expert advice on university selection, program matching, and application strategy for China, Hungary, and Italy at no cost.
+                  </p>
+                  <Link href="/consultation" className="text-green-400 font-semibold hover:text-green-300 inline-flex items-center text-sm transition-colors">
+                    Learn More <ArrowRight className="ml-1 h-4 w-4" />
+                  </Link>
+          </div>
+
+                {/* Test Prep */}
+                <div className="group bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3">
+                  <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300 backdrop-blur-sm">
+                    <div className="text-4xl text-white">🌍</div>
+                </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">Scholarship Facility</h3>
+                  <p className="text-white/90 leading-relaxed mb-4 text-sm">
+                  Navigate scholarship opportunities with our proven strategies and insider knowledge of universities in China, Hungary, and Italy.
+                  </p>
+                  <Link href="/scholarships" className="text-green-400 font-semibold hover:text-green-300 inline-flex items-center text-sm transition-colors">
+                    Learn More <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+                </div>
+
+                {/* Course Finder */}
+                <div className="group bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3">
+                  <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300 backdrop-blur-sm">
+                    <div className="text-4xl text-white">🏛️</div>
+                </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">Language Courses</h3>
+                  <p className="text-white/90 leading-relaxed mb-4 text-sm">
+                  Master languages with our specialized courses. English, Chinese, Hungarian, and Italian training with certified instructors.
+                  </p>
+                  <Link href="/language-courses" className="text-green-400 font-semibold hover:text-green-300 inline-flex items-center text-sm transition-colors">
+                    Learn More <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+                </div>
+
+                {/* Financial Support */}
+                <div className="group bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3">
+                  <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300 backdrop-blur-sm">
+                    <div className="text-4xl text-white">💰</div>
+                </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">Medical Programs</h3>
+                  <p className="text-white/90 leading-relaxed mb-4 text-sm">
+                  MBBS and BDS programs at top medical universities with international recognition and WHO accreditation.
+                  </p>
+                  <Link href="/medical-programs" className="text-green-400 font-semibold hover:text-green-300 inline-flex items-center text-sm transition-colors">
+                    Learn More <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Statistics Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-primary/10 via-transparent to-primary/10"></div>
+          <div className="absolute top-20 -left-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 -right-20 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Our Success in <span className="text-primary">Numbers</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Trusted by thousands of students worldwide to achieve their educational dreams in China, Hungary, and Italy
+            </p>
+          </div>
+
+          {/* Statistics Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            {/* Students Placed */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/80 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 text-center hover:border-primary/50 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+                  <Users className="h-10 w-10 text-white" />
+                </div>
+                <div className="text-4xl font-bold text-primary mb-2">150+</div>
+                <p className="text-xl font-bold text-white mb-2">Students Placed</p>
+                <p className="text-gray-300">Successfully enrolled in universities worldwide</p>
+              </div>
+            </div>
+
+            {/* Success Rate */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 text-center hover:border-green-500/50 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+                  <Award className="h-10 w-10 text-white" />
+                </div>
+                <div className="text-4xl font-bold text-green-400 mb-2">98%</div>
+                <p className="text-xl font-bold text-white mb-2">Success Rate</p>
+                <p className="text-gray-300">Scholarship application success rate</p>
+              </div>
+            </div>
+
+            {/* Partner Universities */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 text-center hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+                  <TrendingUp className="h-10 w-10 text-white" />
+                </div>
+                <div className="text-4xl font-bold text-blue-400 mb-2">75+</div>
+                <p className="text-xl font-bold text-white mb-2">Partner Universities</p>
+                <p className="text-gray-300">Top-tier institutions worldwide</p>
+              </div>
+            </div>
+
+            {/* Years Experience */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 text-center hover:border-purple-500/50 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+                  <CheckCircle className="h-10 w-10 text-white" />
+                </div>
+                <div className="text-4xl font-bold text-purple-400 mb-2">3+</div>
+                <p className="text-xl font-bold text-white mb-2">Years Experience</p>
+                <p className="text-gray-300">Helping students achieve their dreams</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Available Majors - Redesigned */}
+      <section className="relative py-24 bg-gradient-to-br from-primary/5 via-white to-primary/10 overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center space-y-6 mb-20">
+            <h2 className="text-4xl lg:text-5xl font-bold text-balance text-gray-900 leading-tight">
+              Popular Study <span className="text-primary">Programs</span>
+            </h2>
+            <p className="text-xl text-gray-600 text-pretty max-w-3xl mx-auto leading-relaxed">
+              Explore our most popular programs available across China, Hungary, and Italy
+            </p>
+          </div>
+
+          {/* Country Legend */}
+          <div className="flex flex-wrap justify-center gap-4 mb-16">
+            <div className="flex items-center gap-3 bg-gradient-to-br from-primary/10 to-white rounded-2xl px-8 py-4 shadow-xl border-2 border-primary/20 hover:shadow-2xl hover:scale-105 transition-all duration-300">
+              <img src="/china-flag.png" alt="China" className="w-10 h-6 rounded-sm"></img>
+              <div>
+                <p className="font-bold text-gray-900 text-lg">China</p>
+                <p className="text-xs text-gray-600">8 Programs</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 bg-gradient-to-br from-green-500/10 to-white rounded-2xl px-8 py-4 shadow-xl border-2 border-green-200 hover:shadow-2xl hover:scale-105 transition-all duration-300">
+            <img src="/hungary-flag.png" alt="China" className="w-10 h-6 rounded-sm"></img>
+              <div>
+                <p className="font-bold text-gray-900 text-lg">Hungary</p>
+                <p className="text-xs text-gray-600">8 Programs</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 bg-gradient-to-br from-blue-500/10 to-white rounded-2xl px-8 py-4 shadow-xl border-2 border-blue-200 hover:shadow-2xl hover:scale-105 transition-all duration-300">
+            <img src="/italy-flag.png" alt="China" className="w-10 h-6 rounded-sm"></img>
+              <div>
+                <p className="font-bold text-gray-900 text-lg">Italy</p>
+                <p className="text-xs text-gray-600">10 Programs</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Popular Majors Grid - Show Only Top 6 */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {/* Medicine */}
+            <Card className="group relative border-2 border-red-100 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-white overflow-hidden hover:border-primary cursor-pointer">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-red-100/30 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
+              <CardContent className="p-8 relative z-10">
+                <div className="w-20 h-20 bg-gradient-to-br from-red-50 to-red-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <div className="text-5xl">🏥</div>
+                </div>
+                <h4 className="font-bold text-gray-900 mb-3 text-2xl group-hover:text-primary transition-colors">Medicine</h4>
+                <p className="text-sm text-gray-600 leading-relaxed mb-6">MBBS, Dentistry, Pharmacy, Nursing</p>
+                <div className="flex gap-2 flex-wrap">
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors flex items-center gap-2">
+                    <img src="/china-flag.png" alt="China" className="w-4 h-4 rounded-sm" />
+                    China
+                  </Badge>
+                  <Badge className="bg-green-500/10 text-green-700 hover:bg-green-500 hover:text-white transition-colors flex items-center gap-2">
+                    <img src="/hungary-flag.png" alt="Hungary" className="w-4 h-4 rounded-sm" />
+                    Hungary
+                  </Badge>
+                  <Badge className="bg-blue-500/10 text-blue-700 hover:bg-blue-500 hover:text-white transition-colors flex items-center gap-2">
+                    <img src="/italy-flag.png" alt="Italy" className="w-4 h-4 rounded-sm" />
+                    Italy
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Engineering */}
+            <Card className="group relative border-2 border-blue-100 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-white overflow-hidden hover:border-primary cursor-pointer">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100/30 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
+              <CardContent className="p-8 relative z-10">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <div className="text-5xl">💻</div>
+                </div>
+                <h4 className="font-bold text-gray-900 mb-3 text-2xl group-hover:text-primary transition-colors">Engineering</h4>
+                <p className="text-sm text-gray-600 leading-relaxed mb-6">Computer, Electrical, Mechanical, Civil</p>
+                <div className="flex gap-2 flex-wrap">
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors flex items-center gap-2">
+                    <img src="/china-flag.png" alt="China" className="w-4 h-4 rounded-sm" />
+                    China
+                  </Badge>
+                  <Badge className="bg-green-500/10 text-green-700 hover:bg-green-500 hover:text-white transition-colors flex items-center gap-2">
+                    <img src="/hungary-flag.png" alt="Hungary" className="w-4 h-4 rounded-sm" />
+                    Hungary
+                  </Badge>
+                  <Badge className="bg-blue-500/10 text-blue-700 hover:bg-blue-500 hover:text-white transition-colors flex items-center gap-2">
+                    <img src="/italy-flag.png" alt="Italy" className="w-4 h-4 rounded-sm" />
+                    Italy
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Business */}
+            <Card className="group relative border-2 border-purple-100 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-white overflow-hidden hover:border-primary cursor-pointer">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-100/30 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
+              <CardContent className="p-8 relative z-10">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <div className="text-5xl">💼</div>
+                </div>
+                <h4 className="font-bold text-gray-900 mb-3 text-2xl group-hover:text-primary transition-colors">Business</h4>
+                <p className="text-sm text-gray-600 leading-relaxed mb-6">MBA, Management, Finance, Marketing</p>
+                <div className="flex gap-2 flex-wrap">
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors flex items-center gap-2">
+                    <img src="/china-flag.png" alt="China" className="w-4 h-4 rounded-sm" />
+                    China
+                  </Badge>
+                  <Badge className="bg-green-500/10 text-green-700 hover:bg-green-500 hover:text-white transition-colors flex items-center gap-2">
+                    <img src="/hungary-flag.png" alt="Hungary" className="w-4 h-4 rounded-sm" />
+                    Hungary
+                  </Badge>
+                  <Badge className="bg-blue-500/10 text-blue-700 hover:bg-blue-500 hover:text-white transition-colors flex items-center gap-2">
+                    <img src="/italy-flag.png" alt="Italy" className="w-4 h-4 rounded-sm" />
+                    Italy
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* IT & Computing */}
+            <Card className="group relative border-2 border-indigo-100 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-white overflow-hidden hover:border-primary cursor-pointer">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-indigo-100/30 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
+              <CardContent className="p-8 relative z-10">
+                <div className="w-20 h-20 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <div className="text-5xl">🖥️</div>
+                </div>
+                <h4 className="font-bold text-gray-900 mb-3 text-2xl group-hover:text-primary transition-colors">IT & Computing</h4>
+                <p className="text-sm text-gray-600 leading-relaxed mb-6">Computer Science, Software Engineering</p>
+                <div className="flex gap-2 flex-wrap">
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors flex items-center gap-2">
+                    <img src="/china-flag.png" alt="China" className="w-4 h-4 rounded-sm" />
+                    China
+                  </Badge>
+                  <Badge className="bg-green-500/10 text-green-700 hover:bg-green-500 hover:text-white transition-colors flex items-center gap-2">
+                    <img src="/hungary-flag.png" alt="Hungary" className="w-4 h-4 rounded-sm" />
+                    Hungary
+                  </Badge>
+                  <Badge className="bg-blue-500/10 text-blue-700 hover:bg-blue-500 hover:text-white transition-colors flex items-center gap-2">
+                    <img src="/italy-flag.png" alt="Italy" className="w-4 h-4 rounded-sm" />
+                    Italy
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Arts & Design */}
+            <Card className="group relative border-2 border-pink-100 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-white overflow-hidden hover:border-primary cursor-pointer">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-pink-100/30 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
+              <CardContent className="p-8 relative z-10">
+                <div className="w-20 h-20 bg-gradient-to-br from-pink-50 to-pink-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <div className="text-5xl">🎨</div>
+                </div>
+                <h4 className="font-bold text-gray-900 mb-3 text-2xl group-hover:text-primary transition-colors">Arts & Design</h4>
+                <p className="text-sm text-gray-600 leading-relaxed mb-6">Fine Arts, Fashion, Graphic Design</p>
+                <div className="flex gap-2 flex-wrap">
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors flex items-center gap-2">
+                    <img src="/china-flag.png" alt="China" className="w-4 h-4 rounded-sm" />
+                    China
+                  </Badge>
+                  <Badge className="bg-green-500/10 text-green-700 hover:bg-green-500 hover:text-white transition-colors flex items-center gap-2">
+                    <img src="/hungary-flag.png" alt="Hungary" className="w-4 h-4 rounded-sm" />
+                    Hungary
+                  </Badge>
+                  <Badge className="bg-blue-500/10 text-blue-700 hover:bg-blue-500 hover:text-white transition-colors flex items-center gap-2">
+                    <img src="/italy-flag.png" alt="Italy" className="w-4 h-4 rounded-sm" />
+                    Italy
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Architecture */}
+            <Card className="group relative border-2 border-orange-100 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-white overflow-hidden hover:border-primary cursor-pointer">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-100/30 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
+              <CardContent className="p-8 relative z-10">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <div className="text-5xl">🏗️</div>
+                </div>
+                <h4 className="font-bold text-gray-900 mb-3 text-2xl group-hover:text-primary transition-colors">Architecture</h4>
+                <p className="text-sm text-gray-600 leading-relaxed mb-6">Architecture, Urban Planning, Design</p>
+                <div className="flex gap-2 flex-wrap">
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors flex items-center gap-2">
+                    <img src="/china-flag.png" alt="China" className="w-4 h-4 rounded-sm" />
+                    China
+                  </Badge>
+                  <Badge className="bg-green-500/10 text-green-700 hover:bg-green-500 hover:text-white transition-colors flex items-center gap-2">
+                    <img src="/hungary-flag.png" alt="Hungary" className="w-4 h-4 rounded-sm" />
+                    Hungary
+                  </Badge>
+                  <Badge className="bg-blue-500/10 text-blue-700 hover:bg-blue-500 hover:text-white transition-colors flex items-center gap-2">
+                    <img src="/italy-flag.png" alt="Italy" className="w-4 h-4 rounded-sm" />
+                    Italy
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Show More Majors Preview */}
+          <div className="bg-gradient-to-r from-primary/5 to-primary/10 rounded-2xl p-8 mb-12">
+            <div className="text-center space-y-4">
+              <h3 className="text-2xl font-bold text-gray-900">And Many More Programs Available!</h3>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Explore our complete catalog of 50+ programs including Sciences, Law, Tourism, Culinary Arts, Humanities, Economics, and Social Sciences across all three countries.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4 mt-6">
+                <Badge className="bg-white/80 text-primary px-4 py-2">Sciences</Badge>
+                <Badge className="bg-white/80 text-primary px-4 py-2">Law</Badge>
+                <Badge className="bg-white/80 text-primary px-4 py-2">Tourism</Badge>
+                <Badge className="bg-white/80 text-primary px-4 py-2">Culinary Arts</Badge>
+                <Badge className="bg-white/80 text-primary px-4 py-2">Humanities</Badge>
+                <Badge className="bg-white/80 text-primary px-4 py-2">Economics</Badge>
+                <Badge className="bg-white/80 text-primary px-4 py-2">Social Sciences</Badge>
+                <Badge className="bg-primary/20 text-primary px-4 py-2">+ 10 More</Badge>
+        </div>
+            </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="text-center">
+            <div className="inline-flex flex-col items-center gap-6">
+              <Button size="lg" asChild className="bg-gradient-to-r from-primary to-primary/80 text-white hover:from-primary/90 hover:to-primary/70 px-12 py-6 text-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 rounded-2xl">
+                <Link href="/programs" className="flex items-center gap-3">
+                  View All Programs by Country <ArrowRight className="h-6 w-6" />
+                </Link>
+              </Button>
+              <p className="text-gray-600 text-sm">
+                Can't find your major? <Link href="/contact" className="text-primary font-semibold hover:underline">Contact us</Link> for personalized guidance
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Popular Destinations */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-16">
+
+            <h2 className="text-3xl lg:text-4xl font-bold text-balance text-white">
+              Explore Popular Destinations
+            </h2>
+            <p className="text-lg text-white text-pretty max-w-2xl mx-auto">
+              Choose from our top study destinations and start your global education journey today
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {/* China Card */}
+            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                  src="/chinese-university-campus-with-international-stude.jpg"
+                  alt="Study in China"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-4xl">🇨🇳</span>
+                    <h3 className="text-2xl font-bold text-white">China</h3>
+                  </div>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="space-y-4">
+                  <p className="text-gray-600 leading-relaxed">
+                    World-class universities with cutting-edge research facilities and extensive scholarship programs.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div className="bg-gray-50 rounded-lg p-3">
+                      <div className="font-semibold text-gray-900">Tuition</div>
+                      <div className="text-primary">$3,000-5,000/yr</div>
+                    </div>
+                    <div className="bg-gray-50 rounded-lg p-3">
+                      <div className="font-semibold text-gray-900">Duration</div>
+                      <div className="text-primary">3-4 Years</div>
+                    </div>
+                  </div>
+                  <Button asChild className="w-full bg-primary text-white hover:bg-primary/90">
+                    <Link href="/universities">Explore China</Link>
+                  </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+            {/* Hungary Card */}
+            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                  src="https://study-eu.s3.eu-west-1.amazonaws.com/uploads/image/path/283/wide_fullhd_webp_hungary-budapest.webp"
+                  alt="Study in Hungary"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-4xl">🇭🇺</span>
+                    <h3 className="text-2xl font-bold text-white">Hungary</h3>
+                  </div>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="space-y-4">
+                  <p className="text-gray-600 leading-relaxed">
+                    Affordable European education with Stipendium Hungaricum scholarships and rich cultural experience.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div className="bg-gray-50 rounded-lg p-3">
+                      <div className="font-semibold text-gray-900">Tuition</div>
+                      <div className="text-primary">€2,000-8,000/yr</div>
+                    </div>
+                    <div className="bg-gray-50 rounded-lg p-3">
+                      <div className="font-semibold text-gray-900">Duration</div>
+                      <div className="text-primary">3-4 Years</div>
+                    </div>
+                  </div>
+                  <Button asChild className="w-full bg-primary text-white hover:bg-primary/90">
+                    <Link href="/universities">Explore Hungary</Link>
+                  </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+            {/* Italy Card */}
+            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                  src="https://blog.remitforex.com/wp-content/uploads/2023/03/Italy-university-feature.webp"
+                  alt="Study in Italy"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-4xl">🇮🇹</span>
+                    <h3 className="text-2xl font-bold text-white">Italy</h3>
+                  </div>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="space-y-4">
+                  <p className="text-gray-600 leading-relaxed">
+                    Historic universities with world-renowned arts, design programs, and government scholarships.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div className="bg-gray-50 rounded-lg p-3">
+                      <div className="font-semibold text-gray-900">Tuition</div>
+                      <div className="text-primary">€2,500-4,000/yr</div>
+                    </div>
+                    <div className="bg-gray-50 rounded-lg p-3">
+                      <div className="font-semibold text-gray-900">Duration</div>
+                      <div className="text-primary">3-5 Years</div>
+                    </div>
+                  </div>
+                  <Button asChild className="w-full bg-primary text-white hover:bg-primary/90">
+                    <Link href="/universities">Explore Italy</Link>
+                  </Button>
+                  </div>
+                </CardContent>
+              </Card>
+          </div>
+
+          <div className="text-center">
+            <Button size="lg" variant="outline" asChild className="border-primary text-primary hover:bg-primary hover:text-white px-8 py-4">
+              <Link href="/contact">Get Free Consultation</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-3 bg-primary/10 rounded-full px-6 py-3 mb-6">
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Why Choose <span className="text-primary">Next Stop Global?</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Discover what makes us the preferred choice for students seeking quality education abroad across three amazing countries
+            </p>
+          </div>
+
+          <div className="relative">
+            {/* Main Content Container */}
+            <div className="grid lg:grid-cols-3 gap-16 items-center">
+
+              {/* Left Side - Image with Overlay */}
+              <div className="relative group">
+                <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+                  <img
+                    src="/diverse-students-studying-together-at-modern-chine.jpg"
+                    alt="International students studying together"
+                    className="w-full h-96 lg:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+
+                  {/* Floating Stats */}
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
+                      <div className="grid grid-cols-3 gap-4 text-center">
+                        <div>
+                          <div className="text-2xl font-bold text-primary">150+</div>
+                          <div className="text-xs text-gray-600 font-medium">Students Placed</div>
+                  </div>
+                        <div>
+                          <div className="text-2xl font-bold text-primary">95%</div>
+                          <div className="text-xs text-gray-600 font-medium">Success Rate</div>
+                </div>
+                        <div>
+                          <div className="text-2xl font-bold text-primary">3</div>
+                          <div className="text-xs text-gray-600 font-medium">Countries</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Floating Why Choose Us Badge */}
+                  <div className="absolute top-6 right-6">
+                    <div className="bg-gradient-to-br from-green-500 to-green-600 text-white px-6 py-3 rounded-full shadow-lg">
+                      <div className="text-center">
+                        <div className="text-lg font-bold">WHY CHOOSE US </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Decorative Elements */}
+                <div className="absolute -top-4 -left-4 w-24 h-24 bg-primary/10 rounded-full blur-xl"></div>
+                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-green-500/10 rounded-full blur-xl"></div>
+              </div>
+
+              {/* Center - Content Cards */}
+              <div className="space-y-8">
+                <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/50 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-2xl"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
+                        <Award className="h-5 w-5 text-primary" />
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900">Expert Guidance</h3>
+                    </div>
+                    <p className="text-gray-700 leading-relaxed">
+                      We provide comprehensive support to make your dream of studying abroad a reality with our expert guidance and proven track record.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/50 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-500/5 to-transparent rounded-full blur-2xl"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 bg-green-500/10 rounded-xl flex items-center justify-center">
+                        <CheckCircle className="h-5 w-5 text-green-600" />
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900">Proven Results</h3>
+                    </div>
+                    <p className="text-gray-700 leading-relaxed">
+                      Our dedicated team ensures 95% success rate in applications and scholarships across China, Hungary, and Italy.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Side - Feature Points */}
+              <div className="space-y-6">
+
+                {/* Feature 1 */}
+                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                      <Award className="h-7 w-7 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900 text-lg mb-2">Expert Guidance</h4>
+                      <p className="text-gray-600 leading-relaxed text-sm">
+                        Get personalized advice from our experienced counselors with insider knowledge of universities.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Feature 2 */}
+                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                      <Clock className="h-7 w-7 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900 text-lg mb-2">Quick Processing</h4>
+                      <p className="text-gray-600 leading-relaxed text-sm">
+                        Fast-track your application with our streamlined process and efficient document handling.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Feature 3 */}
+                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                      <CheckCircle className="h-7 w-7 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900 text-lg mb-2">Proven Success</h4>
+                      <p className="text-gray-600 leading-relaxed text-sm">
+                        Join 150+ successful students with our 95% success rate in scholarship applications.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Feature 4 */}
+                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-gray-600 to-gray-700 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                      <Users className="h-7 w-7 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900 text-lg mb-2">Personal Support</h4>
+                      <p className="text-gray-600 leading-relaxed text-sm">
+                        Dedicated support throughout your journey from application to arrival at your dream university.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            {/* Background Decorative Elements */}
+            <div className="absolute top-20 -left-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 -right-20 w-32 h-32 bg-green-500/5 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-purple-500/5 rounded-full blur-3xl"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Services Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-primary/10 via-transparent to-primary/10"></div>
+          <div className="absolute top-20 -left-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 -right-20 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-3 bg-primary/20 rounded-full px-6 py-3 mb-6">
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+              <span className="text-primary font-semibold text-sm uppercase tracking-wide">Our Services</span>
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Comprehensive <span className="text-primary">Support Services</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              From consultation to graduation, we provide end-to-end support for your educational journey in China, Hungary, and Italy
+            </p>
+          </div>
+
+          {/* Services Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            {/* Free Consultancy */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/80 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 h-full hover:border-primary/50 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
+                  <CheckCircle className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">Free Consultancy</h3>
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  Get expert advice on university selection, program matching, and application strategy for China, Hungary, and Italy at no cost.
+                </p>
+                <Link href="/consultation" className="inline-flex items-center text-primary font-semibold hover:text-primary/80 transition-colors group-hover:translate-x-1">
+                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+              </div>
+            </div>
+
+            {/* Scholarship Facility */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 h-full hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
+                  <Award className="h-8 w-8 text-white" />
+                  </div>
+                <h3 className="text-2xl font-bold text-white mb-4">Scholarship Facility</h3>
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  Navigate scholarship opportunities with our proven strategies and insider knowledge of universities in China, Hungary, and Italy.
+                </p>
+                <Link href="/scholarships" className="inline-flex items-center text-blue-400 font-semibold hover:text-blue-300 transition-colors group-hover:translate-x-1">
+                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+                </div>
+            </div>
+
+            {/* Student Visa Processing */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 h-full hover:border-green-500/50 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
+                  <FileText className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">Student Visa Processing</h3>
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  Complete visa assistance with 95% success rate. We handle all documentation and provide travel & accommodation support.
+                </p>
+                <Link href="/visa" className="inline-flex items-center text-green-400 font-semibold hover:text-green-300 transition-colors group-hover:translate-x-1">
+                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+                  </div>
+            </div>
+
+            {/* Language Courses */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 h-full hover:border-purple-500/50 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
+                  <Languages className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">Language Courses</h3>
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  Master languages with our specialized courses. English, Chinese, Hungarian, and Italian training with certified instructors.
+                </p>
+                <Link href="/language-courses" className="inline-flex items-center text-purple-400 font-semibold hover:text-purple-300 transition-colors group-hover:translate-x-1">
+                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+              </div>
+            </div>
+
+            {/* Medical Programs */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 h-full hover:border-red-500/50 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
+                  <Stethoscope className="h-8 w-8 text-white" />
+                  </div>
+                <h3 className="text-2xl font-bold text-white mb-4">Medical Programs</h3>
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  MBBS and BDS programs at top medical universities with international recognition and WHO accreditation.
+                </p>
+                <Link href="/medical-programs" className="inline-flex items-center text-red-400 font-semibold hover:text-red-300 transition-colors group-hover:translate-x-1">
+                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+                </div>
+            </div>
+
+            {/* Academic Support */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 h-full hover:border-orange-500/50 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
+                  <Users className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">Academic Support</h3>
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  Comprehensive academic guidance and ongoing support throughout your educational journey from application to graduation.
+                </p>
+                <Link href="/academic-support" className="inline-flex items-center text-orange-400 font-semibold hover:text-orange-300 transition-colors group-hover:translate-x-1">
+                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="text-center mt-16">
+            <div className="bg-gradient-to-r from-primary/20 to-blue-500/20 rounded-3xl p-8 border border-primary/30">
+              <h3 className="text-2xl font-bold text-white mb-4">Ready to Start Your Journey?</h3>
+              <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+                Get personalized guidance from our expert counselors and take the first step towards your dream education abroad.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl">
+                  <Users className="mr-2 h-5 w-5" />
+                  Get Free Consultation
+                </Button>
+                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-xl">
+                  <Mail className="mr-2 h-5 w-5" />
+                  Contact Us
+                </Button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Process Timeline */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-balance text-gray-900">
+              Your Study Abroad Journey
+            </h2>
+            <p className="text-lg text-gray-600 text-pretty max-w-2xl mx-auto">
+              Our streamlined process to make your dream of studying abroad a reality
+            </p>
+          </div>
+
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary/20 via-primary to-primary/20 -translate-y-1/2"></div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 relative">
+              {/* Step 1 */}
+              <div className="text-center group">
+                <div className="relative inline-block mb-6">
+                  <div className="w-20 h-20 bg-white border-4 border-primary rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:scale-110 transition-all duration-300 relative z-10">
+                    <span className="text-2xl font-bold text-primary">1</span>
+                  </div>
+                  <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                </div>
+                <h3 className="text-lg font-bold mb-2 text-gray-900">Free Consultation</h3>
+                <p className="text-sm text-gray-600">Discuss your goals and get personalized guidance</p>
+              </div>
+
+              {/* Step 2 */}
+              <div className="text-center group">
+                <div className="relative inline-block mb-6">
+                  <div className="w-20 h-20 bg-white border-4 border-primary rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:scale-110 transition-all duration-300 relative z-10">
+                    <span className="text-2xl font-bold text-primary">2</span>
+                  </div>
+                  <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                </div>
+                <h3 className="text-lg font-bold mb-2 text-gray-900">University Selection</h3>
+                <p className="text-sm text-gray-600">Choose the best university and program for you</p>
+              </div>
+
+              {/* Step 3 */}
+              <div className="text-center group">
+                <div className="relative inline-block mb-6">
+                  <div className="w-20 h-20 bg-white border-4 border-primary rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:scale-110 transition-all duration-300 relative z-10">
+                    <span className="text-2xl font-bold text-primary">3</span>
+                  </div>
+                  <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                </div>
+                <h3 className="text-lg font-bold mb-2 text-gray-900">Application Preparation</h3>
+                <p className="text-sm text-gray-600">We help prepare all required documents</p>
+              </div>
+
+              {/* Step 4 */}
+              <div className="text-center group">
+                <div className="relative inline-block mb-6">
+                  <div className="w-20 h-20 bg-white border-4 border-primary rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:scale-110 transition-all duration-300 relative z-10">
+                    <span className="text-2xl font-bold text-primary">4</span>
+                  </div>
+                  <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                </div>
+                <h3 className="text-lg font-bold mb-2 text-gray-900">Visa Processing</h3>
+                <p className="text-sm text-gray-600">Complete visa application and approval</p>
+              </div>
+
+              {/* Step 5 */}
+              <div className="text-center group">
+                <div className="relative inline-block mb-6">
+                  <div className="w-20 h-20 bg-white border-4 border-primary rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:scale-110 transition-all duration-300 relative z-10">
+                    <span className="text-2xl font-bold text-primary">5</span>
+                  </div>
+                  <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                </div>
+                <h3 className="text-lg font-bold mb-2 text-gray-900">Departure & Support</h3>
+                <p className="text-sm text-gray-600">Travel assistance and post-arrival support</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button size="lg" asChild className="bg-primary text-white hover:bg-primary/90 px-8 py-4">
+              <Link href="/apply">Start Your Journey <ArrowRight className="ml-2 h-5 w-5" /></Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Partner Universities Logos */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">s
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-2xl lg:text-3xl font-bold text-balance text-white">
+              Our Partner Universities
+            </h2>
+            <p className="text-white max-w-2xl mx-auto">
+              We work with prestigious institutions across China, Hungary, and Italy
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+            {/* University Logo Placeholders */}
+            <div className="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+              <div className="text-center">
+                <div className="text-3xl mb-2">🎓</div>
+                <div className="text-xs font-semibold text-gray-700">Tsinghua</div>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+              <div className="text-center">
+                <div className="text-3xl mb-2">🏛️</div>
+                <div className="text-xs font-semibold text-gray-700">Peking</div>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+              <div className="text-center">
+                <div className="text-3xl mb-2">📚</div>
+                <div className="text-xs font-semibold text-gray-700">Fudan</div>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+              <div className="text-center">
+                <div className="text-3xl mb-2">🏥</div>
+                <div className="text-xs font-semibold text-gray-700">Semmelweis</div>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+              <div className="text-center">
+                <div className="text-3xl mb-2">🏛️</div>
+                <div className="text-xs font-semibold text-gray-700">Bologna</div>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+              <div className="text-center">
+                <div className="text-3xl mb-2">🎓</div>
+                <div className="text-xs font-semibold text-gray-700">Sapienza</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-balance">What Our Students Say</h2>
+            <p className="text-xl text-muted-foreground text-pretty max-w-2xl mx-auto">
+              Real stories from students who achieved their dreams of studying abroad
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-6">
+                <div className="flex items-center space-x-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <blockquote className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                  "Next Stop Global made my dream of studying medicine in China a reality. Their guidance was exceptional, and I secured a full scholarship at Capital Medical University."
+                </blockquote>
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <UserCheck className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-semibold">Sarah Johnson</p>
+                    <p className="text-sm text-muted-foreground">MBBS Student, Capital Medical University</p>
+                  </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-6">
+                <div className="flex items-center space-x-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <blockquote className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                  "The team's expertise in scholarship applications is unmatched. I got accepted to University of Bologna with a full PhD scholarship. Highly recommended!"
+                </blockquote>
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <UserCheck className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-semibold">Ahmed Hassan</p>
+                    <p className="text-sm text-muted-foreground">PhD Student, University of Bologna</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-6">
+                <div className="flex items-center space-x-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <blockquote className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                  "From application to visa processing, Next Stop Global handled everything professionally. Now I'm pursuing my Master's in Medicine at Semmelweis University."
+                </blockquote>
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <UserCheck className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-semibold">Maria Rodriguez</p>
+                    <p className="text-sm text-muted-foreground">Master's Student, Semmelweis University</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-balance text-gray-900">
+              Student Success Stories
+            </h2>
+            <p className="text-lg text-gray-600 text-pretty max-w-2xl mx-auto">
+              Watch real stories from our students who achieved their dreams
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Video Card 1 */}
+            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
+              <div className="relative aspect-video bg-gray-900 overflow-hidden">
+                <img
+                  src="/student-success-story-chinese-university-graduatio.jpg"
+                  alt="Student Success Video"
+                  className="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity duration-300"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-primary/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 cursor-pointer">
+                    <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-gray-900">From Nigeria to Beijing: Sarah's MBBS Journey</h3>
+                <p className="text-gray-600 text-sm mb-3">Watch how Sarah secured a full scholarship at Capital Medical University</p>
+                <div className="flex items-center gap-4 text-sm text-gray-500">
+                  <span className="flex items-center gap-1">
+                    <Clock className="h-4 w-4" />
+                    5:30
+                  </span>
+                  <span>•</span>
+                  <span>MBBS Graduate</span>
+                  </div>
+                </CardContent>
+              </Card>
+
+            {/* Video Card 2 */}
+            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
+              <div className="relative aspect-video bg-gray-900 overflow-hidden">
+                <img
+                  src="/diverse-students-studying-together-at-modern-chine.jpg"
+                  alt="Virtual Campus Tour"
+                  className="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity duration-300"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-primary/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 cursor-pointer">
+                    <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-gray-900">Virtual Campus Tour: Semmelweis University</h3>
+                <p className="text-gray-600 text-sm mb-3">Explore Hungary's premier medical university through our virtual tour</p>
+                <div className="flex items-center gap-4 text-sm text-gray-500">
+                  <span className="flex items-center gap-1">
+                    <Clock className="h-4 w-4" />
+                    4:15
+                  </span>
+                  <span>•</span>
+                  <span>Campus Tour</span>
+                  </div>
+                </CardContent>
+              </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button size="lg" variant="outline" asChild className="border-primary text-primary hover:bg-primary hover:text-white px-8 py-4">
+              <Link href="/blog">Watch More Stories</Link>
+              </Button>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Blog/News Teaser */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-primary/10 via-transparent to-primary/10"></div>
+          <div className="absolute top-20 -left-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 -right-20 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-3 bg-primary/20 rounded-full px-6 py-3 mb-6">
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+              <span className="text-primary font-semibold text-sm uppercase tracking-wide">Latest Updates</span>
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Stay <span className="text-primary">Updated</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Stay informed about scholarships, application deadlines, and study abroad opportunities
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="hover:shadow-md transition-shadow">
+              <CardContent className="p-0">
+                <img
+                  src="/scholarship-announcement-chinese-university.jpg"
+                  alt="Scholarship announcement"
+                  className="w-full h-48 object-cover rounded-t-lg"
+                />
+                <div className="p-6">
+                  <Badge variant="secondary" className="mb-3">
+                    Scholarship Alert
+                  </Badge>
+                  <h3 className="text-xl font-semibold mb-2 text-balance">New MBBS Scholarships Available for 2025</h3>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    Capital Medical University announces 50 new full scholarships for international MBBS students.
+                  </p>
+                  <Link href="/blog/mbbs-scholarships-2025" className="text-primary hover:underline font-medium">
+                    Read More →
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-md transition-shadow">
+              <CardContent className="p-0">
+                <img
+                  src="/visa-guidance-international-students.jpg"
+                  alt="Visa guidance"
+                  className="w-full h-48 object-cover rounded-t-lg"
+                />
+                <div className="p-6">
+                  <Badge variant="secondary" className="mb-3">
+                    Visa Guide
+                  </Badge>
+                  <h3 className="text-xl font-semibold mb-2 text-balance">Student Visa Application Process 2025</h3>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    Complete guide to Chinese student visa requirements and application timeline.
+                  </p>
+                  <Link href="/blog/visa-guide-2025" className="text-primary hover:underline font-medium">
+                    Read More →
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-md transition-shadow">
+              <CardContent className="p-0">
+                <img
+                  src="/student-success-story-chinese-university-graduatio.jpg"
+                  alt="Student success story"
+                  className="w-full h-48 object-cover rounded-t-lg"
+                />
+                <div className="p-6">
+                  <Badge variant="secondary" className="mb-3">
+                    Success Story
+                  </Badge>
+                  <h3 className="text-xl font-semibold mb-2 text-balance">From Nigeria to Beijing: Sarah's Journey</h3>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    How Sarah secured a full PhD scholarship at Tsinghua University through our program.
+                  </p>
+                  <Link href="/blog/sarah-success-story" className="text-primary hover:underline font-medium">
+                    Read More →
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-8 md:hidden">
+            <Button variant="outline" asChild>
+              <Link href="/blog">View All Posts</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-balance text-gray-900">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-gray-600 text-pretty max-w-2xl mx-auto">
+              Find answers to common questions about studying abroad
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-4">
+            {/* FAQ Item 1 */}
+            <details className="group bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
+              <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-gray-900 text-lg">
+                What countries do you provide services for?
+                <span className="text-primary group-open:rotate-180 transition-transform duration-300">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </span>
+              </summary>
+              <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                We provide comprehensive services for students looking to study in China, Hungary, and Italy. Our expert counselors assist with university selection, application processing, scholarship guidance, and visa support for all three countries.
+                </div>
+            </details>
+
+            {/* FAQ Item 2 */}
+            <details className="group bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
+              <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-gray-900 text-lg">
+                Do you offer scholarship assistance?
+                <span className="text-primary group-open:rotate-180 transition-transform duration-300">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </span>
+              </summary>
+              <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                Yes! We help students apply for various scholarships including Chinese Government Scholarship (CSC), Stipendium Hungaricum (Hungary), Italian Government Scholarships, and university-specific scholarships. Our success rate is 95%.
+                  </div>
+            </details>
+
+            {/* FAQ Item 3 */}
+            <details className="group bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
+              <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-gray-900 text-lg">
+                What is the application timeline?
+                <span className="text-primary group-open:rotate-180 transition-transform duration-300">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </span>
+              </summary>
+              <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                The application process typically takes 3-6 months from initial consultation to visa approval. We recommend starting at least 6-8 months before your desired intake. Application deadlines vary by country and university.
+                  </div>
+            </details>
+
+            {/* FAQ Item 4 */}
+            <details className="group bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
+              <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-gray-900 text-lg">
+                What are the language requirements?
+                <span className="text-primary group-open:rotate-180 transition-transform duration-300">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </span>
+              </summary>
+              <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                Most programs require IELTS 6.0+ or TOEFL 80+ for English-taught programs. For Chinese programs, HSK 4+ is required. Italian programs may require Italian B2 level. We also offer language preparation courses for all requirements.
+                </div>
+            </details>
+
+            {/* FAQ Item 5 */}
+            <details className="group bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
+              <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-gray-900 text-lg">
+                Do you help with visa processing?
+                <span className="text-primary group-open:rotate-180 transition-transform duration-300">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </span>
+              </summary>
+              <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                Yes, we provide complete visa processing support including document preparation, application submission, and follow-up. We also offer travel assistance and post-arrival support to ensure a smooth transition.
+                </div>
+            </details>
+
+            {/* FAQ Item 6 */}
+            <details className="group bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
+              <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-gray-900 text-lg">
+                What are the tuition fees and living costs?
+                <span className="text-primary group-open:rotate-180 transition-transform duration-300">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </span>
+              </summary>
+              <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                Tuition fees vary by country: China ($3,000-5,000/year), Hungary (€2,000-8,000/year), Italy (€2,500-4,000/year). Living costs range from $400-800/month depending on the city and lifestyle. Many scholarships cover both tuition and living expenses.
+                  </div>
+            </details>
+                  </div>
+
+          <div className="text-center mt-12">
+            <Button size="lg" asChild className="bg-primary text-white hover:bg-primary/90 px-8 py-4">
+              <Link href="/contact">Ask More Questions</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Media Community */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-primary/10 via-transparent to-primary/10"></div>
+          <div className="absolute top-20 -left-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 -right-20 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-3 bg-primary/20 rounded-full px-6 py-3 mb-6">
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+              <span className="text-primary font-semibold text-sm uppercase tracking-wide">Social Media</span>
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Connect With Us on <span className="text-primary">Social Media</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Follow us for daily updates, success stories, and study abroad tips
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* YouTube */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 text-center hover:border-red-500/50 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                  </svg>
+              </div>
+                <div className="text-3xl font-bold text-white mb-2">50K+</div>
+                <p className="text-lg font-bold text-white mb-2">Active Followers</p>
+                <p className="text-gray-300 text-sm mb-4">Follow us on YouTube</p>
+                <Button size="sm" className="w-full bg-red-600 hover:bg-red-700 text-white">
+                  <a href="https://youtube.com/@nextstopglobal" target="_blank" rel="noopener noreferrer">Follow</a>
+                </Button>
+              </div>
+            </div>
+
+            {/* Instagram */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 text-center hover:border-pink-500/50 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+                  <Instagram className="w-8 h-8 text-white" />
+              </div>
+                <div className="text-3xl font-bold text-white mb-2">35K+</div>
+                <p className="text-lg font-bold text-white mb-2">Active Followers</p>
+                <p className="text-gray-300 text-sm mb-4">Follow us on Instagram</p>
+                <Button size="sm" className="w-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white">
+                  <a href="https://instagram.com/nextstopglobal" target="_blank" rel="noopener noreferrer">Follow</a>
+                </Button>
+              </div>
+            </div>
+
+            {/* Facebook */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 text-center hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+                  <Facebook className="w-8 h-8 text-white" />
+              </div>
+                <div className="text-3xl font-bold text-white mb-2">28K+</div>
+                <p className="text-lg font-bold text-white mb-2">Active Followers</p>
+                <p className="text-gray-300 text-sm mb-4">Follow us on Facebook</p>
+                <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                  <a href="https://facebook.com/nextstopglobal" target="_blank" rel="noopener noreferrer">Follow</a>
+                </Button>
+              </div>
+            </div>
+
+            {/* LinkedIn */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-700 to-indigo-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 text-center hover:border-blue-700/50 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-700 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  </svg>
+              </div>
+                <div className="text-3xl font-bold text-white mb-2">15K+</div>
+                <p className="text-lg font-bold text-white mb-2">Active Followers</p>
+                <p className="text-gray-300 text-sm mb-4">Follow us on LinkedIn</p>
+                <Button size="sm" className="w-full bg-blue-700 hover:bg-blue-800 text-white">
+                  <a href="https://linkedin.com/company/nextstopglobal" target="_blank" rel="noopener noreferrer">Follow</a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-lg p-12 text-center bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200">
+            <div className="max-w-3xl mx-auto space-y-8">
+              <div className="space-y-4">
+                <h2 className="text-3xl lg:text-4xl font-bold text-balance text-gray-900">
+                  Ready to Start Your Journey Abroad?
+                </h2>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Join thousands of successful students who have achieved their dreams in China, Hungary, and Italy with our expert guidance.
+                  Get started with a free consultation today.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button size="lg" asChild className="bg-primary text-white hover:bg-primary/90">
+                  <Link href="/apply">
+                    Start Your Application <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild className="border-primary text-primary hover:bg-primary hover:text-white">
+                  <Link href="/contact">Get Free Consultation</Link>
+                </Button>
+              </div>
+
+              <div className="pt-8 border-t border-gray-200">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                  <div className="flex items-center space-x-2 text-gray-600">
+                    <MailIcon className="h-5 w-5" />
+                    <span>Subscribe to our newsletter for latest updates</span>
+                  </div>
+                  <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+                    <input
+                      type="email"
+                      placeholder="Enter your email"
+                      value={newsletterEmail}
+                      onChange={(e) => setNewsletterEmail(e.target.value)}
+                      className="px-4 py-2 rounded-lg text-gray-900 border border-gray-300 focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                      required
+                    />
+                    <Button 
+                      type="submit" 
+                      className="bg-primary text-white hover:bg-primary/90"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? "Subscribing..." : "Subscribe"}
+                    </Button>
+                  </form>
+                  {submitSuccess && (
+                    <p className="text-green-600 text-sm mt-2">Successfully subscribed to our newsletter!</p>
+                  )}
+                  {submitError && (
+                    <p className="text-red-600 text-sm mt-2">{submitError}</p>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+
+      {/* Floating Action Button - Contact Options */}
+      <div className="fixed bottom-6 right-6 z-50">
+        {/* Expanded Contact Options */}
+        {isFABExpanded && (
+          <div className="absolute bottom-16 right-0 space-y-3 mb-4">
+            {/* WhatsApp */}
+            <button
+              onClick={openWhatsApp}
+              className="flex items-center justify-center w-12 h-12 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+              title="WhatsApp"
+            >
+          <MessageCircle className="h-6 w-6" />
+            </button>
+            
+            {/* Telegram */}
+            <button
+              onClick={openTelegram}
+              className="flex items-center justify-center w-12 h-12 bg-blue-500 hover:bg-blue-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+              title="Telegram"
+            >
+              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+              </svg>
+            </button>
+            
+            {/* Facebook */}
+            <button
+              onClick={openFacebook}
+              className="flex items-center justify-center w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+              title="Facebook"
+            >
+              <Facebook className="h-6 w-6" />
+            </button>
+            
+            {/* Instagram */}
+            <button
+              onClick={openInstagram}
+              className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+              title="Instagram"
+            >
+              <Instagram className="h-6 w-6" />
+            </button>
+            
+            {/* Email */}
+            <button
+              onClick={openEmail}
+              className="flex items-center justify-center w-12 h-12 bg-gray-600 hover:bg-gray-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+              title="Email"
+            >
+              <Mail className="h-6 w-6" />
+            </button>
+          </div>
+        )}
+        
+        {/* Main FAB Button */}
+        <button
+          onClick={() => setIsFABExpanded(!isFABExpanded)}
+          className={`flex items-center justify-center w-14 h-14 bg-primary hover:bg-primary/90 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform ${isFABExpanded ? 'rotate-45' : 'rotate-0'
+          }`}
+        >
+          {isFABExpanded ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <MessageCircle className="h-6 w-6" />
+          )}
+        </button>
+      </div>
+    </div>
+  )
+}
