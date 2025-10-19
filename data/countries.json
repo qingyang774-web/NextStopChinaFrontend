@@ -1,0 +1,327 @@
+[
+  {
+    "id": "china",
+    "name": "China",
+    "slug": "china",
+    "tagline": "Ancient Wisdom Meets Modern Innovation",
+    "description": "Study in one of the world's fastest-growing economies with a 5,000-year-old civilization. Experience cutting-edge technology, world-class universities, and an unforgettable cultural journey.",
+    "flag": "/china-flag.png",
+    "heroImage": "/chinese-university-campus-with-international-stude.jpg",
+    "capital": "Beijing",
+    "language": "Mandarin Chinese (English programs available)",
+    "currency": "Chinese Yuan (CNY)",
+    "population": "1.4+ billion",
+    "climate": "Diverse - from tropical to subarctic",
+    "timezone": "UTC+8",
+    "whyStudyHere": [
+      {
+        "title": "World-Class Education",
+        "description": "Home to 7 universities in the world's top 100, China offers exceptional academic programs recognized globally.",
+        "icon": "GraduationCap"
+      },
+      {
+        "title": "Affordable Tuition",
+        "description": "Study at top-ranked universities for a fraction of Western costs, with numerous scholarship opportunities available.",
+        "icon": "DollarSign"
+      },
+      {
+        "title": "Rich Cultural Heritage",
+        "description": "Experience 5,000 years of history, from the Great Wall to modern skyscrapers in the world's oldest continuous civilization.",
+        "icon": "Landmark"
+      },
+      {
+        "title": "Career Opportunities",
+        "description": "Build valuable connections in the world's second-largest economy and gain a competitive edge in the global job market.",
+        "icon": "Briefcase"
+      },
+      {
+        "title": "Modern Infrastructure",
+        "description": "Enjoy state-of-the-art facilities, high-speed rail, and smart cities with advanced technology integration.",
+        "icon": "Building2"
+      },
+      {
+        "title": "Diverse Experiences",
+        "description": "From bustling megacities to serene countryside, explore incredibly diverse landscapes and experiences.",
+        "icon": "Globe"
+      }
+    ],
+    "topUniversities": [
+      "Tsinghua University",
+      "Peking University",
+      "Fudan University",
+      "Shanghai Jiao Tong University",
+      "Zhejiang University",
+      "University of Science and Technology of China"
+    ],
+    "popularPrograms": [
+      "MBBS (Medicine)",
+      "Engineering & Technology",
+      "Business & Economics",
+      "Computer Science & AI",
+      "Chinese Language & Culture",
+      "International Relations"
+    ],
+    "livingCost": {
+      "monthly": "$400 - $800",
+      "accommodation": "$150 - $400/month",
+      "food": "$150 - $250/month",
+      "transportation": "$30 - $50/month",
+      "utilities": "$30 - $60/month"
+    },
+    "scholarships": [
+      "Chinese Government Scholarship (CSC)",
+      "Provincial Government Scholarships",
+      "University Scholarships",
+      "Confucius Institute Scholarships",
+      "Belt and Road Scholarships"
+    ],
+    "studentLife": [
+      "Vibrant international student communities",
+      "Cultural festivals and celebrations year-round",
+      "Affordable entertainment and dining",
+      "Safe and welcoming environment",
+      "Modern student accommodation",
+      "Extensive public transportation"
+    ],
+    "admissionRequirements": {
+      "undergraduate": [
+        "High school diploma or equivalent",
+        "Minimum GPA: 3.0/4.0",
+        "English proficiency (IELTS 6.0 or TOEFL 80)",
+        "Valid passport",
+        "Health certificate"
+      ],
+      "postgraduate": [
+        "Bachelor's degree",
+        "Minimum GPA: 3.0/4.0",
+        "English proficiency (IELTS 6.5 or TOEFL 90)",
+        "Research proposal (for PhD)",
+        "Recommendation letters"
+      ]
+    },
+    "fastFacts": {
+      "internationalStudents": "500,000+",
+      "universities": "3,000+",
+      "topRankedUniversities": "200+",
+      "englishPrograms": "5,000+",
+      "yearlyTuition": "$2,500 - $10,000"
+    }
+  },
+  {
+    "id": "hungary",
+    "name": "Hungary",
+    "slug": "hungary",
+    "tagline": "Europe's Hidden Gem for Education",
+    "description": "Discover quality European education at affordable prices in the heart of Central Europe. Hungary offers world-renowned medical programs, rich culture, and a gateway to explore Europe.",
+    "flag": "/hungary-flag.png",
+    "heroImage": "/placeholder.jpg",
+    "capital": "Budapest",
+    "language": "Hungarian (English programs available)",
+    "currency": "Hungarian Forint (HUF)",
+    "population": "9.7 million",
+    "climate": "Continental - warm summers, cold winters",
+    "timezone": "UTC+1",
+    "whyStudyHere": [
+      {
+        "title": "EU Member Benefits",
+        "description": "Study in the European Union with access to the Schengen Zone and travel opportunities across 26 European countries.",
+        "icon": "GraduationCap"
+      },
+      {
+        "title": "Medical Excellence",
+        "description": "Home to some of Europe's best medical schools with programs recognized by WHO, EU, and major medical councils worldwide.",
+        "icon": "Heart"
+      },
+      {
+        "title": "Affordable Living",
+        "description": "Experience European lifestyle at much lower costs compared to Western Europe, with excellent quality of life.",
+        "icon": "DollarSign"
+      },
+      {
+        "title": "Central Location",
+        "description": "Perfect base to explore Europe - Vienna, Prague, and other major cities are just hours away.",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Rich Culture",
+        "description": "Immerse yourself in thermal baths, classical music, stunning architecture, and vibrant festivals.",
+        "icon": "Landmark"
+      },
+      {
+        "title": "English Programs",
+        "description": "Wide range of English-taught programs across medicine, engineering, business, and arts.",
+        "icon": "Globe"
+      }
+    ],
+    "topUniversities": [
+      "Semmelweis University",
+      "University of Debrecen",
+      "University of Pécs",
+      "University of Szeged",
+      "Budapest University of Technology and Economics",
+      "Corvinus University of Budapest"
+    ],
+    "popularPrograms": [
+      "Medicine (General Medicine)",
+      "Dentistry",
+      "Pharmacy",
+      "Engineering",
+      "Business Administration",
+      "Computer Science"
+    ],
+    "livingCost": {
+      "monthly": "$600 - $900",
+      "accommodation": "$250 - $450/month",
+      "food": "$200 - $300/month",
+      "transportation": "$30 - $50/month",
+      "utilities": "$80 - $120/month"
+    },
+    "scholarships": [
+      "Stipendium Hungaricum Scholarship",
+      "Hungarian State Scholarship",
+      "Bilateral State Scholarships",
+      "University Merit Scholarships",
+      "Tempus Public Foundation Scholarships"
+    ],
+    "studentLife": [
+      "Vibrant nightlife in Budapest",
+      "Famous thermal baths and spas",
+      "Rich cultural scene with opera and concerts",
+      "Affordable travel across Europe",
+      "Safe and student-friendly cities",
+      "International student communities"
+    ],
+    "admissionRequirements": {
+      "undergraduate": [
+        "High school diploma with science subjects",
+        "Entrance examination (for medical programs)",
+        "English proficiency (IELTS 6.5 or equivalent)",
+        "Biology and Chemistry knowledge",
+        "Valid passport and health insurance"
+      ],
+      "postgraduate": [
+        "Bachelor's degree in relevant field",
+        "Academic transcripts",
+        "English proficiency (IELTS 6.5-7.0)",
+        "Motivation letter",
+        "CV and recommendation letters"
+      ]
+    },
+    "fastFacts": {
+      "internationalStudents": "35,000+",
+      "universities": "60+",
+      "topRankedUniversities": "10+",
+      "englishPrograms": "500+",
+      "yearlyTuition": "$5,000 - $12,000"
+    }
+  },
+  {
+    "id": "italy",
+    "name": "Italy",
+    "slug": "italy",
+    "tagline": "Where History Meets Innovation",
+    "description": "Study in the birthplace of the Renaissance, home to world-famous art, culture, and cuisine. Italy offers prestigious universities, innovative programs, and an unparalleled lifestyle experience.",
+    "flag": "/italy-flag.png",
+    "heroImage": "/placeholder.jpg",
+    "capital": "Rome",
+    "language": "Italian (English programs available)",
+    "currency": "Euro (EUR)",
+    "population": "60 million",
+    "climate": "Mediterranean - mild winters, hot summers",
+    "timezone": "UTC+1",
+    "whyStudyHere": [
+      {
+        "title": "Historic Universities",
+        "description": "Study at some of the world's oldest universities, including Bologna (founded 1088) with centuries of academic excellence.",
+        "icon": "GraduationCap"
+      },
+      {
+        "title": "Design & Arts Capital",
+        "description": "World leader in fashion, design, architecture, and fine arts with unmatched creative opportunities.",
+        "icon": "Palette"
+      },
+      {
+        "title": "EU Education Quality",
+        "description": "Bologna Process education system recognized across Europe with affordable tuition at public universities.",
+        "icon": "Award"
+      },
+      {
+        "title": "Culinary Excellence",
+        "description": "Experience authentic Italian cuisine, wine culture, and Mediterranean lifestyle in the food capital of the world.",
+        "icon": "UtensilsCrossed"
+      },
+      {
+        "title": "Cultural Heritage",
+        "description": "Live among UNESCO World Heritage sites, ancient ruins, Renaissance art, and breathtaking landscapes.",
+        "icon": "Landmark"
+      },
+      {
+        "title": "Strategic Location",
+        "description": "Gateway to Europe, Mediterranean, and North Africa with excellent connectivity and travel opportunities.",
+        "icon": "Globe"
+      }
+    ],
+    "topUniversities": [
+      "University of Bologna",
+      "Sapienza University of Rome",
+      "Polytechnic University of Milan",
+      "University of Padua",
+      "University of Milan",
+      "University of Pisa"
+    ],
+    "popularPrograms": [
+      "Fashion & Design",
+      "Architecture",
+      "Engineering",
+      "Business & Economics",
+      "Arts & Humanities",
+      "Culinary Arts & Food Science"
+    ],
+    "livingCost": {
+      "monthly": "$800 - $1,200",
+      "accommodation": "$350 - $600/month",
+      "food": "$250 - $350/month",
+      "transportation": "$35 - $50/month",
+      "utilities": "$80 - $150/month"
+    },
+    "scholarships": [
+      "Italian Government Scholarships",
+      "Regional Scholarships (DSU)",
+      "University Merit Scholarships",
+      "Invest Your Talent in Italy",
+      "Erasmus+ Scholarships"
+    ],
+    "studentLife": [
+      "La dolce vita lifestyle",
+      "World-famous cuisine and wine",
+      "Beach and mountain access",
+      "Rich cultural events and festivals",
+      "Historic city centers",
+      "Vibrant international communities"
+    ],
+    "admissionRequirements": {
+      "undergraduate": [
+        "High school diploma (12 years of education)",
+        "Pre-enrollment through Italian Embassy",
+        "Italian language (B2) or English proficiency",
+        "Entrance examinations (for some programs)",
+        "Declaration of Value (Dichiarazione di Valore)"
+      ],
+      "postgraduate": [
+        "Bachelor's degree",
+        "Academic transcripts",
+        "Language proficiency (Italian B2 or English)",
+        "Motivation letter and CV",
+        "Portfolio (for design/arts programs)"
+      ]
+    },
+    "fastFacts": {
+      "internationalStudents": "120,000+",
+      "universities": "90+",
+      "topRankedUniversities": "30+",
+      "englishPrograms": "600+",
+      "yearlyTuition": "$1,000 - $4,000 (public)"
+    }
+  }
+]
+

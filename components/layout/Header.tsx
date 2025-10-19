@@ -34,6 +34,9 @@ export default function Header() {
             <Link href="/universities" className={`transition-colors ${isActive("/universities")}`}>
               Universities
             </Link>
+            <Link href="/countries" className={`transition-colors ${isActive("/countries")}`}>
+              Countries
+            </Link>
             <Link href="/blog" className={`transition-colors ${isActive("/blog")}`}>
               Blog
             </Link>
