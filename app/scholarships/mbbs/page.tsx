@@ -14,6 +14,7 @@ import {
   ArrowLeft,
   Heart,
   Stethoscope,
+  MessageCircle,
 } from "lucide-react"
 import Link from "next/link"
 
@@ -620,4 +621,31 @@ export default function MBBSScholarshipsPage() {
                 </div>
                 <div className="flex items-center space-x-2">
                   <Mail className="h-4 w-4 text-primary" />
-                  <span className\
+                  <span className="text-background/80">info@nextstopchina.com</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <MessageCircle className="h-4 w-4 text-primary" />
+                  <span className="text-background/80">WhatsApp Support</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-background/20 mt-12 pt-8 text-center">
+            <p className="text-background/60">
+              © 2025 Next Stop China. All rights reserved. | Making education dreams come true.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      {/* Floating WhatsApp Button */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <Button size="lg" className="rounded-full w-14 h-14 shadow-lg hover:shadow-xl transition-shadow">
+          <MessageCircle className="h-6 w-6" />
+          <span className="sr-only">WhatsApp Support</span>
+        </Button>
+      </div>
+    </div>
+  )
+}
