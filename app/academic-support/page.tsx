@@ -67,9 +67,9 @@ export default function AcademicSupportPage() {
               </CardContent>
             </Card>
 
-            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-green-500/5 to-white">
+            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-orange-500/5 to-white">
               <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-green-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-600 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform">
                   <Users className="h-10 w-10 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-900">Tutoring Services</h3>
@@ -154,20 +154,20 @@ export default function AcademicSupportPage() {
                   <p className="text-gray-600 text-sm leading-relaxed">Evaluate your academic needs and challenges</p>
                 </CardContent>
               </Card>
-              <div className="hidden lg:block absolute top-10 -right-3 w-6 h-0.5 bg-gradient-to-r from-primary to-green-500"></div>
+              <div className="hidden lg:block absolute top-10 -right-3 w-6 h-0.5 bg-gradient-to-r from-primary to-orange-500"></div>
             </div>
 
             <div className="relative">
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-green-500/5 to-white h-full">
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-orange-500/5 to-white h-full">
                 <CardContent className="p-6 text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <div className="w-20 h-20 bg-gradient-to-br from-orange-600 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                     <span className="text-3xl font-bold text-white">2</span>
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-gray-900">Planning</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">Create personalized academic support plan</p>
                 </CardContent>
               </Card>
-              <div className="hidden lg:block absolute top-10 -right-3 w-6 h-0.5 bg-gradient-to-r from-green-500 to-blue-500"></div>
+              <div className="hidden lg:block absolute top-10 -right-3 w-6 h-0.5 bg-gradient-to-r from-orange-500 to-blue-500"></div>
             </div>
 
             <div className="relative">
@@ -234,7 +234,7 @@ export default function AcademicSupportPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-2xl hover:shadow-green-500/20 transition-all duration-300 hover:-translate-y-2 bg-white">
+            <Card className="border-0 shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 hover:-translate-y-2 bg-white">
               <CardContent className="p-8">
                 <div className="flex items-center space-x-1 mb-6">
                   {[...Array(5)].map((_, i) => (
@@ -245,7 +245,7 @@ export default function AcademicSupportPage() {
                   "The cultural integration support made my transition to university life much smoother and helped me adapt quickly."
                 </blockquote>
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-green-600 to-green-500 rounded-full flex items-center justify-center shadow-lg">
+                  <div className="w-14 h-14 bg-gradient-to-br from-orange-600 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
                     <GraduationCap className="h-7 w-7 text-white" />
                   </div>
                   <div className="text-left">

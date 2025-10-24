@@ -248,11 +248,11 @@ export default function UniversityDetailPage({ params }: PageProps) {
       </div>
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-[#129255]/5 to-[#129255]/10">
+      <section className="relative py-20 bg-gradient-to-br from-[orange-600]/5 to-[orange-600]/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <Badge variant="secondary" className="w-fit bg-[#129255]/10 text-[#129255] border-[#129255]/20">
+              <Badge variant="secondary" className="w-fit bg-[orange-600]/10 text-[orange-600] border-[orange-600]/20">
                 {university.ranking}
               </Badge>
               <h1 className="text-4xl lg:text-5xl font-bold text-balance text-[#101828]">{university.name}</h1>
@@ -260,37 +260,37 @@ export default function UniversityDetailPage({ params }: PageProps) {
 
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div className="flex items-center space-x-2">
-                  <MapPin className="h-4 w-4 text-[#129255]" />
+                  <MapPin className="h-4 w-4 text-[orange-600]" />
                   <span className="text-gray-600">Location:</span>
                 </div>
                 <span className="font-medium text-[#101828]">{university.location}</span>
 
                 <div className="flex items-center space-x-2">
-                  <Calendar className="h-4 w-4 text-[#129255]" />
+                  <Calendar className="h-4 w-4 text-[orange-600]" />
                   <span className="text-gray-600">Established:</span>
                 </div>
                 <span className="font-medium text-[#101828]">{university.established}</span>
 
                 <div className="flex items-center space-x-2">
-                  <Users className="h-4 w-4 text-[#129255]" />
+                  <Users className="h-4 w-4 text-[orange-600]" />
                   <span className="text-gray-600">Students:</span>
                 </div>
                 <span className="font-medium text-[#101828]">{university.students}</span>
 
                 <div className="flex items-center space-x-2">
-                  <Globe className="h-4 w-4 text-[#129255]" />
+                  <Globe className="h-4 w-4 text-[orange-600]" />
                   <span className="text-gray-600">International:</span>
                 </div>
                 <span className="font-medium text-[#101828]">{university.internationalStudents}</span>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" asChild className="text-lg px-8 bg-[#129255] text-white hover:bg-[#129255]/90">
+                <Button size="lg" asChild className="text-lg px-8 bg-[orange-600] text-white hover:bg-[orange-600]/90">
                   <Link href="/apply">
                     Apply Now <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline" asChild className="text-lg px-8 bg-transparent border-[#129255] text-[#129255] hover:bg-[#129255] hover:text-white">
+                <Button size="lg" variant="outline" asChild className="text-lg px-8 bg-transparent border-[orange-600] text-[orange-600] hover:bg-[orange-600] hover:text-white">
                   <Link href="/contact">Get More Info</Link>
                 </Button>
               </div>
@@ -323,7 +323,7 @@ export default function UniversityDetailPage({ params }: PageProps) {
               <Card key={index} className="border-0 shadow-lg bg-white hover:shadow-xl transition-shadow">
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-2 text-[#101828]">
-                    <BookOpen className="h-5 w-5 text-[#129255]" />
+                    <BookOpen className="h-5 w-5 text-[orange-600]" />
                     <span>{program.level} Programs</span>
                   </CardTitle>
                   <CardDescription className="text-gray-600">
@@ -334,7 +334,7 @@ export default function UniversityDetailPage({ params }: PageProps) {
                   <div className="space-y-2">
                     {program.fields.map((field, fieldIndex) => (
                       <div key={fieldIndex} className="flex items-center space-x-2">
-                        <CheckCircle className="h-4 w-4 text-[#129255] flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-[orange-600] flex-shrink-0" />
                         <span className="text-sm text-[#101828]">{field}</span>
                       </div>
                     ))}
@@ -365,7 +365,7 @@ export default function UniversityDetailPage({ params }: PageProps) {
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
                     <div className="flex items-center space-x-2">
-                      <Award className="h-4 w-4 text-[#129255]" />
+                      <Award className="h-4 w-4 text-[orange-600]" />
                       <span className="text-gray-600 text-sm">Coverage:</span>
                     </div>
                     <span className="text-sm font-medium text-[#101828]">{scholarship.coverage}</span>
@@ -373,7 +373,7 @@ export default function UniversityDetailPage({ params }: PageProps) {
 
                   <div className="space-y-2">
                     <div className="flex items-center space-x-2">
-                      <CheckCircle className="h-4 w-4 text-[#129255]" />
+                      <CheckCircle className="h-4 w-4 text-[orange-600]" />
                       <span className="text-gray-600 text-sm">Eligibility:</span>
                     </div>
                     <span className="text-sm text-[#101828]">{scholarship.eligibility}</span>
@@ -483,7 +483,7 @@ export default function UniversityDetailPage({ params }: PageProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#129255] text-white">
+      <section className="py-20 bg-[orange-600] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
             <h2 className="text-3xl lg:text-4xl font-bold text-balance text-white">Ready to Apply to {university.name}?</h2>
@@ -492,7 +492,7 @@ export default function UniversityDetailPage({ params }: PageProps) {
               and help you secure scholarships.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" asChild className="text-lg px-8 bg-white text-[#129255] hover:bg-gray-100">
+              <Button size="lg" variant="secondary" asChild className="text-lg px-8 bg-white text-[orange-600] hover:bg-gray-100">
                 <Link href="/apply">
                   Start Application <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
@@ -501,7 +501,7 @@ export default function UniversityDetailPage({ params }: PageProps) {
                 size="lg"
                 variant="outline"
                 asChild
-                className="text-lg px-8 border-white text-white hover:bg-white hover:text-[#129255] bg-transparent"
+                className="text-lg px-8 border-white text-white hover:bg-white hover:text-[orange-600] bg-transparent"
               >
                 <Link href="/contact">Get Personalized Guidance</Link>
               </Button>

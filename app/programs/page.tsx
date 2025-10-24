@@ -72,12 +72,12 @@ export default function ProgramsPage() {
         }
       case 'hungary':
         return {
-          bg: 'from-green-500/10 to-green-500/5',
-          border: 'border-green-500/20',
-          accent: 'text-green-600',
-          button: 'bg-green-600 hover:bg-green-700',
-          card: 'hover:shadow-green-500/20',
-          badge: 'bg-green-100 text-green-700'
+          bg: 'from-orange-500/10 to-orange-500/5',
+          border: 'border-orange-500/20',
+          accent: 'text-orange-600',
+          button: 'bg-orange-600 hover:bg-orange-700',
+          card: 'hover:shadow-orange-500/20',
+          badge: 'bg-orange-100 text-orange-700'
         }
       case 'italy':
         return {
@@ -223,7 +223,7 @@ export default function ProgramsPage() {
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-green-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

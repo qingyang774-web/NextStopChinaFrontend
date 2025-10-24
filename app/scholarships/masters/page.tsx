@@ -153,11 +153,11 @@ export default function MastersScholarshipsPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-500/5 to-green-600/10 py-20">
+      <section className="relative bg-gradient-to-br from-orange-500/5 to-orange-600/10 py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <div className="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mx-auto">
-              <Award className="h-10 w-10 text-green-600" />
+            <div className="w-20 h-20 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto">
+              <Award className="h-10 w-10 text-orange-600" />
             </div>
             <h1 className="text-4xl lg:text-5xl font-bold text-balance">
               Master's Degree <span className="text-primary">Scholarships in China</span>

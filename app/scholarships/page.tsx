@@ -21,7 +21,7 @@ export default function ScholarshipsPage() {
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-green-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -51,7 +51,7 @@ export default function ScholarshipsPage() {
                 <img src="/hungary-flag.png" alt="Hungary" className="w-8 h-6 rounded-sm shadow-md" />
                 <div className="text-left">
                   <span className="text-sm font-bold text-gray-900 block">Hungary</span>
-                  <span className="text-xs text-green-600 font-semibold">Partial Support</span>
+                  <span className="text-xs text-orange-600 font-semibold">Partial Support</span>
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
@@ -86,25 +86,25 @@ export default function ScholarshipsPage() {
                   <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                     <Award className="h-8 w-8 text-white" />
                   </div>
-                  <Badge className="bg-green-600 text-white shadow-md">100% Full</Badge>
+                  <Badge className="bg-orange-600 text-white shadow-md">100% Full</Badge>
                 </div>
                 <h3 className="text-2xl font-bold mb-3 text-gray-900">CSC Scholarship</h3>
                 <p className="text-gray-600 text-sm mb-4">Chinese Government Scholarship Council program for international students</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <CheckCircle className="h-4 w-4 text-orange-600" />
                     <span className="text-gray-700">Full tuition waiver</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <CheckCircle className="h-4 w-4 text-orange-600" />
                     <span className="text-gray-700">Free accommodation</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <CheckCircle className="h-4 w-4 text-orange-600" />
                     <span className="text-gray-700">¥2,500-3,500/month stipend</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <CheckCircle className="h-4 w-4 text-orange-600" />
                     <span className="text-gray-700">Medical insurance</span>
                   </div>
                 </div>
@@ -177,12 +177,12 @@ export default function ScholarshipsPage() {
       </section>
 
       {/* Hungary Scholarships Section */}
-      <section className="py-20 bg-gradient-to-br from-green-500/5 to-white">
+      <section className="py-20 bg-gradient-to-br from-orange-500/5 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center gap-4 mb-12">
             <img src="/hungary-flag.png" alt="Hungary" className="w-16 h-12 rounded-md shadow-lg" />
             <div>
-              <Badge className="bg-green-100 text-green-700 hover:bg-green-200 px-4 py-1 text-sm mb-2">
+              <Badge className="bg-orange-100 text-orange-700 hover:bg-orange-200 px-4 py-1 text-sm mb-2">
                 Partial Support Available
               </Badge>
               <h2 className="text-4xl lg:text-5xl font-bold text-balance">Hungary Scholarships</h2>
@@ -190,36 +190,36 @@ export default function ScholarshipsPage() {
           </div>
 
           <div className="grid md:grid-cols gap-6 max-w-4xl mx-auto">
-            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white border-2 border-green-200">
+            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white border-2 border-orange-200">
               <CardContent className="p-8">
                 <div className="flex items-center justify-between mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-green-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <div className="w-16 h-16 bg-gradient-to-br from-orange-600 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                     <Award className="h-8 w-8 text-white" />
                   </div>
-                  <Badge className="bg-green-600 text-white shadow-md">Partial</Badge>
+                  <Badge className="bg-orange-600 text-white shadow-md">Partial</Badge>
                 </div>
                 <h3 className="text-2xl font-bold mb-3 text-gray-900">University Fee Waivers</h3>
                 <p className="text-gray-600 text-sm mb-4">Partial tuition reduction by Hungarian universities</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <CheckCircle className="h-4 w-4 text-orange-600" />
                     <span className="text-gray-700">25-50% tuition reduction</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <CheckCircle className="h-4 w-4 text-orange-600" />
                     <span className="text-gray-700">Merit-based selection</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <CheckCircle className="h-4 w-4 text-orange-600" />
                     <span className="text-gray-700">No living allowance</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <CheckCircle className="h-4 w-4 text-orange-600" />
                     <span className="text-gray-700">Student must cover remaining fees</span>
                   </div>
                 </div>
-                <div className="mt-4 p-3 bg-green-50 rounded-lg border border-green-200">
-                  <p className="text-xs text-green-800 font-semibold">Limited support - Contact for details</p>
+                <div className="mt-4 p-3 bg-orange-50 rounded-lg border border-orange-200">
+                  <p className="text-xs text-orange-800 font-semibold">Limited support - Contact for details</p>
                 </div>
               </CardContent>
             </Card>
@@ -338,20 +338,20 @@ export default function ScholarshipsPage() {
                   <p className="text-gray-600 text-sm leading-relaxed">We evaluate your academic profile and match you with suitable scholarships</p>
                 </CardContent>
               </Card>
-              <div className="hidden lg:block absolute top-10 -right-3 w-6 h-0.5 bg-gradient-to-r from-primary to-green-500"></div>
+              <div className="hidden lg:block absolute top-10 -right-3 w-6 h-0.5 bg-gradient-to-r from-primary to-orange-500"></div>
             </div>
 
             <div className="relative">
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-green-500/5 to-white h-full">
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-orange-500/5 to-white h-full">
                 <CardContent className="p-6 text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <div className="w-20 h-20 bg-gradient-to-br from-orange-600 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                     <span className="text-3xl font-bold text-white">2</span>
               </div>
                   <h3 className="text-xl font-bold mb-2 text-gray-900">Document Preparation</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">Complete assistance in preparing and organizing all required documents</p>
                 </CardContent>
               </Card>
-              <div className="hidden lg:block absolute top-10 -right-3 w-6 h-0.5 bg-gradient-to-r from-green-500 to-yellow-500"></div>
+              <div className="hidden lg:block absolute top-10 -right-3 w-6 h-0.5 bg-gradient-to-r from-orange-500 to-yellow-500"></div>
             </div>
 
             <div className="relative">
@@ -407,19 +407,19 @@ export default function ScholarshipsPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">High school diploma with 60%+ marks (Bachelor's)</span>
                 </div>
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Bachelor degree for Master's programs</span>
                 </div>
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Master degree for PhD programs</span>
                 </div>
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">No age restrictions for most programs</span>
                 </div>
               </CardContent>
@@ -436,19 +436,19 @@ export default function ScholarshipsPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">No language requirement (English-taught programs)</span>
                 </div>
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">HSK 4+ for Chinese-taught programs</span>
                 </div>
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Free Chinese language course (1-year preparatory)</span>
                 </div>
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">IELTS/TOEFL optional but recommended</span>
                 </div>
               </CardContent>

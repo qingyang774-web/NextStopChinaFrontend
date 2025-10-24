@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import Header from "@/components/layout/Header"
+import Footer from "@/components/layout/Footer"
 import {
   GraduationCap,
   Phone,
@@ -24,40 +26,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 sticky top-0 z-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link href="/" className="flex items-center space-x-2">
-              <GraduationCap className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold text-foreground">Next Stop China</span>
-            </Link>
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-foreground hover:text-primary transition-colors">
-                Home
-              </Link>
-              <Link href="/about" className="text-primary font-medium">
-                About Us
-              </Link>
-              <Link href="/scholarships" className="text-foreground hover:text-primary transition-colors">
-                Scholarships
-              </Link>
-              <Link href="/universities" className="text-foreground hover:text-primary transition-colors">
-                Universities
-              </Link>
-              <Link href="/blog" className="text-foreground hover:text-primary transition-colors">
-                Blog
-              </Link>
-              <Link href="/contact" className="text-foreground hover:text-primary transition-colors">
-                Contact
-              </Link>
-            </div>
-            <Button asChild className="hidden md:inline-flex">
-              <Link href="/apply">Apply Now</Link>
-            </Button>
-          </div>
-        </div>
-      </nav>
+    <Header />
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/5 to-secondary/10 py-20">
@@ -305,95 +274,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-foreground text-background py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <GraduationCap className="h-8 w-8 text-primary" />
-                <span className="text-xl font-bold">Next Stop China</span>
-              </div>
-              <p className="text-background/80 leading-relaxed">
-                Making higher education in China affordable and accessible for international students worldwide.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold">Quick Links</h4>
-              <div className="space-y-2">
-                <Link href="/about" className="block text-primary">
-                  About Us
-                </Link>
-                <Link href="/scholarships" className="block text-background/80 hover:text-primary transition-colors">
-                  Scholarships
-                </Link>
-                <Link href="/universities" className="block text-background/80 hover:text-primary transition-colors">
-                  Universities
-                </Link>
-                <Link href="/apply" className="block text-background/80 hover:text-primary transition-colors">
-                  Apply Now
-                </Link>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold">Programs</h4>
-              <div className="space-y-2">
-                <Link
-                  href="/scholarships/bachelors"
-                  className="block text-background/80 hover:text-primary transition-colors"
-                >
-                  Bachelor's Degrees
-                </Link>
-                <Link
-                  href="/scholarships/masters"
-                  className="block text-background/80 hover:text-primary transition-colors"
-                >
-                  Master's Degrees
-                </Link>
-                <Link
-                  href="/scholarships/phd"
-                  className="block text-background/80 hover:text-primary transition-colors"
-                >
-                  PhD Programs
-                </Link>
-                <Link
-                  href="/scholarships/mbbs"
-                  className="block text-background/80 hover:text-primary transition-colors"
-                >
-                  MBBS Programs
-                </Link>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold">Contact Info</h4>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-2">
-                  <Phone className="h-4 w-4 text-primary" />
-                  <span className="text-background/80">+1 (555) 123-4567</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Mail className="h-4 w-4 text-primary" />
-                  <span className="text-background/80">info@nextstopchina.com</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <MessageCircle className="h-4 w-4 text-primary" />
-                  <span className="text-background/80">WhatsApp Support</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-background/20 mt-12 pt-8 text-center">
-            <p className="text-background/60">
-              © 2025 Next Stop China. All rights reserved. | Making education dreams come true.
-            </p>
-          </div>
-        </div>
-      </footer>
-
+     <Footer />
       {/* Floating WhatsApp Button */}
       <div className="fixed bottom-6 right-6 z-50">
         <Button size="lg" className="rounded-full w-14 h-14 shadow-lg hover:shadow-xl transition-shadow">

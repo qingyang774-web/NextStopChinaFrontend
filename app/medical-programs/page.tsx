@@ -44,7 +44,7 @@ export default function MedicalProgramsPage() {
                 <img src="/china-flag.png" alt="China" className="w-8 h-6 rounded-sm shadow-md" />
                 <span className="text-base font-bold text-gray-900">China</span>
               </div>
-              <div className="flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border-2 border-green-500/10">
+              <div className="flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border-2 border-orange-500/10">
                 <img src="/hungary-flag.png" alt="Hungary" className="w-8 h-6 rounded-sm shadow-md" />
                 <span className="text-base font-bold text-gray-900">Hungary</span>
               </div>
@@ -83,7 +83,7 @@ export default function MedicalProgramsPage() {
 
             <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 text-center">
               <CardContent className="p-8">
-                <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-green-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-600 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                   <Globe className="h-10 w-10 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">English Medium</h3>
@@ -264,14 +264,14 @@ export default function MedicalProgramsPage() {
                   <img src="/hungary-flag.png" alt="Hungary" className="w-8 h-6 rounded-sm shadow-lg" />
                   <h3 className="text-xl font-bold text-white">Hungary</h3>
                 </div>
-                <Card className="border-0 shadow-2xl hover:shadow-green-500/20 transition-all duration-300 hover:-translate-y-2 bg-white">
+                <Card className="border-0 shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 hover:-translate-y-2 bg-white">
                   <CardContent className="p-6 text-center">
-                    <div className="w-14 h-14 bg-gradient-to-br from-green-600 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <div className="w-14 h-14 bg-gradient-to-br from-orange-600 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                       <Hospital className="h-7 w-7 text-white" />
                     </div>
                     <h3 className="text-lg font-bold mb-2 text-gray-900">Semmelweis University</h3>
                     <p className="text-gray-600 text-sm mb-3">Budapest, Hungary</p>
-                    <Badge className="bg-green-100 text-green-700">MBBS</Badge>
+                    <Badge className="bg-orange-100 text-orange-700">MBBS</Badge>
                   </CardContent>
                 </Card>
               </div>
@@ -322,19 +322,19 @@ export default function MedicalProgramsPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">High school diploma with 70%+ marks</span>
                 </div>
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Physics, Chemistry, Biology (PCB mandatory)</span>
                 </div>
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Minimum 60% in each science subject</span>
                 </div>
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Age: 17-25 years (can be relaxed)</span>
                 </div>
               </CardContent>
@@ -351,19 +351,19 @@ export default function MedicalProgramsPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">IELTS/TOEFL optional (varies by university)</span>
                 </div>
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">No entrance exam for most universities</span>
                 </div>
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Valid passport with 6+ months validity</span>
                 </div>
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Medical fitness certificate</span>
                 </div>
               </CardContent>
@@ -398,7 +398,7 @@ export default function MedicalProgramsPage() {
 
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center">
               <CardContent className="p-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-green-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-600 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <CheckCircle className="h-10 w-10 text-white" />
                 </div>
                 <h3 className="text-lg font-bold mb-2 text-gray-900">PMC/PMDC</h3>

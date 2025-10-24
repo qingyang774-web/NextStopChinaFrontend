@@ -57,26 +57,26 @@ export default function UniversitiesPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#129255]/5 to-[#129255]/10 py-20">
+      <section className="relative bg-gradient-to-br from-[orange-600]/5 to-[orange-600]/10 py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <Badge variant="secondary" className="w-fit mx-auto bg-[#129255]/10 text-[#129255] border-[#129255]/20">
+            <Badge variant="secondary" className="w-fit mx-auto bg-[orange-600]/10 text-[orange-600] border-[orange-600]/20">
               Partner Universities
             </Badge>
             <h1 className="text-4xl lg:text-5xl font-bold text-balance text-[#101828]">
-              Study at <span className="text-[#129255]">Top Universities Worldwide</span>
+              Study at <span className="text-[orange-600]">Top Universities Worldwide</span>
             </h1>
             <p className="text-xl text-muted-foreground text-pretty leading-relaxed max-w-3xl mx-auto">
               Discover world-class education opportunities at prestigious universities in China, Hungary, and Italy. Our partner
               institutions offer comprehensive programs with scholarship support for international students.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild className="text-lg px-8 bg-[#129255] text-white hover:bg-[#129255]/90">
+              <Button size="lg" asChild className="text-lg px-8 bg-[orange-600] text-white hover:bg-[orange-600]/90">
                 <Link href="/apply">
                   Apply to Universities <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild className="text-lg px-8 bg-transparent border-[#129255] text-[#129255] hover:bg-[#129255] hover:text-white">
+              <Button size="lg" variant="outline" asChild className="text-lg px-8 bg-transparent border-[orange-600] text-[orange-600] hover:bg-[orange-600] hover:text-white">
                 <Link href="/contact">Get University Guidance</Link>
               </Button>
             </div>
@@ -93,10 +93,10 @@ export default function UniversitiesPage() {
               return (
                 <Card key={index} className="text-center border-0 shadow-lg bg-white">
                   <CardContent className="p-6">
-                    <div className="w-16 h-16 bg-[#129255]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <IconComponent className="h-8 w-8 text-[#129255]" />
+                    <div className="w-16 h-16 bg-[orange-600]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <IconComponent className="h-8 w-8 text-[orange-600]" />
                     </div>
-                    <div className="text-3xl font-bold text-[#129255] mb-2">{stat.number}</div>
+                    <div className="text-3xl font-bold text-[orange-600] mb-2">{stat.number}</div>
                     <div className="text-[#101828]">{stat.label}</div>
                   </CardContent>
                 </Card>
@@ -120,7 +120,7 @@ export default function UniversitiesPage() {
             {universities.map((university, index) => (
               <Card
                 key={index}
-                className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg overflow-hidden bg-white hover:border-[#129255]/20 hover:border-2"
+                className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg overflow-hidden bg-white hover:border-[orange-600]/20 hover:border-2"
               >
                 <div className="relative h-48 overflow-hidden">
                   <Image
@@ -135,7 +135,7 @@ export default function UniversitiesPage() {
                     </Badge>
                   </div>
                   <div className="absolute top-4 right-4">
-                    <Badge variant="default" className="bg-[#129255]/90 text-white">
+                    <Badge variant="default" className="bg-[orange-600]/90 text-white">
                       <Star className="h-3 w-3 mr-1" />
                       {university.specialty}
                     </Badge>
@@ -143,7 +143,7 @@ export default function UniversitiesPage() {
                 </div>
 
                 <CardHeader className="pb-4">
-                  <CardTitle className="text-xl group-hover:text-[#129255] transition-colors text-balance text-[#101828]">
+                  <CardTitle className="text-xl group-hover:text-[orange-600] transition-colors text-balance text-[#101828]">
                     {university.name}
                   </CardTitle>
                   <CardDescription className="leading-relaxed text-gray-600">{university.description}</CardDescription>
@@ -152,13 +152,13 @@ export default function UniversitiesPage() {
                 <CardContent className="space-y-4">
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div className="flex items-center space-x-2">
-                      <MapPin className="h-4 w-4 text-[#129255]" />
+                      <MapPin className="h-4 w-4 text-[orange-600]" />
                       <span className="text-gray-600">Location:</span>
                     </div>
                     <span className="font-medium text-[#101828]">{university.location}</span>
 
                     <div className="flex items-center space-x-2">
-                      <Users className="h-4 w-4 text-[#129255]" />
+                      <Users className="h-4 w-4 text-[orange-600]" />
                       <span className="text-gray-600">Students:</span>
                     </div>
                     <span className="font-medium text-[#101828]">{university.students.toLocaleString()}+</span>
@@ -166,7 +166,7 @@ export default function UniversitiesPage() {
 
                   <div className="space-y-2">
                     <div className="flex items-center space-x-2">
-                      <BookOpen className="h-4 w-4 text-[#129255]" />
+                      <BookOpen className="h-4 w-4 text-[orange-600]" />
                       <span className="text-gray-600 text-sm">Founded:</span>
                     </div>
                     <span className="text-sm font-medium text-[#101828]">{university.founded}</span>
@@ -174,13 +174,13 @@ export default function UniversitiesPage() {
 
                   <div className="space-y-2">
                     <div className="flex items-center space-x-2">
-                      <Award className="h-4 w-4 text-[#129255]" />
+                      <Award className="h-4 w-4 text-[orange-600]" />
                       <span className="text-gray-600 text-sm">Specialty:</span>
                     </div>
-                    <span className="text-sm font-medium text-[#129255]">{university.specialty}</span>
+                    <span className="text-sm font-medium text-[orange-600]">{university.specialty}</span>
                   </div>
 
-                  <Button asChild className="w-full bg-[#129255] text-white hover:bg-[#129255]/90 group-hover:bg-[#129255]/80">
+                  <Button asChild className="w-full bg-[orange-600] text-white hover:bg-[orange-600]/90 group-hover:bg-[orange-600]/80">
                     <Link href={`/universities/${university.id}`}>
                       Learn More <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>

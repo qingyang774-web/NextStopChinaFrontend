@@ -20,7 +20,7 @@ export default function VisaPage() {
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-green-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -82,9 +82,9 @@ export default function VisaPage() {
               </CardContent>
             </Card>
 
-            <Card className="group border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-green-500/5 to-white">
+            <Card className="group border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-orange-500/5 to-white">
               <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-green-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-600 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform shadow-lg">
                   <CheckCircle className="h-10 w-10 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-900">Application Submission</h3>
@@ -198,7 +198,7 @@ export default function VisaPage() {
             </Card>
 
             {/* Hungary Visa */}
-            <Card className="border-0 shadow-2xl bg-gradient-to-br from-green-500/10 to-green-500/5 hover:shadow-green-500/20 transition-all duration-300 hover:-translate-y-2">
+            <Card className="border-0 shadow-2xl bg-gradient-to-br from-orange-500/10 to-orange-500/5 hover:shadow-orange-500/20 transition-all duration-300 hover:-translate-y-2">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <img src="/hungary-flag.png" alt="Hungary" className="w-12 h-8 rounded-md shadow-lg" />
@@ -206,21 +206,21 @@ export default function VisaPage() {
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start gap-2">
-                    <Clock className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
+                    <Clock className="h-5 w-5 text-orange-600 mt-1 flex-shrink-0" />
                     <div>
                       <p className="font-semibold text-gray-900">Processing Time</p>
                       <p className="text-gray-600 text-sm">6-8 weeks</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-2">
-                    <FileText className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
+                    <FileText className="h-5 w-5 text-orange-600 mt-1 flex-shrink-0" />
                     <div>
                       <p className="font-semibold text-gray-900">Visa Type</p>
                       <p className="text-gray-600 text-sm">National D Visa (Student)</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-orange-600 mt-1 flex-shrink-0" />
                     <div>
                       <p className="font-semibold text-gray-900">Key Requirements</p>
                       <ul className="text-gray-600 text-sm space-y-1 list-disc list-inside">
@@ -303,13 +303,13 @@ export default function VisaPage() {
                 </CardContent>
               </Card>
               {/* Connector Line */}
-              <div className="hidden lg:block absolute top-10 -right-4 w-8 h-0.5 bg-gradient-to-r from-primary to-green-500"></div>
+              <div className="hidden lg:block absolute top-10 -right-4 w-8 h-0.5 bg-gradient-to-r from-primary to-orange-500"></div>
             </div>
 
             <div className="relative">
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-green-500/5 to-white h-full">
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-orange-500/5 to-white h-full">
                 <CardContent className="p-8 text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-green-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <div className="w-20 h-20 bg-gradient-to-br from-orange-600 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                     <span className="text-3xl font-bold text-white">2</span>
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-gray-900">Form Completion</h3>
@@ -318,7 +318,7 @@ export default function VisaPage() {
                   </p>
                 </CardContent>
               </Card>
-              <div className="hidden lg:block absolute top-10 -right-4 w-8 h-0.5 bg-gradient-to-r from-green-500 to-blue-500"></div>
+              <div className="hidden lg:block absolute top-10 -right-4 w-8 h-0.5 bg-gradient-to-r from-orange-500 to-blue-500"></div>
             </div>
 
             <div className="relative">
@@ -378,19 +378,19 @@ export default function VisaPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Admission/Acceptance letter from university</span>
                 </div>
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Academic transcripts (notarized & translated)</span>
                 </div>
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Degree certificates (notarized & translated)</span>
                 </div>
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Language proficiency certificates (if applicable)</span>
                 </div>
               </CardContent>
@@ -407,19 +407,19 @@ export default function VisaPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Valid passport (minimum 6 months validity)</span>
                 </div>
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Recent passport-size photographs</span>
                 </div>
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Medical examination & health certificate</span>
                 </div>
                 <div className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Financial proof & bank statements</span>
                 </div>
               </CardContent>
@@ -459,7 +459,7 @@ export default function VisaPage() {
 
             <div className="flex flex-wrap justify-center gap-8 pt-8 text-white/80">
               <div className="flex items-center gap-2">
-                <Shield className="h-5 w-5 text-green-300" />
+                <Shield className="h-5 w-5 text-orange-300" />
                 <span>100% Success Rate</span>
               </div>
               <div className="flex items-center gap-2">

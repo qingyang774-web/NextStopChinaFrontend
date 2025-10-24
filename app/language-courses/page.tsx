@@ -118,31 +118,31 @@ export default function LanguageCoursesPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <Card className="border-0 shadow-2xl bg-gradient-to-br from-green-500/10 to-white hover:shadow-green-500/20 transition-all duration-300 hover:-translate-y-2">
+            <Card className="border-0 shadow-2xl bg-gradient-to-br from-orange-500/10 to-white hover:shadow-orange-500/20 transition-all duration-300 hover:-translate-y-2">
               <CardHeader>
                 <div className="flex items-center justify-between">
-                  <Badge className="bg-green-600 text-white px-4 py-2 text-base">Beginner</Badge>
-                  <Clock className="h-6 w-6 text-green-600" />
+                  <Badge className="bg-orange-600 text-white px-4 py-2 text-base">Beginner</Badge>
+                  <Clock className="h-6 w-6 text-orange-600" />
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
                 <h3 className="text-2xl font-bold text-gray-900">Foundation Level</h3>
                 <p className="text-gray-600">Basic vocabulary, grammar, and pronunciation</p>
                 <div className="space-y-3">
-                  <div className="flex items-center gap-3 p-2 bg-green-50 rounded-lg">
-                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                  <div className="flex items-center gap-3 p-2 bg-orange-50 rounded-lg">
+                    <CheckCircle className="h-5 w-5 text-orange-600 flex-shrink-0" />
                     <span className="text-sm font-medium">Basic conversation skills</span>
                   </div>
-                  <div className="flex items-center gap-3 p-2 bg-green-50 rounded-lg">
-                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                  <div className="flex items-center gap-3 p-2 bg-orange-50 rounded-lg">
+                    <CheckCircle className="h-5 w-5 text-orange-600 flex-shrink-0" />
                     <span className="text-sm font-medium">Essential vocabulary (500+ words)</span>
                   </div>
-                  <div className="flex items-center gap-3 p-2 bg-green-50 rounded-lg">
-                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                  <div className="flex items-center gap-3 p-2 bg-orange-50 rounded-lg">
+                    <CheckCircle className="h-5 w-5 text-orange-600 flex-shrink-0" />
                     <span className="text-sm font-medium">Simple grammar structures</span>
                   </div>
                 </div>
-                <Badge variant="outline" className="w-full justify-center py-2 border-green-600 text-green-600 font-semibold">3-6 months</Badge>
+                <Badge variant="outline" className="w-full justify-center py-2 border-orange-600 text-orange-600 font-semibold">3-6 months</Badge>
               </CardContent>
             </Card>
 
@@ -231,7 +231,7 @@ export default function LanguageCoursesPage() {
 
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center">
               <CardContent className="p-8">
-                <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-green-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-600 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                   <Award className="h-10 w-10 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">Certified Teachers</h3>

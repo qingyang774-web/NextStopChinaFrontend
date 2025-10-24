@@ -9,7 +9,7 @@ export default function Header() {
   const pathname = usePathname()
 
   const isActive = (path: string) => {
-    return pathname === path ? "text-[#129255] font-medium" : "text-[#101828] hover:text-[#129255]"
+    return pathname === path ? "text-orange-500 font-medium" : "text-[#101828] hover:text-orange-500"
   }
 
   return (
@@ -17,7 +17,7 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-            <GraduationCap className="h-8 w-8 text-[#129255]" />
+            <GraduationCap className="h-8 w-8 text-orange-500" />
             <span className="text-xl font-bold text-[#101828]">Next Stop Global</span>
           </Link>
           
@@ -45,7 +45,7 @@ export default function Header() {
             </Link>
           </div>
           
-          <Button asChild className="hidden md:inline-flex bg-[#129255] text-white hover:bg-[#129255]/90">
+          <Button asChild className="hidden md:inline-flex bg-orange-500 text-white hover:bg-orange-700">
             <Link href="/apply" className="flex items-center gap-2">
               Apply Now
             </Link>

@@ -21,7 +21,7 @@ export default function ConsultationPage() {
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-green-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -105,7 +105,7 @@ export default function ConsultationPage() {
             </Card>
 
             {/* Hungary Card */}
-            <Card className="border-0 shadow-2xl bg-gradient-to-br from-green-500/10 to-white hover:shadow-green-500/20 transition-all duration-300 hover:-translate-y-2">
+            <Card className="border-0 shadow-2xl bg-gradient-to-br from-orange-500/10 to-white hover:shadow-orange-500/20 transition-all duration-300 hover:-translate-y-2">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <img src="/hungary-flag.png" alt="Hungary" className="w-16 h-12 rounded-md shadow-lg" />
@@ -113,21 +113,21 @@ export default function ConsultationPage() {
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start gap-2">
-                    <BookOpen className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
+                    <BookOpen className="h-5 w-5 text-orange-600 mt-1 flex-shrink-0" />
                     <div>
                       <p className="font-semibold text-gray-900">European Education</p>
                       <p className="text-gray-600 text-sm">EU-recognized degrees with high standards</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-2">
-                    <DollarSign className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
+                    <DollarSign className="h-5 w-5 text-orange-600 mt-1 flex-shrink-0" />
                     <div>
                       <p className="font-semibold text-gray-900">Cost-Effective</p>
                       <p className="text-gray-600 text-sm">Lower tuition compared to Western Europe</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-2">
-                    <MapPin className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
+                    <MapPin className="h-5 w-5 text-orange-600 mt-1 flex-shrink-0" />
                     <div>
                       <p className="font-semibold text-gray-900">Central Location</p>
                       <p className="text-gray-600 text-sm">Easy access to 26 European countries</p>
@@ -199,9 +199,9 @@ export default function ConsultationPage() {
               </CardContent>
             </Card>
 
-            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-green-500/5 to-white">
+            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-orange-500/5 to-white">
               <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-green-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-600 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform">
                   <Award className="h-10 w-10 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-900">Program Matching</h3>
@@ -250,20 +250,20 @@ export default function ConsultationPage() {
                   <p className="text-gray-600 text-sm leading-relaxed">Reach out to us via phone, email, or WhatsApp</p>
                 </CardContent>
               </Card>
-              <div className="hidden lg:block absolute top-10 -right-3 w-6 h-0.5 bg-gradient-to-r from-primary to-green-500"></div>
+              <div className="hidden lg:block absolute top-10 -right-3 w-6 h-0.5 bg-gradient-to-r from-primary to-orange-500"></div>
             </div>
 
             <div className="relative">
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-green-500/5 to-white h-full">
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-orange-500/5 to-white h-full">
                 <CardContent className="p-6 text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <div className="w-20 h-20 bg-gradient-to-br from-orange-600 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                     <span className="text-3xl font-bold text-white">2</span>
               </div>
                   <h3 className="text-xl font-bold mb-2 text-gray-900">Assessment</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">We assess your academic background and career goals</p>
                 </CardContent>
               </Card>
-              <div className="hidden lg:block absolute top-10 -right-3 w-6 h-0.5 bg-gradient-to-r from-green-500 to-blue-500"></div>
+              <div className="hidden lg:block absolute top-10 -right-3 w-6 h-0.5 bg-gradient-to-r from-orange-500 to-blue-500"></div>
             </div>
 
             <div className="relative">

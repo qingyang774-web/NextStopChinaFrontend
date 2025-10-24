@@ -91,7 +91,7 @@ export default function ContactPage() {
         <div className="absolute inset-0">
           <div className="absolute top-10 right-10 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
           <div className="absolute bottom-10 left-10 w-40 h-40 bg-blue-500/10 rounded-full blur-2xl"></div>
-          <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-green-500/10 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-orange-500/10 rounded-full blur-2xl"></div>
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -142,7 +142,7 @@ export default function ContactPage() {
                 <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                      <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
                         <Phone className="h-6 w-6 text-white" />
                       </div>
                       <div className="space-y-1">
@@ -174,7 +174,7 @@ export default function ContactPage() {
                 <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-green-700 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                      <div className="w-12 h-12 bg-gradient-to-br from-orange-600 to-orange-700 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
                         <MessageCircle className="h-6 w-6 text-white" />
                       </div>
                       <div className="space-y-1">
@@ -220,9 +220,9 @@ export default function ContactPage() {
                 </CardHeader>
                 <CardContent className="space-y-6">
                   {submitSuccess && (
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-center space-x-2">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
-                      <p className="text-green-800">Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.</p>
+                    <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 flex items-center space-x-2">
+                      <CheckCircle className="h-5 w-5 text-orange-600" />
+                      <p className="text-orange-800">Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.</p>
                     </div>
                   )}
 
@@ -393,7 +393,7 @@ export default function ContactPage() {
 
             <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader className="pb-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <MessageCircle className="h-8 w-8 text-white" />
                 </div>
                 <CardTitle className="text-xl">Emergency Support</CardTitle>
@@ -510,7 +510,7 @@ export default function ContactPage() {
             {/* WhatsApp */}
             <button
               onClick={openWhatsApp}
-              className="flex items-center justify-center w-12 h-12 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+              className="flex items-center justify-center w-12 h-12 bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
               title="WhatsApp"
             >
               <MessageCircle className="h-6 w-6" />

@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <GraduationCap className="h-8 w-8 text-[#129255]" />
+              <GraduationCap className="h-8 w-8 text-orange-500" />
               <span className="text-xl font-bold">Next Stop Global</span>
             </div>
             <p className="text-gray-300 leading-relaxed">
@@ -21,16 +21,16 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Quick Links</h4>
             <div className="space-y-2">
-              <Link href="/about" className="block text-gray-300 hover:text-[#129255] transition-colors">
+              <Link href="/about" className="block text-gray-300 hover:text-orange-500 transition-colors">
                 About Us
               </Link>
-              <Link href="/scholarships" className="block text-gray-300 hover:text-[#129255] transition-colors">
+              <Link href="/scholarships" className="block text-gray-300 hover:text-orange-500 transition-colors">
                 Scholarships
               </Link>
-              <Link href="/universities" className="block text-gray-300 hover:text-[#129255] transition-colors">
+              <Link href="/universities" className="block text-gray-300 hover:text-orange-500 transition-colors">
                 Universities
               </Link>
-              <Link href="/apply" className="block text-gray-300 hover:text-[#129255] transition-colors">
+              <Link href="/apply" className="block text-gray-300 hover:text-orange-500 transition-colors">
                 Apply Now
               </Link>
             </div>
@@ -41,25 +41,25 @@ export default function Footer() {
             <div className="space-y-2">
               <Link
                 href="/scholarships/bachelors"
-                className="block text-gray-300 hover:text-[#129255] transition-colors"
+                className="block text-gray-300 hover:text-orange-500 transition-colors"
               >
                 Bachelor's Degrees
               </Link>
               <Link
                 href="/scholarships/masters"
-                className="block text-gray-300 hover:text-[#129255] transition-colors"
+                className="block text-gray-300 hover:text-orange-500 transition-colors"
               >
                 Master's Degrees
               </Link>
               <Link
                 href="/scholarships/phd"
-                className="block text-gray-300 hover:text-[#129255] transition-colors"
+                className="block text-gray-300 hover:text-orange-500 transition-colors"
               >
                 PhD Programs
               </Link>
               <Link
                 href="/scholarships/mbbs"
-                className="block text-gray-300 hover:text-[#129255] transition-colors"
+                className="block text-gray-300 hover:text-orange-500 transition-colors"
               >
                 MBBS Programs
               </Link>
@@ -70,15 +70,15 @@ export default function Footer() {
             <h4 className="text-lg font-semibold">Contact Info</h4>
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4 text-[#129255]" />
+                <Phone className="h-4 w-4 text-orange-500" />
                 <span className="text-gray-300">+92 346 487 6094</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail className="h-4 w-4 text-[#129255]" />
+                <Mail className="h-4 w-4 text-orange-500" />
                 <span className="text-gray-300">info@nextstopglobal.com</span>
               </div>
               <div className="flex items-center space-x-2">
-                <MessageCircle className="h-4 w-4 text-[#129255]" />
+                <MessageCircle className="h-4 w-4 text-orange-500" />
                 <span className="text-gray-300">WhatsApp Support</span>
               </div>
             </div>

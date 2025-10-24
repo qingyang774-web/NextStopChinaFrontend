@@ -39,7 +39,7 @@ export default function CallToAction() {
               <span>200+ Programs</span>
             </div>
             <div className="flex items-center gap-2">
-              <GraduationCap className="h-5 w-5 text-green-400" />
+              <GraduationCap className="h-5 w-5 text-orange-400" />
               <span>Expert Guidance</span>
             </div>
             <div className="flex items-center gap-2">

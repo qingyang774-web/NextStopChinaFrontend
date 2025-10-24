@@ -164,9 +164,9 @@ export default function ApplyPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             {submitSuccess && (
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-8 flex items-center space-x-2">
-                <CheckCircle className="h-5 w-5 text-green-600" />
-                <p className="text-green-800">Application submitted successfully! We will review your application and get back to you within 2 weeks.</p>
+              <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-8 flex items-center space-x-2">
+                <CheckCircle className="h-5 w-5 text-orange-600" />
+                <p className="text-orange-800">Application submitted successfully! We will review your application and get back to you within 2 weeks.</p>
               </div>
             )}
 

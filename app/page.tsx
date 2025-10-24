@@ -36,7 +36,7 @@ export default function HomePage() {
       badge: "🇨🇳 Study in China",
       title: "World-Class Education in China",
       description: "Your gateway to top Chinese universities with scholarships. We help students secure bachelor's, master's, and PhD scholarships with expert guidance and proven success.",
-      primaryButton: { text: "Explore China", href: "/universities" },
+      primaryButton: { text: "Explore China", href: "/countries/china" },
       secondaryButton: { text: "China Scholarships", href: "/scholarships" },
       image: "/chinese-university-campus-with-international-stude.jpg",
       alt: "Students studying at Chinese university"
@@ -45,7 +45,7 @@ export default function HomePage() {
       badge: "🇭🇺 Study in Hungary",
       title: "Affordable European Education",
       description: "Discover Hungary's prestigious universities with low tuition fees and high-quality education. Experience European culture while pursuing your academic dreams.",
-      primaryButton: { text: "Explore Hungary", href: "/universities" },
+      primaryButton: { text: "Explore Hungary", href: "/countries/hungary" },
       secondaryButton: { text: "Hungary Programs", href: "/scholarships" },
       image: "https://study-eu.s3.eu-west-1.amazonaws.com/uploads/image/path/283/wide_fullhd_webp_hungary-budapest.webp",
       alt: "Students studying at Hungarian university"
@@ -54,7 +54,7 @@ export default function HomePage() {
       badge: "🇮🇹 Study in Italy",
       title: "Historic Excellence in Education",
       description: "Study at Italy's world-renowned universities with rich history and cutting-edge research. Experience la dolce vita while advancing your career.",
-      primaryButton: { text: "Explore Italy", href: "/universities" },
+      primaryButton: { text: "Explore Italy", href: "/countries/italy" },
       secondaryButton: { text: "Italy Opportunities", href: "/scholarships" },
       image: "https://blog.remitforex.com/wp-content/uploads/2023/03/Italy-university-feature.webp",
       alt: "Students studying at Italian university"
@@ -323,7 +323,7 @@ export default function HomePage() {
           </div>
 
           {/* Service Cards Container */}
-          <div className="bg-primary rounded-3xl shadow-2xl relative overflow-hidden">
+          <div className="bg-white rounded-3xl shadow-2xl relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-10 left-10 w-32 h-32 border-2 border-white rounded-full"></div>
@@ -335,57 +335,105 @@ export default function HomePage() {
             <div className="relative z-10 p-12">
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {/* Student Visa */}
-                <div className="group bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3">
-                  <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300 backdrop-blur-sm">
-                    <div className="text-4xl text-white">✈️</div>
+                <div className="group bg-white rounded-2xl p-8 text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 relative overflow-hidden">
+                  {/* Moving border animation */}
+                  <div className="absolute inset-0 rounded-2xl">
+                    {/* Top border - moves from left to right */}
+                    <div className="absolute top-0 left-0 h-1 bg-primary w-0 group-hover:w-full transition-all duration-1000 ease-in-out"></div>
+                    {/* Right border - moves from top to bottom */}
+                    <div className="absolute top-0 right-0 w-1 bg-primary h-0 group-hover:h-full transition-all duration-1000 ease-in-out delay-200"></div>
+                    {/* Bottom border - moves from right to left */}
+                    <div className="absolute bottom-0 right-0 h-1 bg-primary w-0 group-hover:w-full transition-all duration-1000 ease-in-out delay-400"></div>
+                    {/* Left border - moves from bottom to top */}
+                    <div className="absolute bottom-0 left-0 w-1 bg-primary h-0 group-hover:h-full transition-all duration-1000 ease-in-out delay-600"></div>
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-white">Free Consultancy</h3>
-                  <p className="text-white/90 leading-relaxed mb-4 text-sm">
+                  
+                  <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+                    <div className="text-4xl">✈️</div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-gray-900">Free Consultancy</h3>
+                  <p className="text-gray-600 leading-relaxed mb-4 text-sm">
                   Get expert advice on university selection, program matching, and application strategy for China, Hungary, and Italy at no cost.
                   </p>
-                  <Link href="/consultation" className="text-green-400 font-semibold hover:text-green-300 inline-flex items-center text-sm transition-colors">
+                  <Link href="/consultation" className="text-primary font-semibold hover:text-orange-600 inline-flex items-center text-sm transition-colors">
                     Learn More <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
           </div>
 
                 {/* Test Prep */}
-                <div className="group bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3">
-                  <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300 backdrop-blur-sm">
-                    <div className="text-4xl text-white">🌍</div>
-                </div>
-                  <h3 className="text-xl font-bold mb-3 text-white">Scholarship Facility</h3>
-                  <p className="text-white/90 leading-relaxed mb-4 text-sm">
+                <div className="group bg-white rounded-2xl p-8 text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 relative overflow-hidden">
+                  {/* Moving border animation - clockwise */}
+                  <div className="absolute inset-0 rounded-2xl">
+                    {/* Top border - moves from right to left */}
+                    <div className="absolute top-0 right-0 h-1 bg-primary w-0 group-hover:w-full transition-all duration-1000 ease-in-out"></div>
+                    {/* Right border - moves from bottom to top */}
+                    <div className="absolute bottom-0 right-0 w-1 bg-primary h-0 group-hover:h-full transition-all duration-1000 ease-in-out delay-200"></div>
+                    {/* Bottom border - moves from left to right */}
+                    <div className="absolute bottom-0 left-0 h-1 bg-primary w-0 group-hover:w-full transition-all duration-1000 ease-in-out delay-400"></div>
+                    {/* Left border - moves from top to bottom */}
+                    <div className="absolute top-0 left-0 w-1 bg-primary h-0 group-hover:h-full transition-all duration-1000 ease-in-out delay-600"></div>
+                  </div>
+                  
+                  <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+                    <div className="text-4xl">🌍</div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-gray-900">Scholarship Facility</h3>
+                  <p className="text-gray-600 leading-relaxed mb-4 text-sm">
                   Navigate scholarship opportunities with our proven strategies and insider knowledge of universities in China, Hungary, and Italy.
                   </p>
-                  <Link href="/scholarships" className="text-green-400 font-semibold hover:text-green-300 inline-flex items-center text-sm transition-colors">
+                  <Link href="/scholarships" className="text-primary font-semibold hover:text-orange-600 inline-flex items-center text-sm transition-colors">
                     Learn More <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
                 </div>
 
                 {/* Course Finder */}
-                <div className="group bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3">
-                  <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300 backdrop-blur-sm">
-                    <div className="text-4xl text-white">🏛️</div>
-                </div>
-                  <h3 className="text-xl font-bold mb-3 text-white">Language Courses</h3>
-                  <p className="text-white/90 leading-relaxed mb-4 text-sm">
+                <div className="group bg-white rounded-2xl p-8 text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 relative overflow-hidden">
+                  {/* Moving border animation - counter-clockwise */}
+                  <div className="absolute inset-0 rounded-2xl">
+                    {/* Top border - moves from left to right */}
+                    <div className="absolute top-0 left-0 h-1 bg-primary w-0 group-hover:w-full transition-all duration-1000 ease-in-out"></div>
+                    {/* Left border - moves from top to bottom */}
+                    <div className="absolute top-0 left-0 w-1 bg-primary h-0 group-hover:h-full transition-all duration-1000 ease-in-out delay-200"></div>
+                    {/* Bottom border - moves from right to left */}
+                    <div className="absolute bottom-0 right-0 h-1 bg-primary w-0 group-hover:w-full transition-all duration-1000 ease-in-out delay-400"></div>
+                    {/* Right border - moves from bottom to top */}
+                    <div className="absolute bottom-0 right-0 w-1 bg-primary h-0 group-hover:h-full transition-all duration-1000 ease-in-out delay-600"></div>
+                  </div>
+                  
+                  <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+                    <div className="text-4xl">🏛️</div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-gray-900">Language Courses</h3>
+                  <p className="text-gray-600 leading-relaxed mb-4 text-sm">
                   Master languages with our specialized courses. English, Chinese, Hungarian, and Italian training with certified instructors.
                   </p>
-                  <Link href="/language-courses" className="text-green-400 font-semibold hover:text-green-300 inline-flex items-center text-sm transition-colors">
+                  <Link href="/language-courses" className="text-primary font-semibold hover:text-orange-600 inline-flex items-center text-sm transition-colors">
                     Learn More <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
                 </div>
 
                 {/* Financial Support */}
-                <div className="group bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3">
-                  <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300 backdrop-blur-sm">
-                    <div className="text-4xl text-white">💰</div>
-                </div>
-                  <h3 className="text-xl font-bold mb-3 text-white">Medical Programs</h3>
-                  <p className="text-white/90 leading-relaxed mb-4 text-sm">
+                <div className="group bg-white rounded-2xl p-8 text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 relative overflow-hidden">
+                  {/* Moving border animation - diagonal */}
+                  <div className="absolute inset-0 rounded-2xl">
+                    {/* Top border - moves from right to left */}
+                    <div className="absolute top-0 right-0 h-1 bg-primary w-0 group-hover:w-full transition-all duration-1000 ease-in-out"></div>
+                    {/* Right border - moves from top to bottom */}
+                    <div className="absolute top-0 right-0 w-1 bg-primary h-0 group-hover:h-full transition-all duration-1000 ease-in-out delay-200"></div>
+                    {/* Bottom border - moves from left to right */}
+                    <div className="absolute bottom-0 left-0 h-1 bg-primary w-0 group-hover:w-full transition-all duration-1000 ease-in-out delay-400"></div>
+                    {/* Left border - moves from bottom to top */}
+                    <div className="absolute bottom-0 left-0 w-1 bg-primary h-0 group-hover:h-full transition-all duration-1000 ease-in-out delay-600"></div>
+                  </div>
+                  
+                  <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+                    <div className="text-4xl">💰</div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-gray-900">Medical Programs</h3>
+                  <p className="text-gray-600 leading-relaxed mb-4 text-sm">
                   MBBS and BDS programs at top medical universities with international recognition and WHO accreditation.
                   </p>
-                  <Link href="/medical-programs" className="text-green-400 font-semibold hover:text-green-300 inline-flex items-center text-sm transition-colors">
+                  <Link href="/medical-programs" className="text-primary font-semibold hover:text-orange-600 inline-flex items-center text-sm transition-colors">
                     Learn More <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
                 </div>
@@ -425,7 +473,7 @@ export default function HomePage() {
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/80 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
               <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 text-center hover:border-primary/50 transition-all duration-500 hover:-translate-y-2">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
                   <Users className="h-10 w-10 text-white" />
                 </div>
                 <div className="text-4xl font-bold text-primary mb-2">150+</div>
@@ -436,12 +484,12 @@ export default function HomePage() {
 
             {/* Success Rate */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 text-center hover:border-green-500/50 transition-all duration-500 hover:-translate-y-2">
-                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 text-center hover:border-orange-500/50 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
                   <Award className="h-10 w-10 text-white" />
                 </div>
-                <div className="text-4xl font-bold text-green-400 mb-2">98%</div>
+                <div className="text-4xl font-bold text-orange-500 mb-2">98%</div>
                 <p className="text-xl font-bold text-white mb-2">Success Rate</p>
                 <p className="text-gray-300">Scholarship application success rate</p>
               </div>
@@ -504,7 +552,7 @@ export default function HomePage() {
                 <p className="text-xs text-gray-600">8 Programs</p>
               </div>
             </div>
-            <div className="flex items-center gap-3 bg-gradient-to-br from-green-500/10 to-white rounded-2xl px-8 py-4 shadow-xl border-2 border-green-200 hover:shadow-2xl hover:scale-105 transition-all duration-300">
+            <div className="flex items-center gap-3 bg-gradient-to-br from-orange-500 to-white rounded-2xl px-8 py-4 shadow-xl border-2 border-orange-200 hover:shadow-2xl hover:scale-105 transition-all duration-300">
             <img src="/hungary-flag.png" alt="China" className="w-10 h-6 rounded-sm"></img>
               <div>
                 <p className="font-bold text-gray-900 text-lg">Hungary</p>
@@ -536,7 +584,7 @@ export default function HomePage() {
                     <img src="/china-flag.png" alt="China" className="w-4 h-4 rounded-sm" />
                     China
                   </Badge>
-                  <Badge className="bg-green-500/10 text-green-700 hover:bg-green-500 hover:text-white transition-colors flex items-center gap-2">
+                  <Badge className="bg-orange-500/10 text-orange-700 hover:bg-orange-500 hover:text-white transition-colors flex items-center gap-2">
                     <img src="/hungary-flag.png" alt="Hungary" className="w-4 h-4 rounded-sm" />
                     Hungary
                   </Badge>
@@ -562,7 +610,7 @@ export default function HomePage() {
                     <img src="/china-flag.png" alt="China" className="w-4 h-4 rounded-sm" />
                     China
                   </Badge>
-                  <Badge className="bg-green-500/10 text-green-700 hover:bg-green-500 hover:text-white transition-colors flex items-center gap-2">
+                  <Badge className="bg-orange-500/10 text-orange-700 hover:bg-orange-500 hover:text-white transition-colors flex items-center gap-2">
                     <img src="/hungary-flag.png" alt="Hungary" className="w-4 h-4 rounded-sm" />
                     Hungary
                   </Badge>
@@ -588,7 +636,7 @@ export default function HomePage() {
                     <img src="/china-flag.png" alt="China" className="w-4 h-4 rounded-sm" />
                     China
                   </Badge>
-                  <Badge className="bg-green-500/10 text-green-700 hover:bg-green-500 hover:text-white transition-colors flex items-center gap-2">
+                  <Badge className="bg-orange-500/10 text-orange-700 hover:bg-orange-500 hover:text-white transition-colors flex items-center gap-2">
                     <img src="/hungary-flag.png" alt="Hungary" className="w-4 h-4 rounded-sm" />
                     Hungary
                   </Badge>
@@ -614,7 +662,7 @@ export default function HomePage() {
                     <img src="/china-flag.png" alt="China" className="w-4 h-4 rounded-sm" />
                     China
                   </Badge>
-                  <Badge className="bg-green-500/10 text-green-700 hover:bg-green-500 hover:text-white transition-colors flex items-center gap-2">
+                  <Badge className="bg-orange-500/10 text-orange-700 hover:bg-orange-500 hover:text-white transition-colors flex items-center gap-2">
                     <img src="/hungary-flag.png" alt="Hungary" className="w-4 h-4 rounded-sm" />
                     Hungary
                   </Badge>
@@ -640,7 +688,7 @@ export default function HomePage() {
                     <img src="/china-flag.png" alt="China" className="w-4 h-4 rounded-sm" />
                     China
                   </Badge>
-                  <Badge className="bg-green-500/10 text-green-700 hover:bg-green-500 hover:text-white transition-colors flex items-center gap-2">
+                  <Badge className="bg-orange-500/10 text-orange-700 hover:bg-orange-500 hover:text-white transition-colors flex items-center gap-2">
                     <img src="/hungary-flag.png" alt="Hungary" className="w-4 h-4 rounded-sm" />
                     Hungary
                   </Badge>
@@ -666,7 +714,7 @@ export default function HomePage() {
                     <img src="/china-flag.png" alt="China" className="w-4 h-4 rounded-sm" />
                     China
                   </Badge>
-                  <Badge className="bg-green-500/10 text-green-700 hover:bg-green-500 hover:text-white transition-colors flex items-center gap-2">
+                  <Badge className="bg-orange-500/10 text-orange-700 hover:bg-orange-500 hover:text-white transition-colors flex items-center gap-2">
                     <img src="/hungary-flag.png" alt="Hungary" className="w-4 h-4 rounded-sm" />
                     Hungary
                   </Badge>
@@ -753,7 +801,7 @@ export default function HomePage() {
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div className="bg-gray-50 rounded-lg p-3">
                       <div className="font-semibold text-gray-900">Tuition</div>
-                      <div className="text-primary">$3,000-5,000/yr</div>
+                      <div className="text-primary">Full/Partial Scholarship</div>
                     </div>
                     <div className="bg-gray-50 rounded-lg p-3">
                       <div className="font-semibold text-gray-900">Duration</div>
@@ -858,10 +906,7 @@ export default function HomePage() {
 
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 bg-primary/10 rounded-full px-6 py-3 mb-6">
-              <div className="w-2 h-2 bg-primary rounded-full"></div>
-              <div className="w-2 h-2 bg-primary rounded-full"></div>
-            </div>
+            
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Why Choose <span className="text-primary">Next Stop Global?</span>
             </h2>
@@ -906,7 +951,7 @@ export default function HomePage() {
 
                   {/* Floating Why Choose Us Badge */}
                   <div className="absolute top-6 right-6">
-                    <div className="bg-gradient-to-br from-green-500 to-green-600 text-white px-6 py-3 rounded-full shadow-lg">
+                    <div className="bg-gradient-to-br from-orange-500 to-orange-600 text-white px-6 py-3 rounded-full shadow-lg">
                       <div className="text-center">
                         <div className="text-lg font-bold">WHY CHOOSE US </div>
                       </div>
@@ -916,7 +961,7 @@ export default function HomePage() {
 
                 {/* Decorative Elements */}
                 <div className="absolute -top-4 -left-4 w-24 h-24 bg-primary/10 rounded-full blur-xl"></div>
-                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-green-500/10 rounded-full blur-xl"></div>
+                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-orange-500/10 rounded-full blur-xl"></div>
               </div>
 
               {/* Center - Content Cards */}
@@ -937,11 +982,11 @@ export default function HomePage() {
                 </div>
 
                 <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/50 relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-500/5 to-transparent rounded-full blur-2xl"></div>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-500/5 to-transparent rounded-full blur-2xl"></div>
                   <div className="relative z-10">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 bg-green-500/10 rounded-xl flex items-center justify-center">
-                        <CheckCircle className="h-5 w-5 text-green-600" />
+                      <div className="w-10 h-10 bg-orange-500/10 rounded-xl flex items-center justify-center">
+                        <CheckCircle className="h-5 w-5 text-orange-600" />
                       </div>
                       <h3 className="text-xl font-bold text-gray-900">Proven Results</h3>
                     </div>
@@ -988,7 +1033,7 @@ export default function HomePage() {
                 {/* Feature 3 */}
                 <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                   <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
                       <CheckCircle className="h-7 w-7 text-white" />
                     </div>
                     <div>
@@ -1021,7 +1066,7 @@ export default function HomePage() {
 
             {/* Background Decorative Elements */}
             <div className="absolute top-20 -left-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 -right-20 w-32 h-32 bg-green-500/5 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 -right-20 w-32 h-32 bg-orange-500/5 rounded-full blur-3xl"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-purple-500/5 rounded-full blur-3xl"></div>
           </div>
         </div>
@@ -1041,11 +1086,7 @@ export default function HomePage() {
 
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 bg-primary/20 rounded-full px-6 py-3 mb-6">
-              <div className="w-2 h-2 bg-primary rounded-full"></div>
-              <span className="text-primary font-semibold text-sm uppercase tracking-wide">Our Services</span>
-              <div className="w-2 h-2 bg-primary rounded-full"></div>
-            </div>
+           
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               Comprehensive <span className="text-primary">Support Services</span>
             </h2>
@@ -1093,16 +1134,16 @@ export default function HomePage() {
 
             {/* Student Visa Processing */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 h-full hover:border-green-500/50 transition-all duration-500 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 h-full hover:border-orange-500/50 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
                   <FileText className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">Student Visa Processing</h3>
                 <p className="text-gray-300 leading-relaxed mb-6">
                   Complete visa assistance with 95% success rate. We handle all documentation and provide travel & accommodation support.
                 </p>
-                <Link href="/visa" className="inline-flex items-center text-green-400 font-semibold hover:text-green-300 transition-colors group-hover:translate-x-1">
+                <Link href="/visa" className="inline-flex items-center text-orange-400 font-semibold hover:text-orange-300 transition-colors group-hover:translate-x-1">
                   Learn More <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
                   </div>
@@ -1271,8 +1312,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Partner Universities Logos */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">s
+      {/* Partner Universities Logos Slider */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-2xl lg:text-3xl font-bold text-balance text-white">
@@ -1283,47 +1324,190 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-            {/* University Logo Placeholders */}
-            <div className="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
-              <div className="text-center">
-                <div className="text-3xl mb-2">🎓</div>
-                <div className="text-xs font-semibold text-gray-700">Tsinghua</div>
-              </div>
-            </div>
+          {/* Slider Container */}
+          <div className="relative overflow-hidden">
+            {/* Slider Track */}
+            <div className="flex animate-scroll">
+              {/* First Set of Universities */}
+              <div className="flex space-x-8 min-w-full">
+                {/* Tsinghua University */}
+                <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white font-bold text-xl">清</span>
+                    </div>
+                    <div className="text-white font-semibold text-sm">Tsinghua University</div>
+                    <div className="text-white/70 text-xs">Beijing, China</div>
+                  </div>
+                </div>
 
-            <div className="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
-              <div className="text-center">
-                <div className="text-3xl mb-2">🏛️</div>
-                <div className="text-xs font-semibold text-gray-700">Peking</div>
-              </div>
-            </div>
+                {/* Peking University */}
+                <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white font-bold text-xl">北</span>
+                    </div>
+                    <div className="text-white font-semibold text-sm">Peking University</div>
+                    <div className="text-white/70 text-xs">Beijing, China</div>
+                  </div>
+                </div>
 
-            <div className="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
-              <div className="text-center">
-                <div className="text-3xl mb-2">📚</div>
-                <div className="text-xs font-semibold text-gray-700">Fudan</div>
-              </div>
-            </div>
+                {/* Fudan University */}
+                <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-green-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white font-bold text-xl">复</span>
+                    </div>
+                    <div className="text-white font-semibold text-sm">Fudan University</div>
+                    <div className="text-white/70 text-xs">Shanghai, China</div>
+                  </div>
+                </div>
 
-            <div className="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
-              <div className="text-center">
-                <div className="text-3xl mb-2">🏥</div>
-                <div className="text-xs font-semibold text-gray-700">Semmelweis</div>
-              </div>
-            </div>
+                {/* Shanghai Jiao Tong University */}
+                <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white font-bold text-xl">交</span>
+                    </div>
+                    <div className="text-white font-semibold text-sm">Shanghai Jiao Tong</div>
+                    <div className="text-white/70 text-xs">Shanghai, China</div>
+                  </div>
+                </div>
 
-            <div className="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
-              <div className="text-center">
-                <div className="text-3xl mb-2">🏛️</div>
-                <div className="text-xs font-semibold text-gray-700">Bologna</div>
-              </div>
-            </div>
+                {/* Zhejiang University */}
+                <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-700 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white font-bold text-xl">浙</span>
+                    </div>
+                    <div className="text-white font-semibold text-sm">Zhejiang University</div>
+                    <div className="text-white/70 text-xs">Hangzhou, China</div>
+                  </div>
+                </div>
 
-            <div className="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
-              <div className="text-center">
-                <div className="text-3xl mb-2">🎓</div>
-                <div className="text-xs font-semibold text-gray-700">Sapienza</div>
+                {/* Nanjing University */}
+                <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-teal-600 to-teal-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white font-bold text-xl">南</span>
+                    </div>
+                    <div className="text-white font-semibold text-sm">Nanjing University</div>
+                    <div className="text-white/70 text-xs">Nanjing, China</div>
+                  </div>
+                </div>
+
+                {/* Sun Yat-sen University */}
+                <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-pink-600 to-pink-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white font-bold text-xl">中</span>
+                    </div>
+                    <div className="text-white font-semibold text-sm">Sun Yat-sen University</div>
+                    <div className="text-white/70 text-xs">Guangzhou, China</div>
+                  </div>
+                </div>
+
+                {/* Harbin Institute of Technology */}
+                <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white font-bold text-xl">哈</span>
+                    </div>
+                    <div className="text-white font-semibold text-sm">Harbin Institute</div>
+                    <div className="text-white/70 text-xs">Harbin, China</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Duplicate Set for Seamless Loop */}
+              <div className="flex space-x-8 min-w-full">
+                {/* Tsinghua University */}
+                <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white font-bold text-xl">清</span>
+                    </div>
+                    <div className="text-white font-semibold text-sm">Tsinghua University</div>
+                    <div className="text-white/70 text-xs">Beijing, China</div>
+                  </div>
+                </div>
+
+                {/* Peking University */}
+                <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white font-bold text-xl">北</span>
+                    </div>
+                    <div className="text-white font-semibold text-sm">Peking University</div>
+                    <div className="text-white/70 text-xs">Beijing, China</div>
+                  </div>
+                </div>
+
+                {/* Fudan University */}
+                <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-green-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white font-bold text-xl">复</span>
+                    </div>
+                    <div className="text-white font-semibold text-sm">Fudan University</div>
+                    <div className="text-white/70 text-xs">Shanghai, China</div>
+                  </div>
+                </div>
+
+                {/* Shanghai Jiao Tong University */}
+                <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white font-bold text-xl">交</span>
+                    </div>
+                    <div className="text-white font-semibold text-sm">Shanghai Jiao Tong</div>
+                    <div className="text-white/70 text-xs">Shanghai, China</div>
+                  </div>
+                </div>
+
+                {/* Zhejiang University */}
+                <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-700 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white font-bold text-xl">浙</span>
+                    </div>
+                    <div className="text-white font-semibold text-sm">Zhejiang University</div>
+                    <div className="text-white/70 text-xs">Hangzhou, China</div>
+                  </div>
+                </div>
+
+                {/* Nanjing University */}
+                <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-teal-600 to-teal-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white font-bold text-xl">南</span>
+                    </div>
+                    <div className="text-white font-semibold text-sm">Nanjing University</div>
+                    <div className="text-white/70 text-xs">Nanjing, China</div>
+                  </div>
+                </div>
+
+                {/* Sun Yat-sen University */}
+                <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-pink-600 to-pink-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white font-bold text-xl">中</span>
+                    </div>
+                    <div className="text-white font-semibold text-sm">Sun Yat-sen University</div>
+                    <div className="text-white/70 text-xs">Guangzhou, China</div>
+                  </div>
+                </div>
+
+                {/* Harbin Institute of Technology */}
+                <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white font-bold text-xl">哈</span>
+                    </div>
+                    <div className="text-white font-semibold text-sm">Harbin Institute</div>
+                    <div className="text-white/70 text-xs">Harbin, China</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1507,11 +1691,7 @@ export default function HomePage() {
 
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 bg-primary/20 rounded-full px-6 py-3 mb-6">
-              <div className="w-2 h-2 bg-primary rounded-full"></div>
-              <span className="text-primary font-semibold text-sm uppercase tracking-wide">Latest Updates</span>
-              <div className="w-2 h-2 bg-primary rounded-full"></div>
-            </div>
+           
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               Stay <span className="text-primary">Updated</span>
             </h2>
@@ -1722,11 +1902,7 @@ export default function HomePage() {
 
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 bg-primary/20 rounded-full px-6 py-3 mb-6">
-              <div className="w-2 h-2 bg-primary rounded-full"></div>
-              <span className="text-primary font-semibold text-sm uppercase tracking-wide">Social Media</span>
-              <div className="w-2 h-2 bg-primary rounded-full"></div>
-            </div>
+           
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               Connect With Us on <span className="text-primary">Social Media</span>
             </h2>
@@ -1736,20 +1912,20 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* YouTube */}
+            {/* WhatsApp */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 text-center hover:border-red-500/50 transition-all duration-500 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 text-center hover:border-green-500/50 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
                   <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
                   </svg>
-              </div>
-                <div className="text-3xl font-bold text-white mb-2">50K+</div>
-                <p className="text-lg font-bold text-white mb-2">Active Followers</p>
-                <p className="text-gray-300 text-sm mb-4">Follow us on YouTube</p>
-                <Button size="sm" className="w-full bg-red-600 hover:bg-red-700 text-white">
-                  <a href="https://youtube.com/@nextstopglobal" target="_blank" rel="noopener noreferrer">Follow</a>
+                </div>
+                <div className="text-3xl font-bold text-white mb-2">24/7</div>
+                <p className="text-lg font-bold text-white mb-2">Support Available</p>
+                <p className="text-gray-300 text-sm mb-4">Message us on WhatsApp</p>
+                <Button size="sm" className="w-full bg-green-600 hover:bg-green-700 text-white">
+                  <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">Contact Us</a>
                 </Button>
               </div>
             </div>
@@ -1760,9 +1936,9 @@ export default function HomePage() {
               <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 text-center hover:border-pink-500/50 transition-all duration-500 hover:-translate-y-2">
                 <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
                   <Instagram className="w-8 h-8 text-white" />
-              </div>
-                <div className="text-3xl font-bold text-white mb-2">35K+</div>
-                <p className="text-lg font-bold text-white mb-2">Active Followers</p>
+                </div>
+                <div className="text-3xl font-bold text-white mb-2">Daily</div>
+                <p className="text-lg font-bold text-white mb-2">Updates & Tips</p>
                 <p className="text-gray-300 text-sm mb-4">Follow us on Instagram</p>
                 <Button size="sm" className="w-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white">
                   <a href="https://instagram.com/nextstopglobal" target="_blank" rel="noopener noreferrer">Follow</a>
@@ -1776,9 +1952,9 @@ export default function HomePage() {
               <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 text-center hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
                   <Facebook className="w-8 h-8 text-white" />
-              </div>
-                <div className="text-3xl font-bold text-white mb-2">28K+</div>
-                <p className="text-lg font-bold text-white mb-2">Active Followers</p>
+                </div>
+                <div className="text-3xl font-bold text-white mb-2">Community</div>
+                <p className="text-lg font-bold text-white mb-2">Support & News</p>
                 <p className="text-gray-300 text-sm mb-4">Follow us on Facebook</p>
                 <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
                   <a href="https://facebook.com/nextstopglobal" target="_blank" rel="noopener noreferrer">Follow</a>
@@ -1786,20 +1962,20 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* LinkedIn */}
+            {/* Telegram */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-700 to-indigo-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 text-center hover:border-blue-700/50 transition-all duration-500 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-700 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+              <div className="relative bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 text-center hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
                   <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
                   </svg>
-              </div>
-                <div className="text-3xl font-bold text-white mb-2">15K+</div>
-                <p className="text-lg font-bold text-white mb-2">Active Followers</p>
-                <p className="text-gray-300 text-sm mb-4">Follow us on LinkedIn</p>
-                <Button size="sm" className="w-full bg-blue-700 hover:bg-blue-800 text-white">
-                  <a href="https://linkedin.com/company/nextstopglobal" target="_blank" rel="noopener noreferrer">Follow</a>
+                </div>
+                <div className="text-3xl font-bold text-white mb-2">Instant</div>
+                <p className="text-lg font-bold text-white mb-2">Updates & Alerts</p>
+                <p className="text-gray-300 text-sm mb-4">Join our Telegram</p>
+                <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                  <a href="https://t.me/nextstopglobal" target="_blank" rel="noopener noreferrer">Join Channel</a>
                 </Button>
               </div>
             </div>
@@ -1857,7 +2033,7 @@ export default function HomePage() {
                     </Button>
                   </form>
                   {submitSuccess && (
-                    <p className="text-green-600 text-sm mt-2">Successfully subscribed to our newsletter!</p>
+                    <p className="text-orange-600 text-sm mt-2">Successfully subscribed to our newsletter!</p>
                   )}
                   {submitError && (
                     <p className="text-red-600 text-sm mt-2">{submitError}</p>
@@ -1879,7 +2055,7 @@ export default function HomePage() {
             {/* WhatsApp */}
             <button
               onClick={openWhatsApp}
-              className="flex items-center justify-center w-12 h-12 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+              className="flex items-center justify-center w-12 h-12 bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
               title="WhatsApp"
             >
           <MessageCircle className="h-6 w-6" />
