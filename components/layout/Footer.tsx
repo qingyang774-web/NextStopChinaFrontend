@@ -27,8 +27,8 @@ export default function Footer() {
               <Link href="/scholarships" className="block text-gray-300 hover:text-orange-500 transition-colors">
                 Scholarships
               </Link>
-              <Link href="/universities" className="block text-gray-300 hover:text-orange-500 transition-colors">
-                Universities
+              <Link href="/countries" className="block text-gray-300 hover:text-orange-500 transition-colors">
+                Countries
               </Link>
               <Link href="/apply" className="block text-gray-300 hover:text-orange-500 transition-colors">
                 Apply Now

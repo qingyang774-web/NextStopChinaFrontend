@@ -5,32 +5,16 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { GraduationCap, BookOpen, CheckCircle, Phone, Mail, MessageCircle, ArrowRight, Clock, Users, Globe } from "lucide-react"
 import Link from "next/link"
+import FloatingActionButton from "@/components/layout/FloatingActionButton"
+import Header from "@/components/layout/Header"
+import Footer from "@/components/layout/Footer"
+import CallToAction from "@/components/layout/callToAction"
 
 export default function ApplicationSupportPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="border-b bg-white sticky top-0 z-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link href="/" className="flex items-center space-x-2">
-              <GraduationCap className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold text-foreground">Next Stop China</span>
-            </Link>
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-foreground hover:text-primary transition-colors">Home</Link>
-              <Link href="/about" className="text-foreground hover:text-primary transition-colors">About Us</Link>
-              <Link href="/scholarships" className="text-foreground hover:text-primary transition-colors">Scholarships</Link>
-              <Link href="/universities" className="text-foreground hover:text-primary transition-colors">Universities</Link>
-              <Link href="/blog" className="text-foreground hover:text-primary transition-colors">Blog</Link>
-              <Link href="/contact" className="text-foreground hover:text-primary transition-colors">Contact</Link>
-            </div>
-            <Button asChild className="hidden md:inline-flex">
-              <Link href="/apply" className="flex items-center gap-2">Apply Now</Link>
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <Header />
+   
 
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary/10 to-primary/5">
@@ -215,89 +199,10 @@ export default function ApplicationSupportPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-balance">Ready to Start Your Application?</h2>
-            <p className="text-xl text-gray-600">
-              Let our experts guide you through the entire application process. 
-              Contact us today for personalized support and maximize your chances of success.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild className="bg-primary text-white hover:bg-primary/90">
-                <Link href="/contact" className="flex items-center gap-2">
-                  Start Application Process <ArrowRight className="h-5 w-5" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="/universities">Browse Universities</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+    <CallToAction />
+    <Footer />
+    <FloatingActionButton />
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <GraduationCap className="h-8 w-8 text-primary" />
-                <span className="text-xl font-bold">Next Stop China</span>
-              </div>
-              <p className="text-gray-300 leading-relaxed">
-                Making higher education in China affordable and accessible for international students worldwide.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold">Quick Links</h4>
-              <div className="space-y-2">
-                <Link href="/about" className="block text-gray-300 hover:text-primary transition-colors">About Us</Link>
-                <Link href="/scholarships" className="block text-gray-300 hover:text-primary transition-colors">Scholarships</Link>
-                <Link href="/universities" className="block text-gray-300 hover:text-primary transition-colors">Universities</Link>
-                <Link href="/apply" className="block text-gray-300 hover:text-primary transition-colors">Apply Now</Link>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold">Services</h4>
-              <div className="space-y-2">
-                <Link href="/consultation" className="block text-gray-300 hover:text-primary transition-colors">Free Consultancy</Link>
-                <Link href="/scholarships" className="block text-gray-300 hover:text-primary transition-colors">Scholarship Guidance</Link>
-                <Link href="/visa" className="block text-gray-300 hover:text-primary transition-colors">Visa Processing</Link>
-                <Link href="/language-courses" className="block text-gray-300 hover:text-primary transition-colors">Language Courses</Link>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold">Contact Info</h4>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-2">
-                  <Phone className="h-4 w-4 text-primary" />
-                  <span className="text-gray-300">+92 346 487 6094</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Mail className="h-4 w-4 text-primary" />
-                  <span className="text-gray-300">info@nextstopchina.com</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <MessageCircle className="h-4 w-4 text-primary" />
-                  <span className="text-gray-300">WhatsApp Support</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-700 mt-12 pt-8 text-center">
-            <p className="text-gray-400">
-              © 2025 Next Stop China. All rights reserved. | Making education dreams come true.
-            </p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }

@@ -10,6 +10,7 @@ import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 import programsData from "@/data/programs.json"
 import { useState, useMemo, useEffect } from "react"
+import FloatingActionButton from "@/components/layout/FloatingActionButton"
 
 // Type definitions
 type Program = {
@@ -562,6 +563,7 @@ export default function ProgramsPage() {
         </div>
       </section>
       <Footer />
+      <FloatingActionButton />
       </div>
     </>
   )

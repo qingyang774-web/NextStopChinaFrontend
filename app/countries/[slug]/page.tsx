@@ -2,6 +2,10 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import CallToAction from "@/components/layout/callToAction"
+import Footer from "@/components/layout/Footer"
+import Header from "@/components/layout/Header"
+import FloatingActionButton from "@/components/layout/FloatingActionButton"
+
 import {
   GraduationCap,
   ArrowRight,
@@ -72,65 +76,20 @@ export default function CountryPage({ params }: { params: { slug: string } }) {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 sticky top-0 z-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link href="/" className="flex items-center space-x-2">
-              <GraduationCap className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold text-foreground">Next Stop China</span>
-            </Link>
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-foreground hover:text-primary transition-colors">
-                Home
-              </Link>
-              <Link href="/about" className="text-foreground hover:text-primary transition-colors">
-                About Us
-              </Link>
-              <Link href="/scholarships" className="text-foreground hover:text-primary transition-colors">
-                Scholarships
-              </Link>
-              <Link href="/universities" className="text-foreground hover:text-primary transition-colors">
-                Universities
-              </Link>
-              <Link href="/countries" className="text-primary font-medium">
-                Countries
-              </Link>
-              <Link href="/contact" className="text-foreground hover:text-primary transition-colors">
-                Contact
-              </Link>
-            </div>
-            <Button asChild className="hidden md:inline-flex">
-              <Link href="/apply">Apply Now</Link>
-            </Button>
-          </div>
-        </div>
-      </nav>
+     <Header />
+  
 
-      {/* Breadcrumb */}
-      <div className="bg-muted/30 py-4">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center space-x-2 text-sm">
-            <Link href="/countries" className="text-primary hover:underline flex items-center">
-              <ArrowLeft className="h-4 w-4 mr-1" />
-              Countries
-            </Link>
-            <span className="text-muted-foreground">/</span>
-            <span className="text-foreground">{country.name}</span>
-          </div>
-        </div>
-      </div>
 
       {/* Hero Section */}
-      <section className="relative h-[600px] lg:h-[700px] overflow-hidden">
+      <section className="relative h-[600px] lg:h-[650px] overflow-hidden">
         {/* Background Image with Parallax Effect */}
         <div className="absolute inset-0">
           <Image src={country.heroImage || "/placeholder.jpg"} alt={country.name} fill className="object-cover scale-105" priority />
         </div>
 
         {/* Gradient Overlays - Lighter */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent" />
 
         {/* Animated Decorative Elements */}
         <div className="absolute top-20 right-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse" />
@@ -138,50 +97,48 @@ export default function CountryPage({ params }: { params: { slug: string } }) {
 
         <div className="absolute inset-0 flex items-center">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div className="max-w-5xl text-white space-y-8">
+            <div className="max-w-5xl text-white space-y-6">
               {/* Flag and Title */}
-              <div className="flex items-start space-x-6">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-white/50 rounded-full blur-xl" />
-                  <div className="relative w-28 h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden border-4 border-white shadow-2xl ring-8 ring-white/30">
-                    <Image src={country.flag || "/placeholder.svg"} alt={`${country.name} flag`} width={128} height={128} className="object-cover" />
+              <div className="flex items-start space-x-4 lg:space-x-5">
+                <div className="relative flex-shrink-0">
+                  <div className="absolute inset-0 bg-white/50 rounded-lg blur-xl" />
+                  <div className="relative w-20 h-14 lg:w-28 lg:h-20 overflow-hidden border-3 border-white shadow-2xl ring-4 ring-white/40">
+                    <Image src={country.flag || "/placeholder.svg"} alt={`${country.name} flag`} width={128} height={128} className="object-cover w-full h-full" />
                   </div>
                 </div>
-                <div className="flex-1 space-y-4">
-                  <div className="space-y-2">
-                    <Badge className="bg-white/90 text-gray-800 hover:bg-white border-white/50 backdrop-blur shadow-lg">
-                      Study Destination
-                    </Badge>
-                    <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-white drop-shadow-lg">
-                      {country.name}
-                    </h1>
-                    <p className="text-2xl lg:text-3xl text-white/95 font-medium drop-shadow-md">{country.tagline}</p>
-                  </div>
+                <div className="flex-1 space-y-3">
+                  <Badge className="bg-white/90 text-gray-800 hover:bg-white border-white/50 backdrop-blur shadow-lg text-xs">
+                    Study Destination
+                  </Badge>
+                  <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-white drop-shadow-lg">
+                    {country.name}
+                  </h1>
+                  <p className="text-lg lg:text-xl text-white/90 font-medium drop-shadow-md">{country.tagline}</p>
                 </div>
               </div>
 
               {/* Description */}
-              <p className="text-lg lg:text-2xl text-white-800 leading-relaxed max-w-3xl backdrop-blur-sm bg-white/10 p-6 rounded-2xl border border-white/20 shadow-lg">
+              <p className="text-base lg:text-lg text-white/95 leading-relaxed max-w-3xl backdrop-blur-sm bg-black/20 p-5 rounded-xl border border-white/10 shadow-lg">
                 {country.description}
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-4 pt-4">
+              <div className="flex flex-wrap gap-3 pt-2">
                 <Button
                   size="lg"
                   asChild
-                  className="bg-primary text-white hover:bg-primary/90 shadow-2xl hover:shadow-3xl transition-all duration-300 text-lg px-8 py-6 group"
+                  className="bg-primary text-white hover:bg-primary/90 shadow-xl hover:shadow-2xl transition-all duration-300 text-base px-6 py-5 group"
                 >
                   <Link href="/apply" className="flex items-center">
                     Apply Now
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
                   asChild
-                  className="bg-white/90 text-gray-800 hover:bg-white hover:text-primary backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 text-lg px-8 py-6"
+                  className="bg-white/90 text-gray-800 hover:bg-white hover:text-primary backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 text-base px-6 py-5"
                 >
                   <Link href="/contact">Get Free Consultation</Link>
                 </Button>
@@ -365,30 +322,31 @@ export default function CountryPage({ params }: { params: { slug: string } }) {
       </section>
 
       {/* Living Costs */}
-      <section className="py-20 bg-primary text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-primary/5 relative overflow-hidden">
         {/* Decorative Elements */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" />
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-6xl mx-auto">
             <div className="text-center space-y-4 mb-16">
-              <Badge className="mb-4 bg-white/20 text-white hover:bg-white/30 border-white/30">Affordability</Badge>
-              <h2 className="text-4xl lg:text-5xl font-bold text-balance">
+              <Badge className="mb-4 bg-primary/10 text-primary hover:bg-primary/20 border-primary/30">Affordability</Badge>
+              <h2 className="text-4xl lg:text-5xl font-bold text-balance text-gray-900">
                 Cost of Living
               </h2>
-              <p className="text-xl text-white/90 text-pretty">
+              <p className="text-xl text-gray-600 text-pretty">
                 Transparent breakdown of estimated monthly student expenses
               </p>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8">
               {/* Total Cost Display */}
-              <Card className="border-0 shadow-2xl bg-white/10 backdrop-blur overflow-hidden">
-                <CardContent className="p-8 text-center">
+              <Card className="border-0 shadow-2xl bg-gradient-to-br from-primary to-primary/90 text-white overflow-hidden group h-full">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <CardContent className="p-8 text-center relative h-full flex flex-col items-center justify-center">
                   <div className="relative inline-flex mb-6">
                     <div className="absolute inset-0 bg-white/30 rounded-full blur-2xl animate-pulse" />
-                    <div className="relative w-20 h-20 bg-white/20 rounded-3xl flex items-center justify-center shadow-2xl">
+                    <div className="relative w-20 h-20 bg-white/20 rounded-3xl flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
                       <DollarSign className="h-10 w-10 text-white" />
                     </div>
                   </div>
@@ -399,66 +357,89 @@ export default function CountryPage({ params }: { params: { slug: string } }) {
 
               {/* Breakdown */}
               <div className="space-y-4">
-                <div className="flex items-center justify-between p-4 rounded-xl bg-white/10 backdrop-blur border border-white/20 hover:bg-white/20 transition-all duration-300 group">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Home className="h-6 w-6 text-white" />
+                <Card className="border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden bg-white">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <CardContent className="p-6 relative">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-4">
+                        <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                          <Home className="h-7 w-7 text-white" />
+                        </div>
+                        <div>
+                          <span className="font-bold text-lg text-gray-900">Accommodation</span>
+                          <p className="text-sm text-gray-500">Housing & Utilities</p>
+                        </div>
+                      </div>
+                      <span className="font-bold text-2xl text-primary">{country.livingCost.breakdown.accommodation}</span>
                     </div>
-                    <div>
-                      <span className="font-semibold text-lg">Accommodation</span>
-                      <p className="text-sm text-white/80">Housing & Utilities</p>
-                    </div>
-                  </div>
-                  <span className="font-bold text-2xl">{country.livingCost.breakdown.accommodation}</span>
-                </div>
+                  </CardContent>
+                </Card>
 
-                <div className="flex items-center justify-between p-4 rounded-xl bg-white/10 backdrop-blur border border-white/20 hover:bg-white/20 transition-all duration-300 group">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Heart className="h-6 w-6 text-white" />
+                <Card className="border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden bg-white">
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <CardContent className="p-6 relative">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-4">
+                        <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                          <Heart className="h-7 w-7 text-white" />
+                        </div>
+                        <div>
+                          <span className="font-bold text-lg text-gray-900">Food & Dining</span>
+                          <p className="text-sm text-gray-500">Groceries & Restaurants</p>
+                        </div>
+                      </div>
+                      <span className="font-bold text-2xl text-orange-600">{country.livingCost.breakdown.food}</span>
                     </div>
-                    <div>
-                      <span className="font-semibold text-lg">Food & Dining</span>
-                      <p className="text-sm text-white/80">Groceries & Restaurants</p>
-                    </div>
-                  </div>
-                  <span className="font-bold text-2xl">{country.livingCost.breakdown.food}</span>
-                </div>
+                  </CardContent>
+                </Card>
 
-                <div className="flex items-center justify-between p-4 rounded-xl bg-white/10 backdrop-blur border border-white/20 hover:bg-white/20 transition-all duration-300 group">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Plane className="h-6 w-6 text-white" />
+                <Card className="border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden bg-white">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <CardContent className="p-6 relative">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-4">
+                        <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                          <Plane className="h-7 w-7 text-white" />
+                        </div>
+                        <div>
+                          <span className="font-bold text-lg text-gray-900">Transportation</span>
+                          <p className="text-sm text-gray-500">Public Transit & Travel</p>
+                        </div>
+                      </div>
+                      <span className="font-bold text-2xl text-blue-600">{country.livingCost.breakdown.transportation}</span>
                     </div>
-                    <div>
-                      <span className="font-semibold text-lg">Transportation</span>
-                      <p className="text-sm text-white/80">Public Transit & Travel</p>
-                    </div>
-                  </div>
-                  <span className="font-bold text-2xl">{country.livingCost.breakdown.transportation}</span>
-                </div>
+                  </CardContent>
+                </Card>
 
-                <div className="flex items-center justify-between p-4 rounded-xl bg-white/10 backdrop-blur border border-white/20 hover:bg-white/20 transition-all duration-300 group">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <CheckCircle className="h-6 w-6 text-white" />
+                <Card className="border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden bg-white">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <CardContent className="p-6 relative">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-4">
+                        <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                          <CheckCircle className="h-7 w-7 text-white" />
+                        </div>
+                        <div>
+                          <span className="font-bold text-lg text-gray-900">Other Expenses</span>
+                          <p className="text-sm text-gray-500">Entertainment & Personal</p>
+                        </div>
+                      </div>
+                      <span className="font-bold text-2xl text-purple-600">{country.livingCost.breakdown.other}</span>
                     </div>
-                    <div>
-                      <span className="font-semibold text-lg">Other Expenses</span>
-                      <p className="text-sm text-white/80">Entertainment & Personal</p>
-                    </div>
-                  </div>
-                  <span className="font-bold text-2xl">{country.livingCost.breakdown.other}</span>
-                </div>
+                  </CardContent>
+                </Card>
               </div>
             </div>
 
             {/* Pro Tip */}
-            <div className="mt-8 p-6 bg-white/10 backdrop-blur rounded-2xl border border-white/20">
-              <p className="text-center text-sm text-white/90">
-                💡 <span className="font-semibold">Pro Tip:</span> Many scholarships cover accommodation and living expenses, reducing your costs significantly!
-              </p>
-            </div>
+            <Card className="mt-8 border-l-4 border-l-primary shadow-lg bg-gradient-to-r from-primary/5 to-orange-500/5">
+              <CardContent className="p-6">
+                <p className="text-center text-gray-700">
+                  <span className="text-2xl mr-2">💡</span>
+                  <span className="font-semibold text-gray-900">Pro Tip:</span> Many scholarships cover accommodation and living expenses, reducing your costs significantly!
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -529,49 +510,49 @@ export default function CountryPage({ params }: { params: { slug: string } }) {
           </div>
 
           {/* Fast Facts Grid */}
-          <Card className="border-0 shadow-xl bg-gradient-to-br from-primary to-primary/80 text-white overflow-hidden">
+          <Card className="border-4 border-primary shadow-xl bg-white text-gray-900 overflow-hidden">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2 text-primary">
                 <Award className="h-6 w-6" />
                 Essential Information
               </h3>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="space-y-2">
-                  <div className="flex items-center space-x-2 opacity-90">
+                  <div className="flex items-center space-x-2 text-primary">
                     <Calendar className="h-4 w-4" />
                     <span className="text-sm font-medium">Academic Year</span>
                   </div>
-                  <p className="text-sm pl-6">{country.fastFacts.academicYear}</p>
+                  <p className="text-sm pl-6 text-gray-700">{country.fastFacts.academicYear}</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="flex items-center space-x-2 opacity-90">
+                  <div className="flex items-center space-x-2 text-primary">
                     <FileText className="h-4 w-4" />
                     <span className="text-sm font-medium">Visa</span>
                   </div>
-                  <p className="text-sm pl-6">{country.fastFacts.visaRequired}</p>
+                  <p className="text-sm pl-6 text-gray-700">{country.fastFacts.visaRequired}</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="flex items-center space-x-2 opacity-90">
+                  <div className="flex items-center space-x-2 text-primary">
                     <Briefcase className="h-4 w-4" />
                     <span className="text-sm font-medium">Work Rights</span>
                   </div>
-                  <p className="text-sm pl-6">{country.fastFacts.partTimeWork}</p>
+                  <p className="text-sm pl-6 text-gray-700">{country.fastFacts.partTimeWork}</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="flex items-center space-x-2 opacity-90">
+                  <div className="flex items-center space-x-2 text-primary">
                     <Heart className="h-4 w-4" />
                     <span className="text-sm font-medium">Insurance</span>
                   </div>
-                  <p className="text-sm pl-6">{country.fastFacts.healthInsurance}</p>
+                  <p className="text-sm pl-6 text-gray-700">{country.fastFacts.healthInsurance}</p>
                 </div>
               </div>
 
               {/* Top Cities Inline */}
-              <div className="mt-8 pt-8 border-t border-white/20">
-                <p className="text-sm font-medium mb-3 opacity-90">Popular Student Cities</p>
+              <div className="mt-8 pt-8 border-t border-primary/30">
+                <p className="text-sm font-medium mb-3 text-gray-700">Popular Student Cities</p>
                 <div className="flex flex-wrap gap-2">
                   {country.topCities.map((city, index) => (
-                    <span key={index} className="px-4 py-1.5 bg-white/20 rounded-full text-sm backdrop-blur">
+                    <span key={index} className="px-4 py-1.5 bg-primary text-white rounded-full text-sm font-medium hover:bg-orange-600 transition-colors">
                       {city}
                     </span>
                   ))}
@@ -586,6 +567,10 @@ export default function CountryPage({ params }: { params: { slug: string } }) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <CallToAction />
       </div>
+
+      {/* Footer */}
+      <Footer />
+      <FloatingActionButton />
     </div>
   )
 }

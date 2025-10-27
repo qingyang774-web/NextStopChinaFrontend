@@ -27,6 +27,7 @@ import { useState } from "react"
 import { useApplicationFormSubmission } from "@/hooks/useFormSubmission"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
+import FloatingActionButton from "@/components/layout/FloatingActionButton"
 
 export default function ApplyPage() {
   const [formData, setFormData] = useState<any>({
@@ -670,14 +671,7 @@ export default function ApplyPage() {
       </section>
 
       <Footer />
-
-      {/* Floating WhatsApp Button */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <Button size="lg" className="rounded-full w-14 h-14 shadow-lg hover:shadow-xl transition-shadow">
-          <MessageCircle className="h-6 w-6" />
-          <span className="sr-only">WhatsApp Support</span>
-        </Button>
-      </div>
+     <FloatingActionButton />
     </div>
   )
 }

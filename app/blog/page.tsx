@@ -6,6 +6,8 @@ import Link from "next/link"
 import Image from "next/image"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
+import FloatingActionButton from "@/components/layout/FloatingActionButton"
+
 export const metadata = {
   title: "Blog - Study Abroad Tips & Success Stories",
   description:
@@ -314,12 +316,7 @@ export default function BlogPage() {
    <Footer />
 
       {/* Floating WhatsApp Button */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <Button size="lg" className="rounded-full w-14 h-14 shadow-lg hover:shadow-xl transition-shadow">
-          <MessageCircle className="h-6 w-6" />
-          <span className="sr-only">WhatsApp Support</span>
-        </Button>
-      </div>
+     <FloatingActionButton />
     </div>
   )
   

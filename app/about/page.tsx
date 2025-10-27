@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
+import FloatingActionButton from "@/components/layout/FloatingActionButton"
 import {
   GraduationCap,
   Phone,
@@ -276,12 +277,7 @@ export default function AboutPage() {
 
      <Footer />
       {/* Floating WhatsApp Button */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <Button size="lg" className="rounded-full w-14 h-14 shadow-lg hover:shadow-xl transition-shadow">
-          <MessageCircle className="h-6 w-6" />
-          <span className="sr-only">WhatsApp Support</span>
-        </Button>
-      </div>
+     <FloatingActionButton />
     </div>
   )
 }

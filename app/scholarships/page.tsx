@@ -8,6 +8,7 @@ import Link from "next/link"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 import CallToAction from "@/components/layout/callToAction"
+import FloatingActionButton from "@/components/layout/FloatingActionButton"
 
 export default function ScholarshipsPage() {
   return (
@@ -51,7 +52,7 @@ export default function ScholarshipsPage() {
                 <img src="/hungary-flag.png" alt="Hungary" className="w-8 h-6 rounded-sm shadow-md" />
                 <div className="text-left">
                   <span className="text-sm font-bold text-gray-900 block">Hungary</span>
-                  <span className="text-xs text-orange-600 font-semibold">Partial Support</span>
+                  <span className="text-xs text-orange-600 font-semibold">Limited Support</span>
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
@@ -173,6 +174,26 @@ export default function ScholarshipsPage() {
               </CardContent>
             </Card>
           </div>
+
+          {/* Note Section */}
+          <div className="mt-12 p-6 bg-gradient-to-r from-primary/10 via-orange-500/10 to-yellow-500/10 rounded-2xl border border-primary/20 shadow-lg">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Award className="h-6 w-6 text-primary" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-lg font-bold text-gray-900 mb-1">More Scholarships Available</h3>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  We have many more scholarship opportunities available across different universities and programs in China. Contact us to explore all available options and find the perfect scholarship for your academic goals.
+                </p>
+              </div>
+            </div>
+            <div className="mt-4 flex justify-end">
+              <Button asChild className="bg-primary text-white hover:bg-primary/90">
+                <Link href="/contact">Contact Us for More</Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -183,7 +204,7 @@ export default function ScholarshipsPage() {
             <img src="/hungary-flag.png" alt="Hungary" className="w-16 h-12 rounded-md shadow-lg" />
             <div>
               <Badge className="bg-orange-100 text-orange-700 hover:bg-orange-200 px-4 py-1 text-sm mb-2">
-                Partial Support Available
+                Limited Support Available
               </Badge>
               <h2 className="text-4xl lg:text-5xl font-bold text-balance">Hungary Scholarships</h2>
             </div>
@@ -457,11 +478,10 @@ export default function ScholarshipsPage() {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <CallToAction />
-      </div>
 
       <Footer />
+      <FloatingActionButton />
     </div>
     </>
   )

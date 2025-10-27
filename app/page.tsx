@@ -4,12 +4,37 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { GraduationCap, Users, Award, Phone, Mail, MessageCircle, ArrowRight, Globe, BookOpen, Star, TrendingUp, CheckCircle, UserCheck, Mail as MailIcon, ChevronLeft, ChevronRight, CheckCircle2, FileText, Languages, Stethoscope, X, Facebook, Instagram, Clock, Calendar } from "lucide-react"
+import { GraduationCap, Users, Award, Phone, Mail, ArrowRight, Globe, BookOpen, Star, TrendingUp, CheckCircle, UserCheck, Mail as MailIcon, ChevronLeft, ChevronRight, CheckCircle2, FileText, Languages, Stethoscope, Clock, Calendar, Facebook, Instagram } from "lucide-react"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import { useNewsletterSubmission } from "@/hooks/useFormSubmission"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
+import FloatingActionButton from "@/components/layout/FloatingActionButton"
+import programsData from "@/data/programs.json"
+
+// Function to count total programs from JSON data
+const getTotalProgramCount = () => {
+  let totalCount = 0
+  Object.values(programsData.countries).forEach((country: any) => {
+    country.categories.forEach((category: any) => {
+      totalCount += category.programs.length
+    })
+  })
+  return totalCount
+}
+
+// Function to count programs for a specific country
+const getCountryProgramCount = (countryKey: string) => {
+  const country = programsData.countries[countryKey as keyof typeof programsData.countries]
+  if (!country) return 0
+  
+  let count = 0
+  country.categories.forEach((category: any) => {
+    count += category.programs.length
+  })
+  return count
+}
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -29,7 +54,6 @@ export default function HomePage() {
   }
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [isAnimating, setIsAnimating] = useState(false)
-  const [isFABExpanded, setIsFABExpanded] = useState(false)
   
   const slides = [
     {
@@ -90,32 +114,7 @@ export default function HomePage() {
     setTimeout(() => setIsAnimating(false), 700)
   }
 
-  // Contact functions - UPDATE THESE WITH YOUR ACTUAL CONTACT DETAILS
-  const openWhatsApp = () => {
-    // Replace 1234567890 with your WhatsApp number (include country code, no + sign)
-    // Example: 919876543210 for India, 1234567890 for US
-    window.open('https://wa.me/923464876094?text=Hi, I am interested in studying abroad with Next Stop Global', '_blank')
-  }
 
-  const openTelegram = () => {
-    // Replace 'nextstopglobal' with your actual Telegram username
-    window.open('https://t.me/nextstopglobal', '_blank')
-  }
-
-  const openFacebook = () => {
-    // Replace 'nextstopglobal' with your actual Facebook page username
-    window.open('https://facebook.com/nextstopglobal', '_blank')
-  }
-
-  const openInstagram = () => {
-    // Replace 'nextstopglobal' with your actual Instagram username
-    window.open('https://instagram.com/nextstopglobal', '_blank')
-  }
-
-  const openEmail = () => {
-    // Replace 'info@nextstopglobal.com' with your actual email address
-    window.open('mailto:info@nextstopglobal.com?subject=Inquiry about studying abroad', '_blank')
-  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -337,7 +336,7 @@ export default function HomePage() {
                 {/* Student Visa */}
                 <div className="group bg-white rounded-2xl p-8 text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 relative overflow-hidden">
                   {/* Moving border animation */}
-                  <div className="absolute inset-0 rounded-2xl">
+                  <div className="absolute inset-0 rounded-2xl pointer-events-none">
                     {/* Top border - moves from left to right */}
                     <div className="absolute top-0 left-0 h-1 bg-primary w-0 group-hover:w-full transition-all duration-1000 ease-in-out"></div>
                     {/* Right border - moves from top to bottom */}
@@ -363,7 +362,7 @@ export default function HomePage() {
                 {/* Test Prep */}
                 <div className="group bg-white rounded-2xl p-8 text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 relative overflow-hidden">
                   {/* Moving border animation - clockwise */}
-                  <div className="absolute inset-0 rounded-2xl">
+                  <div className="absolute inset-0 rounded-2xl pointer-events-none">
                     {/* Top border - moves from right to left */}
                     <div className="absolute top-0 right-0 h-1 bg-primary w-0 group-hover:w-full transition-all duration-1000 ease-in-out"></div>
                     {/* Right border - moves from bottom to top */}
@@ -389,7 +388,7 @@ export default function HomePage() {
                 {/* Course Finder */}
                 <div className="group bg-white rounded-2xl p-8 text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 relative overflow-hidden">
                   {/* Moving border animation - counter-clockwise */}
-                  <div className="absolute inset-0 rounded-2xl">
+                  <div className="absolute inset-0 rounded-2xl pointer-events-none">
                     {/* Top border - moves from left to right */}
                     <div className="absolute top-0 left-0 h-1 bg-primary w-0 group-hover:w-full transition-all duration-1000 ease-in-out"></div>
                     {/* Left border - moves from top to bottom */}
@@ -415,7 +414,7 @@ export default function HomePage() {
                 {/* Financial Support */}
                 <div className="group bg-white rounded-2xl p-8 text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 relative overflow-hidden">
                   {/* Moving border animation - diagonal */}
-                  <div className="absolute inset-0 rounded-2xl">
+                  <div className="absolute inset-0 rounded-2xl pointer-events-none">
                     {/* Top border - moves from right to left */}
                     <div className="absolute top-0 right-0 h-1 bg-primary w-0 group-hover:w-full transition-all duration-1000 ease-in-out"></div>
                     {/* Right border - moves from top to bottom */}
@@ -549,21 +548,21 @@ export default function HomePage() {
               <img src="/china-flag.png" alt="China" className="w-10 h-6 rounded-sm"></img>
               <div>
                 <p className="font-bold text-gray-900 text-lg">China</p>
-                <p className="text-xs text-gray-600">8 Programs</p>
+                <p className="text-xs text-gray-600">{getCountryProgramCount('china')} Programs</p>
               </div>
             </div>
             <div className="flex items-center gap-3 bg-gradient-to-br from-orange-500 to-white rounded-2xl px-8 py-4 shadow-xl border-2 border-orange-200 hover:shadow-2xl hover:scale-105 transition-all duration-300">
             <img src="/hungary-flag.png" alt="China" className="w-10 h-6 rounded-sm"></img>
               <div>
                 <p className="font-bold text-gray-900 text-lg">Hungary</p>
-                <p className="text-xs text-gray-600">8 Programs</p>
+                <p className="text-xs text-gray-600">{getCountryProgramCount('hungary')} Programs</p>
               </div>
             </div>
             <div className="flex items-center gap-3 bg-gradient-to-br from-blue-500/10 to-white rounded-2xl px-8 py-4 shadow-xl border-2 border-blue-200 hover:shadow-2xl hover:scale-105 transition-all duration-300">
             <img src="/italy-flag.png" alt="China" className="w-10 h-6 rounded-sm"></img>
               <div>
                 <p className="font-bold text-gray-900 text-lg">Italy</p>
-                <p className="text-xs text-gray-600">10 Programs</p>
+                <p className="text-xs text-gray-600">{getCountryProgramCount('italy')} Programs</p>
               </div>
             </div>
           </div>
@@ -730,10 +729,10 @@ export default function HomePage() {
           {/* Show More Majors Preview */}
           <div className="bg-gradient-to-r from-primary/5 to-primary/10 rounded-2xl p-8 mb-12">
             <div className="text-center space-y-4">
-              <h3 className="text-2xl font-bold text-gray-900">And Many More Programs Available!</h3>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Explore our complete catalog of 50+ programs including Sciences, Law, Tourism, Culinary Arts, Humanities, Economics, and Social Sciences across all three countries.
-              </p>
+                <h3 className="text-2xl font-bold text-gray-900">And Many More Programs Available!</h3>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  Explore our complete catalog of {getTotalProgramCount()}+ programs including Sciences, Law, Tourism, Culinary Arts, Humanities, Economics, and Social Sciences across all three countries.
+                </p>
               <div className="flex flex-wrap justify-center gap-4 mt-6">
                 <Badge className="bg-white/80 text-primary px-4 py-2">Sciences</Badge>
                 <Badge className="bg-white/80 text-primary px-4 py-2">Law</Badge>
@@ -809,7 +808,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <Button asChild className="w-full bg-primary text-white hover:bg-primary/90">
-                    <Link href="/universities">Explore China</Link>
+                    <Link href="/countries/china">Explore China</Link>
                   </Button>
                   </div>
                 </CardContent>
@@ -847,7 +846,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <Button asChild className="w-full bg-primary text-white hover:bg-primary/90">
-                    <Link href="/universities">Explore Hungary</Link>
+                    <Link href="/countries/hungary">Explore Hungary</Link>
                   </Button>
                   </div>
                 </CardContent>
@@ -885,7 +884,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <Button asChild className="w-full bg-primary text-white hover:bg-primary/90">
-                    <Link href="/universities">Explore Italy</Link>
+                    <Link href="/countries/italy">Explore Italy</Link>
                   </Button>
                   </div>
                 </CardContent>
@@ -1334,10 +1333,10 @@ export default function HomePage() {
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">清</span>
+                      <span className="text-white font-bold text-xl">郑</span>
                     </div>
-                    <div className="text-white font-semibold text-sm">Tsinghua University</div>
-                    <div className="text-white/70 text-xs">Beijing, China</div>
+                    <div className="text-white font-semibold text-sm">Zhengzhou University</div>
+                    <div className="text-white/70 text-xs">Zhengzhou, China</div>
                   </div>
                 </div>
 
@@ -1345,10 +1344,10 @@ export default function HomePage() {
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">北</span>
+                      <span className="text-white font-bold text-xl">常</span>
                     </div>
-                    <div className="text-white font-semibold text-sm">Peking University</div>
-                    <div className="text-white/70 text-xs">Beijing, China</div>
+                    <div className="text-white font-semibold text-sm">Changshu University</div>
+                    <div className="text-white/70 text-xs">Changshu, China</div>
                   </div>
                 </div>
 
@@ -1356,10 +1355,10 @@ export default function HomePage() {
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-green-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">复</span>
+                      <span className="text-white font-bold text-xl">天</span>
                     </div>
-                    <div className="text-white font-semibold text-sm">Fudan University</div>
-                    <div className="text-white/70 text-xs">Shanghai, China</div>
+                    <div className="text-white font-semibold text-sm">Tianjin University</div>
+                    <div className="text-white/70 text-xs">Tianjin, China</div>
                   </div>
                 </div>
 
@@ -1400,10 +1399,10 @@ export default function HomePage() {
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-gradient-to-br from-pink-600 to-pink-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">中</span>
+                      <span className="text-white font-bold text-xl">江</span>
                     </div>
-                    <div className="text-white font-semibold text-sm">Sun Yat-sen University</div>
-                    <div className="text-white/70 text-xs">Guangzhou, China</div>
+                    <div className="text-white font-semibold text-sm">Jiangsu University</div>
+                    <div className="text-white/70 text-xs">Zhenjiang, China</div>
                   </div>
                 </div>
 
@@ -1425,10 +1424,10 @@ export default function HomePage() {
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">清</span>
+                      <span className="text-white font-bold text-xl">郑</span>
                     </div>
-                    <div className="text-white font-semibold text-sm">Tsinghua University</div>
-                    <div className="text-white/70 text-xs">Beijing, China</div>
+                    <div className="text-white font-semibold text-sm">Zhengzhou University</div>
+                    <div className="text-white/70 text-xs">Zhengzhou, China</div>
                   </div>
                 </div>
 
@@ -1436,10 +1435,10 @@ export default function HomePage() {
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">北</span>
+                      <span className="text-white font-bold text-xl">常</span>
                     </div>
-                    <div className="text-white font-semibold text-sm">Peking University</div>
-                    <div className="text-white/70 text-xs">Beijing, China</div>
+                    <div className="text-white font-semibold text-sm">Changshu University</div>
+                    <div className="text-white/70 text-xs">Changshu, China</div>
                   </div>
                 </div>
 
@@ -1447,10 +1446,10 @@ export default function HomePage() {
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-green-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">复</span>
+                      <span className="text-white font-bold text-xl">天</span>
                     </div>
-                    <div className="text-white font-semibold text-sm">Fudan University</div>
-                    <div className="text-white/70 text-xs">Shanghai, China</div>
+                    <div className="text-white font-semibold text-sm">Tianjin University</div>
+                    <div className="text-white/70 text-xs">Tianjin, China</div>
                   </div>
                 </div>
 
@@ -1491,10 +1490,10 @@ export default function HomePage() {
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-gradient-to-br from-pink-600 to-pink-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">中</span>
+                      <span className="text-white font-bold text-xl">江</span>
                     </div>
-                    <div className="text-white font-semibold text-sm">Sun Yat-sen University</div>
-                    <div className="text-white/70 text-xs">Guangzhou, China</div>
+                    <div className="text-white font-semibold text-sm">Jiangsu University</div>
+                    <div className="text-white/70 text-xs">Zhenjiang, China</div>
                   </div>
                 </div>
 
@@ -2046,74 +2045,7 @@ export default function HomePage() {
       </section>
 
       <Footer />
-
-      {/* Floating Action Button - Contact Options */}
-      <div className="fixed bottom-6 right-6 z-50">
-        {/* Expanded Contact Options */}
-        {isFABExpanded && (
-          <div className="absolute bottom-16 right-0 space-y-3 mb-4">
-            {/* WhatsApp */}
-            <button
-              onClick={openWhatsApp}
-              className="flex items-center justify-center w-12 h-12 bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
-              title="WhatsApp"
-            >
-          <MessageCircle className="h-6 w-6" />
-            </button>
-            
-            {/* Telegram */}
-            <button
-              onClick={openTelegram}
-              className="flex items-center justify-center w-12 h-12 bg-blue-500 hover:bg-blue-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
-              title="Telegram"
-            >
-              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
-              </svg>
-            </button>
-            
-            {/* Facebook */}
-            <button
-              onClick={openFacebook}
-              className="flex items-center justify-center w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
-              title="Facebook"
-            >
-              <Facebook className="h-6 w-6" />
-            </button>
-            
-            {/* Instagram */}
-            <button
-              onClick={openInstagram}
-              className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
-              title="Instagram"
-            >
-              <Instagram className="h-6 w-6" />
-            </button>
-            
-            {/* Email */}
-            <button
-              onClick={openEmail}
-              className="flex items-center justify-center w-12 h-12 bg-gray-600 hover:bg-gray-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
-              title="Email"
-            >
-              <Mail className="h-6 w-6" />
-            </button>
-          </div>
-        )}
-        
-        {/* Main FAB Button */}
-        <button
-          onClick={() => setIsFABExpanded(!isFABExpanded)}
-          className={`flex items-center justify-center w-14 h-14 bg-primary hover:bg-primary/90 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform ${isFABExpanded ? 'rotate-45' : 'rotate-0'
-          }`}
-        >
-          {isFABExpanded ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <MessageCircle className="h-6 w-6" />
-          )}
-        </button>
-      </div>
+      <FloatingActionButton />
     </div>
   )
 }

@@ -19,6 +19,8 @@ import Image from "next/image"
 import universitiesData from "@/data/universities.json"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
+import FloatingActionButton from "@/components/layout/FloatingActionButton"
+import CallToAction from "@/components/layout/callToAction"
 
 export const metadata = {
   title: "Partner Universities Worldwide - Top Universities in China, Hungary & Italy",
@@ -245,42 +247,12 @@ export default function UniversitiesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-3xl mx-auto space-y-6">
-            <h2 className="text-3xl lg:text-4xl font-bold text-balance">Ready to Start Your Journey?</h2>
-            <p className="text-xl opacity-90 text-pretty leading-relaxed">
-              Choose from our partner universities and begin your application process today. Our experts will guide you
-              through every step of the way.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" asChild className="text-lg px-8">
-                <Link href="/apply">
-                  Apply Now <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                asChild
-                className="text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
-              >
-                <Link href="/contact">Get University Guidance</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
+    <CallToAction />
+    
       <Footer />
 
-      {/* Floating WhatsApp Button */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <Button size="lg" className="rounded-full w-14 h-14 shadow-lg hover:shadow-xl transition-shadow">
-          <MessageCircle className="h-6 w-6" />
-          <span className="sr-only">WhatsApp Support</span>
-        </Button>
-      </div>
+    
+    <FloatingActionButton />
     </div>
   )
 }

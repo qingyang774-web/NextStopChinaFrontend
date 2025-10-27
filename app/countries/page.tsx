@@ -1,6 +1,10 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import Header from "@/components/layout/Header"
+import Footer from "@/components/layout/Footer"
+import CallToAction from "@/components/layout/callToAction"
+import FloatingActionButton from "@/components/layout/FloatingActionButton"
 import {
   GraduationCap,
   ArrowRight,
@@ -25,42 +29,7 @@ export default function CountriesPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <nav className="border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 sticky top-0 z-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link href="/" className="flex items-center space-x-2">
-              <GraduationCap className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold text-foreground">Next Stop China</span>
-            </Link>
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-foreground hover:text-primary transition-colors">
-                Home
-              </Link>
-              <Link href="/about" className="text-foreground hover:text-primary transition-colors">
-                About Us
-              </Link>
-              <Link href="/scholarships" className="text-foreground hover:text-primary transition-colors">
-                Scholarships
-              </Link>
-              <Link href="/universities" className="text-foreground hover:text-primary transition-colors">
-                Universities
-              </Link>
-              <Link href="/countries" className="text-primary font-medium">
-                Countries
-              </Link>
-              <Link href="/blog" className="text-foreground hover:text-primary transition-colors">
-                Blog
-              </Link>
-              <Link href="/contact" className="text-foreground hover:text-primary transition-colors">
-                Contact
-              </Link>
-            </div>
-            <Button asChild className="hidden md:inline-flex">
-              <Link href="/apply">Apply Now</Link>
-            </Button>
-          </div>
-        </div>
-      </nav>
+     <Header />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden py-24 lg:py-32">
@@ -151,14 +120,14 @@ export default function CountriesPage() {
                     {/* Flag Badge */}
                     <div className="absolute top-6 right-6 z-10">
                       <div className="relative">
-                        <div className="absolute inset-0 bg-white/50 rounded-full blur-md" />
-                        <div className="relative w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-2xl ring-4 ring-white/30 group-hover:scale-110 transition-transform duration-500">
+                        <div className="absolute inset-0 bg-white/50 rounded-lg blur-md" />
+                        <div className="relative w-24 h-16 overflow-hidden border-4 border-white shadow-2xl ring-4 ring-white/30 group-hover:scale-110 transition-transform duration-500 flex items-center justify-center">
                         <Image
                           src={country.flag || "/placeholder.svg"}
                           alt={`${country.name} flag`}
                           width={80}
                           height={80}
-                          className="object-cover"
+                          className="object-cover w-full h-full"
                         />
                         </div>
                       </div>
@@ -340,78 +309,9 @@ export default function CountriesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-24 lg:py-32 overflow-hidden">
-        {/* Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/80" />
-        
-        {/* Animated Background Patterns */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        </div>
-        
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-4xl mx-auto text-center space-y-8 text-white">
-            <div className="inline-flex items-center justify-center mb-4">
-              <Badge className="bg-white/20 text-white hover:bg-white/30 border-white/30 backdrop-blur text-base px-6 py-2">
-                Start Your Journey Today
-              </Badge>
-            </div>
-            
-            <h2 className="text-4xl lg:text-6xl font-bold text-balance leading-tight">
-              Ready to Transform
-              <br />
-              Your Future?
-            </h2>
-            
-            <p className="text-xl lg:text-2xl opacity-95 text-pretty leading-relaxed max-w-2xl mx-auto">
-              Get personalized guidance on choosing the right country, university, and program for your academic goals.
-            </p>
-            
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto py-8">
-              <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold mb-2">10,000+</div>
-                <div className="text-white/80 text-sm">Students Helped</div>
-              </div>
-              <div className="text-center border-x border-white/20">
-                <div className="text-3xl lg:text-4xl font-bold mb-2">95%</div>
-                <div className="text-white/80 text-sm">Success Rate</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold mb-2">50+</div>
-                <div className="text-white/80 text-sm">Partner Universities</div>
-              </div>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button 
-                size="lg" 
-                variant="secondary" 
-                asChild 
-                className="text-lg px-10 py-6 bg-white text-primary hover:bg-white/90 shadow-2xl hover:shadow-3xl transition-all duration-300 group"
-              >
-                <Link href="/apply" className="flex items-center">
-                  Apply Now 
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                asChild
-                className="text-lg px-10 py-6 border-2 border-white text-white hover:bg-white hover:text-primary bg-transparent shadow-xl hover:shadow-2xl transition-all duration-300"
-              >
-                <Link href="/contact">Get Free Consultation</Link>
-              </Button>
-            </div>
-            
-            <p className="text-sm opacity-75 pt-4">
-              ✨ No application fees • Free consultation • Expert guidance
-            </p>
-          </div>
-        </div>
-      </section>
+    <CallToAction />
+    <Footer />
+    <FloatingActionButton />
     </div>
   )
 }

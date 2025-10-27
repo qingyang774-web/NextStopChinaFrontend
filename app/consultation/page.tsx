@@ -8,6 +8,7 @@ import Link from "next/link"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 import CallToAction from "@/components/layout/callToAction"
+import FloatingActionButton from "@/components/layout/FloatingActionButton"
 
 export default function ConsultationPage() {
   return (
@@ -299,6 +300,7 @@ export default function ConsultationPage() {
             </div>
 
       <Footer />
+      <FloatingActionButton />
     </div>
     </>
   )
