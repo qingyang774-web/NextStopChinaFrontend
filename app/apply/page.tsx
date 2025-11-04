@@ -21,13 +21,16 @@ import {
   User,
   BookOpen,
   AlertCircle,
+  Globe,
+  MapPin,
 } from "lucide-react"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { useApplicationFormSubmission } from "@/hooks/useFormSubmission"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 import FloatingActionButton from "@/components/layout/FloatingActionButton"
+import programsData from "@/data/programs.json"
 
 export default function ApplyPage() {
   const [formData, setFormData] = useState<any>({
@@ -47,6 +50,7 @@ export default function ApplyPage() {
       fieldOfStudy: "",
     },
     program: {
+      country: "",
       degreeLevel: "",
       preferredProgram: "",
       preferredUniversity: "",
@@ -64,6 +68,60 @@ export default function ApplyPage() {
       previousExperience: "",
     },
   })
+
+  // Calculate actual program counts for each country
+  const programCounts = useMemo(() => {
+    const counts: Record<string, number> = {}
+    Object.keys(programsData.countries).forEach((countryKey) => {
+      const countryData = programsData.countries[countryKey as keyof typeof programsData.countries]
+      let totalCount = 0
+      countryData.categories.forEach((category) => {
+        totalCount += category.programs.length
+      })
+      counts[countryKey] = totalCount
+    })
+    return counts
+  }, [])
+
+  // Get available programs based on selected country and degree level
+  const availablePrograms = useMemo(() => {
+    if (!formData.program.country || !formData.program.degreeLevel) {
+      return []
+    }
+
+    const countryData = programsData.countries[formData.program.country as keyof typeof programsData.countries]
+    if (!countryData) return []
+
+    const allPrograms: any[] = []
+    countryData.categories.forEach((category) => {
+      category.programs.forEach((program) => {
+        // Map degree levels
+        const degreeMapping: Record<string, string[]> = {
+          bachelor: ["Bachelor's", "bachelor", "bachelors"],
+          master: ["Master's", "master", "masters"],
+          phd: ["PhD", "phd"],
+          mbbs: ["MBBS", "Bachelor's", "bachelor"],
+        }
+
+        const programDegreeLevel = program.degreeLevel.toLowerCase()
+        const selectedDegreeLevel = formData.program.degreeLevel.toLowerCase()
+
+        if (
+          degreeMapping[selectedDegreeLevel]?.some((d) =>
+            programDegreeLevel.includes(d.toLowerCase())
+          ) ||
+          programDegreeLevel.includes(selectedDegreeLevel)
+        ) {
+          allPrograms.push({
+            ...program,
+            category: category.name,
+          })
+        }
+      })
+    })
+
+    return allPrograms
+  }, [formData.program.country, formData.program.degreeLevel])
 
   const { isSubmitting, submitError, submitSuccess, submitApplicationForm } = useApplicationFormSubmission({
     onSuccess: () => {
@@ -85,6 +143,7 @@ export default function ApplyPage() {
           fieldOfStudy: "",
         },
         program: {
+          country: "",
           degreeLevel: "",
           preferredProgram: "",
           preferredUniversity: "",
@@ -104,6 +163,31 @@ export default function ApplyPage() {
       });
     },
   });
+
+  // Handle country change - reset program selection
+  const handleCountryChange = (country: string) => {
+    setFormData({
+      ...formData,
+      program: {
+        ...formData.program,
+        country,
+        preferredProgram: "",
+        degreeLevel: formData.program.degreeLevel || "",
+      },
+    });
+  };
+
+  // Handle degree level change - keep country but reset program
+  const handleDegreeLevelChange = (degreeLevel: string) => {
+    setFormData({
+      ...formData,
+      program: {
+        ...formData.program,
+        degreeLevel,
+        preferredProgram: "",
+      },
+    });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -130,11 +214,11 @@ export default function ApplyPage() {
               Application Form
             </Badge>
             <h1 className="text-4xl lg:text-5xl font-bold text-balance">
-              Apply for <span className="text-primary">Scholarships in China</span>
+              Apply for <span className="text-primary">International Scholarships</span>
             </h1>
             <p className="text-xl text-muted-foreground text-pretty leading-relaxed max-w-3xl mx-auto">
-              Start your journey to study in China. Complete our comprehensive application form and our experts will
-              guide you through the scholarship and university application process.
+              Start your journey to study abroad. Complete our comprehensive application form and our experts will
+              guide you through the scholarship and university application process in China, Hungary, or Italy.
             </p>
           </div>
         </div>
@@ -402,28 +486,70 @@ export default function ApplyPage() {
               </Card>
 
               {/* Program Selection */}
-              <Card className="border-0 shadow-lg">
+              <Card className="border-0 shadow-lg bg-gradient-to-br from-primary/5 to-secondary/5">
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-2">
                     <GraduationCap className="h-5 w-5 text-primary" />
                     <span>Program Selection</span>
                   </CardTitle>
-                  <CardDescription>Choose your preferred program and university</CardDescription>
+                  <CardDescription>Choose your preferred country, degree level, and program</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
+                  {/* Country Selection */}
+                  <div className="space-y-2">
+                    <Label htmlFor="country" className="flex items-center space-x-2">
+                      <Globe className="h-4 w-4 text-primary" />
+                      <span>Select Country *</span>
+                    </Label>
+                    <Select
+                      value={formData.program.country}
+                      onValueChange={handleCountryChange}
+                    >
+                      <SelectTrigger className="h-12">
+                        <SelectValue placeholder="Select your preferred study destination" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="china">
+                          <div className="flex items-center space-x-2">
+                            <span className="text-lg">🇨🇳</span>
+                            <span>China</span>
+                            <Badge variant="secondary" className="ml-2 text-xs">
+                              {programCounts.china || 0} programs
+                            </Badge>
+                          </div>
+                        </SelectItem>
+                        <SelectItem value="hungary">
+                          <div className="flex items-center space-x-2">
+                            <span className="text-lg">🇭🇺</span>
+                            <span>Hungary</span>
+                            <Badge variant="secondary" className="ml-2 text-xs">
+                              {programCounts.hungary || 0} programs
+                            </Badge>
+                          </div>
+                        </SelectItem>
+                        <SelectItem value="italy">
+                          <div className="flex items-center space-x-2">
+                            <span className="text-lg">🇮🇹</span>
+                            <span>Italy</span>
+                            <Badge variant="secondary" className="ml-2 text-xs">
+                              {programCounts.italy || 0} programs
+                            </Badge>
+                          </div>
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {/* Degree Level and Program Selection */}
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="degreeLevel">Degree Level *</Label>
                       <Select
                         value={formData.program.degreeLevel}
-                        onValueChange={(value) =>
-                          setFormData({
-                            ...formData,
-                            program: { ...formData.program, degreeLevel: value },
-                          })
-                        }
+                        onValueChange={handleDegreeLevelChange}
+                        disabled={!formData.program.country}
                       >
-                        <SelectTrigger>
+                        <SelectTrigger className="h-12">
                           <SelectValue placeholder="Select degree level" />
                         </SelectTrigger>
                         <SelectContent>
@@ -436,22 +562,91 @@ export default function ApplyPage() {
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="preferredProgram">Preferred Program *</Label>
-                      <Input
-                        id="preferredProgram"
-                        placeholder="Computer Science, Business Administration, etc."
+                      <Select
                         value={formData.program.preferredProgram}
-                        onChange={(e) =>
+                        onValueChange={(value) =>
                           setFormData({
                             ...formData,
-                            program: { ...formData.program, preferredProgram: e.target.value },
+                            program: { ...formData.program, preferredProgram: value },
                           })
                         }
-                        required
-                      />
+                        disabled={!formData.program.country || !formData.program.degreeLevel || availablePrograms.length === 0}
+                      >
+                        <SelectTrigger className="h-12">
+                          <SelectValue 
+                            placeholder={
+                              !formData.program.country 
+                                ? "Select country first" 
+                                : !formData.program.degreeLevel 
+                                ? "Select degree level first"
+                                : availablePrograms.length === 0
+                                ? "No programs available"
+                                : "Select your preferred program"
+                            } 
+                          />
+                        </SelectTrigger>
+                        <SelectContent className="max-h-[300px]">
+                          {availablePrograms.length > 0 ? (
+                            availablePrograms.map((program) => (
+                              <SelectItem key={program.id} value={program.majorName}>
+                                <div className="flex flex-col py-1">
+                                  <span className="font-medium">{program.majorName}</span>
+                                  <span className="text-xs text-muted-foreground">
+                                    {program.category} • {program.duration} • {program.language}
+                                  </span>
+                                </div>
+                              </SelectItem>
+                            ))
+                          ) : (
+                            <div className="px-2 py-6 text-center text-sm text-muted-foreground">
+                              {!formData.program.country 
+                                ? "Please select a country first" 
+                                : !formData.program.degreeLevel
+                                ? "Please select a degree level"
+                                : "No programs available for this selection"}
+                            </div>
+                          )}
+                        </SelectContent>
+                      </Select>
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
+                  {/* Selected Program Details */}
+                  {formData.program.preferredProgram && availablePrograms.find((p) => p.majorName === formData.program.preferredProgram) && (
+                    <div className="rounded-lg border border-primary/20 bg-primary/5 p-4 space-y-2">
+                      {(() => {
+                        const selectedProgram = availablePrograms.find((p) => p.majorName === formData.program.preferredProgram)
+                        if (!selectedProgram) return null
+                        return (
+                          <>
+                            <div className="flex items-start justify-between">
+                              <div className="space-y-1">
+                                <h4 className="font-semibold text-sm">{selectedProgram.majorName}</h4>
+                                <p className="text-xs text-muted-foreground">{selectedProgram.description}</p>
+                              </div>
+                            </div>
+                            <div className="flex flex-wrap gap-3 pt-2 text-xs">
+                              <Badge variant="outline" className="text-xs">
+                                <MapPin className="h-3 w-3 mr-1" />
+                                {programsData.countries[formData.program.country as keyof typeof programsData.countries]?.name}
+                              </Badge>
+                              <Badge variant="outline" className="text-xs">
+                                Duration: {selectedProgram.duration}
+                              </Badge>
+                              <Badge variant="outline" className="text-xs">
+                                Language: {selectedProgram.language}
+                              </Badge>
+                              <Badge variant="outline" className="text-xs">
+                                Fee: {selectedProgram.fee}
+                              </Badge>
+                            </div>
+                          </>
+                        )
+                      })()}
+                    </div>
+                  )}
+
+                  {/* <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="preferredUniversity">Preferred University</Label>
                       <Select
@@ -463,16 +658,37 @@ export default function ApplyPage() {
                           })
                         }
                       >
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select preferred university" />
+                        <SelectTrigger className="h-12">
+                          <SelectValue placeholder="Select preferred university (optional)" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="tsinghua">Tsinghua University</SelectItem>
-                          <SelectItem value="peking">Peking University</SelectItem>
-                          <SelectItem value="fudan">Fudan University</SelectItem>
-                          <SelectItem value="shanghai-jiaotong">Shanghai Jiao Tong University</SelectItem>
-                          <SelectItem value="zhejiang">Zhejiang University</SelectItem>
                           <SelectItem value="no-preference">No Preference</SelectItem>
+                          {formData.program.country === "china" && (
+                            <>
+                              <SelectItem value="tsinghua">Tsinghua University</SelectItem>
+                              <SelectItem value="peking">Peking University</SelectItem>
+                              <SelectItem value="fudan">Fudan University</SelectItem>
+                              <SelectItem value="shanghai-jiaotong">Shanghai Jiao Tong University</SelectItem>
+                              <SelectItem value="zhejiang">Zhejiang University</SelectItem>
+                              <SelectItem value="nanjing">Nanjing University</SelectItem>
+                              <SelectItem value="jiangsu">Jiangsu University</SelectItem>
+                            </>
+                          )}
+                          {formData.program.country === "hungary" && (
+                            <>
+                              <SelectItem value="semmelweis">Semmelweis University</SelectItem>
+                              <SelectItem value="eotvos">Eötvös Loránd University</SelectItem>
+                              <SelectItem value="budapest">Budapest University of Technology</SelectItem>
+                            </>
+                          )}
+                          {formData.program.country === "italy" && (
+                            <>
+                              <SelectItem value="bologna">University of Bologna</SelectItem>
+                              <SelectItem value="sapienza">Sapienza University of Rome</SelectItem>
+                              <SelectItem value="milano">University of Milano</SelectItem>
+                              <SelectItem value="torino">University of Torino</SelectItem>
+                            </>
+                          )}
                         </SelectContent>
                       </Select>
                     </div>
@@ -487,17 +703,18 @@ export default function ApplyPage() {
                           })
                         }
                       >
-                        <SelectTrigger>
+                        <SelectTrigger className="h-12">
                           <SelectValue placeholder="Select start date" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="fall-2025">Fall 2025</SelectItem>
-                          <SelectItem value="spring-2026">Spring 2026</SelectItem>
-                          <SelectItem value="fall-2026">Fall 2026</SelectItem>
+                          <SelectItem value="fall-2025">Fall 2025 (September)</SelectItem>
+                          <SelectItem value="spring-2026">Spring 2026 (February/March)</SelectItem>
+                          <SelectItem value="fall-2026">Fall 2026 (September)</SelectItem>
+                          <SelectItem value="spring-2027">Spring 2027 (February/March)</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
-                  </div>
+                  </div> */}
                 </CardContent>
               </Card>
 
@@ -605,7 +822,7 @@ export default function ApplyPage() {
                     <Label htmlFor="personalStatement">Personal Statement *</Label>
                     <Textarea
                       id="personalStatement"
-                      placeholder="Tell us about your academic goals, why you want to study in China, and how this program fits your career plans... (minimum 200 words)"
+                      placeholder={`Tell us about your academic goals, why you want to study ${formData.program.country ? `in ${programsData.countries[formData.program.country as keyof typeof programsData.countries]?.name || 'abroad'}` : 'abroad'}, and how this program fits your career plans... (minimum 200 words)`}
                       className="min-h-32"
                       value={formData.additional.personalStatement}
                       onChange={(e) =>
@@ -616,6 +833,9 @@ export default function ApplyPage() {
                       }
                       required
                     />
+                    <p className="text-xs text-muted-foreground">
+                      {formData.additional.personalStatement.length} characters / minimum 200 characters required
+                    </p>
                   </div>
 
                   <div className="space-y-2">

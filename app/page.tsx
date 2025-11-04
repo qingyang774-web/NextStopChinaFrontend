@@ -12,6 +12,8 @@ import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 import FloatingActionButton from "@/components/layout/FloatingActionButton"
 import programsData from "@/data/programs.json"
+import blogsData from "@/data/blogs.json"
+import CallToAction from "@/components/layout/callToAction"
 
 // Function to count total programs from JSON data
 const getTotalProgramCount = () => {
@@ -54,6 +56,16 @@ export default function HomePage() {
   }
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [isAnimating, setIsAnimating] = useState(false)
+  const [currentCertSlide, setCurrentCertSlide] = useState(0)
+  
+  const certificates = [
+    { src: "/Admission Letters/817240c64fa2b6e05bdc4e83dc092878.jpg", alt: "Success Certificate 1" },
+    { src: "/Admission Letters/bf7aa11eee927a8943836134e9b1992c.jpg", alt: "Success Certificate 2" },
+    { src: "/Admission Letters/5c0f853376fdb26ee15bf92328a62089.jpg", alt: "Success Certificate 3" },
+    { src: "/Admission Letters/140e5b9682e5236a80d0e1546db33ca0.jpg", alt: "Success Certificate 4" },
+    { src: "/Admission Letters/89974ed632b1c546d776dd684dccb505.jpg", alt: "Success Certificate 5" },
+    { src: "/Admission Letters/af60b0f42f28214adc7622c68a647524.jpg", alt: "Success Certificate 6" },
+  ]
   
   const slides = [
     {
@@ -94,6 +106,15 @@ export default function HomePage() {
 
     return () => clearInterval(interval)
   }, [isAutoPlaying, slides.length])
+
+  // Auto-slide for certificates
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentCertSlide((prev) => (prev + 1) % certificates.length)
+    }, 4000) // Change certificate every 4 seconds
+
+    return () => clearInterval(interval)
+  }, [certificates.length])
 
   const goToSlide = (index: number) => {
     if (index === currentSlide) return
@@ -1329,33 +1350,33 @@ export default function HomePage() {
             <div className="flex animate-scroll">
               {/* First Set of Universities */}
               <div className="flex space-x-8 min-w-full">
-                {/* Tsinghua University */}
+                {/* Zhengzhou University */}
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">郑</span>
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <img src="/University logos/zhengzhou.png" alt="Zhengzhou University" className="w-12 h-12 object-contain" />
                     </div>
                     <div className="text-white font-semibold text-sm">Zhengzhou University</div>
                     <div className="text-white/70 text-xs">Zhengzhou, China</div>
                   </div>
                 </div>
 
-                {/* Peking University */}
+                {/* Changshu University */}
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">常</span>
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <img src="/University logos/changsha.png" alt="Changshu University" className="w-12 h-12 object-contain" />
                     </div>
                     <div className="text-white font-semibold text-sm">Changshu University</div>
                     <div className="text-white/70 text-xs">Changshu, China</div>
                   </div>
                 </div>
 
-                {/* Fudan University */}
+                {/* Tianjin University */}
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-green-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">天</span>
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <img src="/University logos/tianjin.png" alt="Tianjin University" className="w-12 h-12 object-contain" />
                     </div>
                     <div className="text-white font-semibold text-sm">Tianjin University</div>
                     <div className="text-white/70 text-xs">Tianjin, China</div>
@@ -1365,8 +1386,8 @@ export default function HomePage() {
                 {/* Shanghai Jiao Tong University */}
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">交</span>
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <img src="/University logos/Shanghai.png" alt="Shanghai Jiao Tong University" className="w-12 h-12 object-contain" />
                     </div>
                     <div className="text-white font-semibold text-sm">Shanghai Jiao Tong</div>
                     <div className="text-white/70 text-xs">Shanghai, China</div>
@@ -1376,8 +1397,8 @@ export default function HomePage() {
                 {/* Zhejiang University */}
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-700 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">浙</span>
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <img src="/University logos/zhejiang.jpg" alt="Zhejiang University" className="w-12 h-12 object-contain" />
                     </div>
                     <div className="text-white font-semibold text-sm">Zhejiang University</div>
                     <div className="text-white/70 text-xs">Hangzhou, China</div>
@@ -1387,19 +1408,19 @@ export default function HomePage() {
                 {/* Nanjing University */}
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-teal-600 to-teal-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">南</span>
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <img src="/University logos/nanjing.png" alt="Nanjing University" className="w-12 h-12 object-contain" />
                     </div>
                     <div className="text-white font-semibold text-sm">Nanjing University</div>
                     <div className="text-white/70 text-xs">Nanjing, China</div>
                   </div>
                 </div>
 
-                {/* Sun Yat-sen University */}
+                {/* Jiangsu University */}
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-pink-600 to-pink-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">江</span>
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <img src="/University logos/Jiangsu_University_logo.png" alt="Jiangsu University" className="w-12 h-12 object-contain" />
                     </div>
                     <div className="text-white font-semibold text-sm">Jiangsu University</div>
                     <div className="text-white/70 text-xs">Zhenjiang, China</div>
@@ -1410,7 +1431,7 @@ export default function HomePage() {
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">哈</span>
+                      <img src="/placeholder-logo.png" alt="Harbin Institute" className="w-12 h-12 object-contain" />
                     </div>
                     <div className="text-white font-semibold text-sm">Harbin Institute</div>
                     <div className="text-white/70 text-xs">Harbin, China</div>
@@ -1420,33 +1441,33 @@ export default function HomePage() {
 
               {/* Duplicate Set for Seamless Loop */}
               <div className="flex space-x-8 min-w-full">
-                {/* Tsinghua University */}
+                {/* Zhengzhou University */}
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">郑</span>
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <img src="/University logos/zhengzhou.png" alt="Zhengzhou University" className="w-12 h-12 object-contain" />
                     </div>
                     <div className="text-white font-semibold text-sm">Zhengzhou University</div>
                     <div className="text-white/70 text-xs">Zhengzhou, China</div>
                   </div>
                 </div>
 
-                {/* Peking University */}
+                {/* Changshu University */}
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">常</span>
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <img src="/University logos/changsha.png" alt="Changshu University" className="w-12 h-12 object-contain" />
                     </div>
                     <div className="text-white font-semibold text-sm">Changshu University</div>
                     <div className="text-white/70 text-xs">Changshu, China</div>
                   </div>
                 </div>
 
-                {/* Fudan University */}
+                {/* Tianjin University */}
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-green-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">天</span>
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <img src="/University logos/tianjin.png" alt="Tianjin University" className="w-12 h-12 object-contain" />
                     </div>
                     <div className="text-white font-semibold text-sm">Tianjin University</div>
                     <div className="text-white/70 text-xs">Tianjin, China</div>
@@ -1456,8 +1477,8 @@ export default function HomePage() {
                 {/* Shanghai Jiao Tong University */}
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">交</span>
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <img src="/University logos/Shanghai.png" alt="Shanghai Jiao Tong University" className="w-12 h-12 object-contain" />
                     </div>
                     <div className="text-white font-semibold text-sm">Shanghai Jiao Tong</div>
                     <div className="text-white/70 text-xs">Shanghai, China</div>
@@ -1467,8 +1488,8 @@ export default function HomePage() {
                 {/* Zhejiang University */}
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-700 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">浙</span>
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <img src="/University logos/zhejiang.jpg" alt="Zhejiang University" className="w-12 h-12 object-contain" />
                     </div>
                     <div className="text-white font-semibold text-sm">Zhejiang University</div>
                     <div className="text-white/70 text-xs">Hangzhou, China</div>
@@ -1478,19 +1499,19 @@ export default function HomePage() {
                 {/* Nanjing University */}
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-teal-600 to-teal-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">南</span>
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <img src="/University logos/nanjing.png" alt="Nanjing University" className="w-12 h-12 object-contain" />
                     </div>
                     <div className="text-white font-semibold text-sm">Nanjing University</div>
                     <div className="text-white/70 text-xs">Nanjing, China</div>
                   </div>
                 </div>
 
-                {/* Sun Yat-sen University */}
+                {/* Jiangsu University */}
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-pink-600 to-pink-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">江</span>
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <img src="/University logos/Jiangsu_University_logo.png" alt="Jiangsu University" className="w-12 h-12 object-contain" />
                     </div>
                     <div className="text-white font-semibold text-sm">Jiangsu University</div>
                     <div className="text-white/70 text-xs">Zhenjiang, China</div>
@@ -1501,7 +1522,7 @@ export default function HomePage() {
                 <div className="flex-shrink-0 flex items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 group">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-full flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">哈</span>
+                      <img src="/placeholder-logo.png" alt="Harbin Institute" className="w-12 h-12 object-contain" />
                     </div>
                     <div className="text-white font-semibold text-sm">Harbin Institute</div>
                     <div className="text-white/70 text-xs">Harbin, China</div>
@@ -1589,6 +1610,101 @@ export default function HomePage() {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Success Certificates Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-primary/10 via-transparent to-primary/10"></div>
+          <div className="absolute top-20 -left-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 -right-20 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <Badge className="bg-primary/20 text-primary hover:bg-primary/30 px-4 py-2 text-sm mb-4">
+              <Award className="h-4 w-4 mr-2 inline" />
+              Documented Success
+            </Badge>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Our <span className="text-primary">Achievement Records</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              See the documented success of our students who secured admissions at top universities
+            </p>
+          </div>
+
+          {/* Success Certificates Slider */}
+          <div className="relative overflow-hidden py-12">
+            {/* Decorative Elements - Gradient Overlays */}
+            {/* <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-10">
+              <div className="absolute top-1/2 left-0 w-40 h-full bg-gradient-to-r from-gray-900 via-gray-900/50 to-transparent"></div>
+              <div className="absolute top-1/2 right-0 w-40 h-full bg-gradient-to-l from-gray-900 via-gray-900/50 to-transparent"></div>
+            </div> */}
+
+            <div className="flex transition-transform duration-700 ease-in-out"
+              style={{ transform: `translateX(-${currentCertSlide * 33.333}%)` }}>
+              {certificates.map((cert, index) => (
+                <div key={index} className="w-1/3 flex-shrink-0 px-4">
+                  <div className="relative group overflow-hidden rounded-2xl bg-white shadow-2xl transform transition-all duration-500 hover:scale-105 border-4 border-white/20">
+                    <img
+                      src={cert.src}
+                      alt={cert.alt}
+                      className="w-full h-[500px] md:h-[600px] object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-4">
+                      <Badge className="bg-primary text-white">Successful Placement</Badge>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Navigation Arrows */}
+            <button
+              onClick={() => setCurrentCertSlide((prev) => (prev - 1 + certificates.length) % certificates.length)}
+              className="absolute left-8 top-1/2 -translate-y-1/2 bg-gray-900/80 hover:bg-gray-900 border-2 border-primary/30 hover:border-primary text-white backdrop-blur-sm w-12 h-12 rounded-full shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-110 z-20"
+              aria-label="Previous certificate"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+              onClick={() => setCurrentCertSlide((prev) => (prev + 1) % certificates.length)}
+              className="absolute right-8 top-1/2 -translate-y-1/2 bg-gray-900/80 hover:bg-gray-900 border-2 border-primary/30 hover:border-primary text-white backdrop-blur-sm w-12 h-12 rounded-full shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-110 z-20"
+              aria-label="Next certificate"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+          </div>
+
+          {/* Slider Dots */}
+          <div className="flex justify-center gap-3 mt-8">
+            {certificates.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentCertSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  currentCertSlide === index
+                    ? 'bg-primary scale-125'
+                    : 'bg-white/30 hover:bg-white/50'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Bottom Text */}
+          <div className="text-center mt-12 space-y-4">
+            <p className="text-gray-300 text-lg">
+              Each certificate represents a student who successfully achieved their dream of studying abroad
+            </p>
+            <Button size="lg" variant="outline" asChild className="border-2 border-primary/50 text-primary hover:bg-primary hover:text-white px-8 py-4 bg-white/5 backdrop-blur-sm">
+              <Link href="/contact">Start Your Success Story</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -1700,71 +1816,29 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="hover:shadow-md transition-shadow">
-              <CardContent className="p-0">
-                <img
-                  src="/scholarship-announcement-chinese-university.jpg"
-                  alt="Scholarship announcement"
-                  className="w-full h-48 object-cover rounded-t-lg"
-                />
-                <div className="p-6">
-                  <Badge variant="secondary" className="mb-3">
-                    Scholarship Alert
-                  </Badge>
-                  <h3 className="text-xl font-semibold mb-2 text-balance">New MBBS Scholarships Available for 2025</h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Capital Medical University announces 50 new full scholarships for international MBBS students.
-                  </p>
-                  <Link href="/blog/mbbs-scholarships-2025" className="text-primary hover:underline font-medium">
-                    Read More →
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-md transition-shadow">
-              <CardContent className="p-0">
-                <img
-                  src="/visa-guidance-international-students.jpg"
-                  alt="Visa guidance"
-                  className="w-full h-48 object-cover rounded-t-lg"
-                />
-                <div className="p-6">
-                  <Badge variant="secondary" className="mb-3">
-                    Visa Guide
-                  </Badge>
-                  <h3 className="text-xl font-semibold mb-2 text-balance">Student Visa Application Process 2025</h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Complete guide to Chinese student visa requirements and application timeline.
-                  </p>
-                  <Link href="/blog/visa-guide-2025" className="text-primary hover:underline font-medium">
-                    Read More →
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-md transition-shadow">
-              <CardContent className="p-0">
-                <img
-                  src="/student-success-story-chinese-university-graduatio.jpg"
-                  alt="Student success story"
-                  className="w-full h-48 object-cover rounded-t-lg"
-                />
-                <div className="p-6">
-                  <Badge variant="secondary" className="mb-3">
-                    Success Story
-                  </Badge>
-                  <h3 className="text-xl font-semibold mb-2 text-balance">From Nigeria to Beijing: Sarah's Journey</h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    How Sarah secured a full PhD scholarship at Tsinghua University through our program.
-                  </p>
-                  <Link href="/blog/sarah-success-story" className="text-primary hover:underline font-medium">
-                    Read More →
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
+            {blogsData.posts.slice(0, 3).map((post, index) => (
+              <Card key={index} className="hover:shadow-md transition-shadow">
+                <CardContent className="p-0">
+                  <img
+                    src={post.image || "/placeholder.svg"}
+                    alt={post.title}
+                    className="w-full h-48 object-cover rounded-t-lg"
+                  />
+                  <div className="p-6">
+                    <Badge variant="secondary" className="mb-3">
+                      {post.category}
+                    </Badge>
+                    <h3 className="text-xl font-semibold mb-2 text-balance">{post.title}</h3>
+                    <p className="text-muted-foreground mb-4 leading-relaxed">
+                      {post.excerpt}
+                    </p>
+                    <Link href={`/blog/${post.slug}`} className="text-primary hover:underline font-medium">
+                      Read More →
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
 
           <div className="text-center mt-8 md:hidden">
@@ -1983,66 +2057,7 @@ export default function HomePage() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-lg p-12 text-center bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200">
-            <div className="max-w-3xl mx-auto space-y-8">
-              <div className="space-y-4">
-                <h2 className="text-3xl lg:text-4xl font-bold text-balance text-gray-900">
-                  Ready to Start Your Journey Abroad?
-                </h2>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  Join thousands of successful students who have achieved their dreams in China, Hungary, and Italy with our expert guidance.
-                  Get started with a free consultation today.
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button size="lg" asChild className="bg-primary text-white hover:bg-primary/90">
-                  <Link href="/apply">
-                    Start Your Application <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild className="border-primary text-primary hover:bg-primary hover:text-white">
-                  <Link href="/contact">Get Free Consultation</Link>
-                </Button>
-              </div>
-
-              <div className="pt-8 border-t border-gray-200">
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                  <div className="flex items-center space-x-2 text-gray-600">
-                    <MailIcon className="h-5 w-5" />
-                    <span>Subscribe to our newsletter for latest updates</span>
-                  </div>
-                  <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
-                    <input
-                      type="email"
-                      placeholder="Enter your email"
-                      value={newsletterEmail}
-                      onChange={(e) => setNewsletterEmail(e.target.value)}
-                      className="px-4 py-2 rounded-lg text-gray-900 border border-gray-300 focus:ring-2 focus:ring-primary/50 focus:border-primary"
-                      required
-                    />
-                    <Button 
-                      type="submit" 
-                      className="bg-primary text-white hover:bg-primary/90"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? "Subscribing..." : "Subscribe"}
-                    </Button>
-                  </form>
-                  {submitSuccess && (
-                    <p className="text-orange-600 text-sm mt-2">Successfully subscribed to our newsletter!</p>
-                  )}
-                  {submitError && (
-                    <p className="text-red-600 text-sm mt-2">{submitError}</p>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+     <CallToAction />
 
       <Footer />
       <FloatingActionButton />

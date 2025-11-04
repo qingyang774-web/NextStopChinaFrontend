@@ -7,6 +7,7 @@ import Image from "next/image"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 import FloatingActionButton from "@/components/layout/FloatingActionButton"
+import blogsData from "@/data/blogs.json"
 
 export const metadata = {
   title: "Blog - Study Abroad Tips & Success Stories",
@@ -15,118 +16,17 @@ export const metadata = {
 }
 
 export default function BlogPage() {
-  const featuredPost = {
-    slug: "complete-guide-chinese-government-scholarship-2025",
-    title: "Complete Guide to Chinese Government Scholarship (CSC) 2025",
-    excerpt:
-      "Everything you need to know about applying for the Chinese Government Scholarship, including eligibility criteria, application process, and tips for success.",
-    image: "/scholarship-announcement-chinese-university.jpg",
-    author: "Sarah Chen",
-    date: "January 15, 2025",
-    readTime: "8 min read",
-    category: "Scholarships",
-  }
-
-  const blogPosts = [
-    {
-      slug: "top-10-universities-international-students-china",
-      title: "Top 10 Universities for International Students in China",
-      excerpt:
-        "Discover the best Chinese universities that welcome international students with excellent programs and support services.",
-      image: "/chinese-university-campus-with-international-stude.jpg",
-      author: "Michael Zhang",
-      date: "January 12, 2025",
-      readTime: "6 min read",
-      category: "Universities",
-    },
-    {
-      slug: "student-life-beijing-international-perspective",
-      title: "Student Life in Beijing: An International Perspective",
-      excerpt: "A firsthand account of what it's really like to study and live in Beijing as an international student.",
-      image: "/diverse-students-studying-together-at-modern-chine.jpg",
-      author: "Emma Johnson",
-      date: "January 10, 2025",
-      readTime: "5 min read",
-      category: "Student Life",
-    },
-    {
-      slug: "mbbs-china-complete-guide-medical-students",
-      title: "MBBS in China: Complete Guide for Medical Students",
-      excerpt:
-        "Everything you need to know about pursuing medical education in China, from admission requirements to career prospects.",
-      image: "/chinese-university-campus-with-international-stude.jpg",
-      author: "Dr. James Liu",
-      date: "January 8, 2025",
-      readTime: "10 min read",
-      category: "MBBS",
-    },
-    {
-      slug: "scholarship-application-tips-success-stories",
-      title: "Scholarship Application Tips: Success Stories from Students",
-      excerpt:
-        "Learn from successful scholarship recipients about what made their applications stand out and secure funding.",
-      image: "/student-success-story-chinese-university-graduatio.jpg",
-      author: "Lisa Wang",
-      date: "January 5, 2025",
-      readTime: "7 min read",
-      category: "Success Stories",
-    },
-    {
-      slug: "chinese-language-learning-international-students",
-      title: "Chinese Language Learning Tips for International Students",
-      excerpt:
-        "Practical advice on learning Mandarin Chinese while studying in China, from basic survival phrases to academic proficiency.",
-      image: "/diverse-students-studying-together-at-modern-chine.jpg",
-      author: "David Kim",
-      date: "January 3, 2025",
-      readTime: "6 min read",
-      category: "Language",
-    },
-    {
-      slug: "visa-application-process-study-china-2025",
-      title: "Visa Application Process for Studying in China 2025",
-      excerpt:
-        "Step-by-step guide to obtaining a student visa for China, including required documents and processing times.",
-      image: "/visa-guidance-international-students.jpg",
-      author: "Anna Rodriguez",
-      date: "December 30, 2024",
-      readTime: "8 min read",
-      category: "Visa Guide",
-    },
-    {
-      slug: "study-hungary-stipendium-hungaricum-guide",
-      title: "Study in Hungary: Complete Guide to Stipendium Hungaricum",
-      excerpt:
-        "Everything you need to know about studying in Hungary with the Stipendium Hungaricum scholarship program.",
-      image: "/student-success-story-chinese-university-graduatio.jpg",
-      author: "Maria Kovacs",
-      date: "January 18, 2025",
-      readTime: "9 min read",
-      category: "Hungary",
-    },
-    {
-      slug: "italy-university-admission-process-2025",
-      title: "Italy University Admission Process 2025: Step-by-Step Guide",
-      excerpt:
-        "Complete guide to applying for universities in Italy, including Italian government scholarships and requirements.",
-      image: "/chinese-university-campus-with-international-stude.jpg",
-      author: "Giuseppe Rossi",
-      date: "January 16, 2025",
-      readTime: "7 min read",
-      category: "Italy",
-    },
-  ]
-
-  const categories = [
-    { name: "All Posts", count: 27, active: true },
-    { name: "Scholarships", count: 10 },
-    { name: "Universities", count: 8 },
-    { name: "Student Life", count: 5 },
-    { name: "Success Stories", count: 4 },
-    { name: "Hungary", count: 3 },
-    { name: "Italy", count: 2 },
-    { name: "MBBS", count: 2 },
-  ]
+  // Get featured post (first post with featured: true, or first post)
+  const featuredPost = blogsData.posts.find(post => post.featured) || blogsData.posts[0]
+  
+  // Get all other posts (excluding featured)
+  const blogPosts = blogsData.posts.filter(post => post.slug !== featuredPost.slug)
+  
+  // Use categories from JSON data
+  const categories = blogsData.categories.map((cat, index) => ({
+    ...cat,
+    active: index === 0
+  }))
 
   return (
     <div className="min-h-screen bg-background">
