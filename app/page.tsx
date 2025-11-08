@@ -928,7 +928,7 @@ export default function HomePage() {
           <div className="text-center mb-16">
             
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Why Choose <span className="text-primary">Next Stop Global?</span>
+              Why Choose <span className="text-primary">ManaraScholars?</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Discover what makes us the preferred choice for students seeking quality education abroad across three amazing countries
@@ -1553,7 +1553,7 @@ export default function HomePage() {
                   ))}
                 </div>
                 <blockquote className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  "Next Stop Global made my dream of studying medicine in China a reality. Their guidance was exceptional, and I secured a full scholarship at Capital Medical University."
+                  "ManaraScholars made my dream of studying medicine in China a reality. Their guidance was exceptional, and I secured a full scholarship at Capital Medical University."
                 </blockquote>
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
@@ -1597,7 +1597,7 @@ export default function HomePage() {
                   ))}
                 </div>
                 <blockquote className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  "From application to visa processing, Next Stop Global handled everything professionally. Now I'm pursuing my Master's in Medicine at Semmelweis University."
+                  "From application to visa processing, ManaraScholars handled everything professionally. Now I'm pursuing my Master's in Medicine at Semmelweis University."
                 </blockquote>
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
@@ -2014,7 +2014,7 @@ export default function HomePage() {
                 <p className="text-lg font-bold text-white mb-2">Updates & Tips</p>
                 <p className="text-gray-300 text-sm mb-4">Follow us on Instagram</p>
                 <Button size="sm" className="w-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white">
-                  <a href="https://instagram.com/nextstopglobal" target="_blank" rel="noopener noreferrer">Follow</a>
+                  <a href="https://instagram.com/manarascholars" target="_blank" rel="noopener noreferrer">Follow</a>
                 </Button>
               </div>
             </div>
@@ -2030,7 +2030,7 @@ export default function HomePage() {
                 <p className="text-lg font-bold text-white mb-2">Support & News</p>
                 <p className="text-gray-300 text-sm mb-4">Follow us on Facebook</p>
                 <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                  <a href="https://facebook.com/nextstopglobal" target="_blank" rel="noopener noreferrer">Follow</a>
+                  <a href="https://facebook.com/manarascholars" target="_blank" rel="noopener noreferrer">Follow</a>
                 </Button>
               </div>
             </div>
@@ -2048,7 +2048,7 @@ export default function HomePage() {
                 <p className="text-lg font-bold text-white mb-2">Updates & Alerts</p>
                 <p className="text-gray-300 text-sm mb-4">Join our Telegram</p>
                 <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                  <a href="https://t.me/nextstopglobal" target="_blank" rel="noopener noreferrer">Join Channel</a>
+                  <a href="https://t.me/manarascholars" target="_blank" rel="noopener noreferrer">Join Channel</a>
                 </Button>
               </div>
             </div>

@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 
   return {
-    title: `Study in ${country.name} - ${country.tagline} | Next Stop China`,
+    title: `Study in ${country.name} - ${country.tagline} | ManaraScholars`,
     description: country.description,
   }
 }

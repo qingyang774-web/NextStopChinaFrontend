@@ -20,9 +20,9 @@ import Image from "next/image"
 import countries from "@/data/countries.json"
 
 export const metadata = {
-  title: "Study Destinations - China, Hungary & Italy | Next Stop China",
+  title: "Study Destinations - China, Hungary & Italy | ManaraScholars",
   description:
-    "Explore top study destinations including China, Hungary, and Italy. Compare universities, scholarships, and living costs across different countries.",
+    "Explore top study destinations including China, Hungary, and Italy. Compare universities, scholarships, and living costs across different countries with ManaraScholars.",
 }
 
 export default function CountriesPage() {

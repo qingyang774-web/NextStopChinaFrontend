@@ -7,23 +7,23 @@ function FloatingActionButton() {
   const [isFABExpanded, setIsFABExpanded] = useState(false)
 
   const openWhatsApp = () => {
-    window.open('https://wa.me/923464876094?text=Hi, I am interested in studying abroad with Next Stop Global', '_blank')
+    window.open('https://wa.me/923464876094?text=Hi, I am interested in studying abroad with ManaraScholars', '_blank')
   }
 
   const openTelegram = () => {
-    window.open('https://t.me/nextstopglobal', '_blank')
+    window.open('https://t.me/manarascholars', '_blank')
   }
 
   const openFacebook = () => {
-    window.open('https://facebook.com/nextstopglobal', '_blank')
+    window.open('https://facebook.com/manarascholars', '_blank')
   }
 
   const openInstagram = () => {
-    window.open('https://instagram.com/nextstopglobal', '_blank')
+    window.open('https://instagram.com/manarascholars', '_blank')
   }
 
   const openEmail = () => {
-    window.open('mailto:info@nextstopglobal.com?subject=Inquiry about studying abroad', '_blank')
+    window.open('mailto:info@manarascholars.com?subject=Inquiry about studying abroad', '_blank')
   }
 
   return (

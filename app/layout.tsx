@@ -7,10 +7,10 @@ import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Study in China with Scholarships – Next Stop China",
+  title: "Study in China with Scholarships – ManaraScholars",
   description:
-    "Next Stop China helps students apply for bachelor's, master's, and PhD scholarships in China. Free consultancy, scholarship guidance, and application support.",
-  generator: "Next Stop China",
+    "ManaraScholars helps students apply for bachelor's, master's, and PhD scholarships in China. Free consultancy, scholarship guidance, and application support.",
+  generator: "ManaraScholars",
 }
 
 export default function RootLayout({

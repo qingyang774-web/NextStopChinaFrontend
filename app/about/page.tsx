@@ -19,9 +19,9 @@ import {
 import Link from "next/link"
 
 export const metadata = {
-  title: "About Us - Next Stop China Education Consultancy",
+  title: "About Us - ManaraScholars Education Consultancy",
   description:
-    "Learn about Next Stop China's mission to make higher education in China affordable and accessible. Trusted partnerships, high visa success rates, and expert guidance.",
+    "Learn about ManaraScholars' mission to make higher education in China affordable and accessible. Trusted partnerships, high visa success rates, and expert guidance.",
 }
 
 export default function AboutPage() {
@@ -34,7 +34,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <Badge variant="secondary" className="w-fit mx-auto">
-              About Next Stop China
+              About ManaraScholars
             </Badge>
             <h1 className="text-4xl lg:text-5xl font-bold text-balance">
               Making Higher Education in China <span className="text-primary">Affordable & Accessible</span>
@@ -58,7 +58,7 @@ export default function AboutPage() {
                   <h2 className="text-3xl font-bold">Our Mission</h2>
                 </div>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  At Next Stop China, we believe that quality education should be accessible to everyone, regardless of
+                  At ManaraScholars, we believe that quality education should be accessible to everyone, regardless of
                   their financial background. Our mission is to bridge the gap between ambitious students and
                   world-class Chinese universities through comprehensive scholarship programs and expert guidance.
                 </p>
@@ -114,7 +114,7 @@ export default function AboutPage() {
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-balance">Why Choose Next Stop China?</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-balance">Why Choose ManaraScholars?</h2>
             <p className="text-xl text-muted-foreground text-pretty max-w-2xl mx-auto">
               Our track record speaks for itself - we deliver results that change lives
             </p>

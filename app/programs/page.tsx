@@ -212,7 +212,7 @@ export default function ProgramsPage() {
   return (
     <>
       <Head>
-        <title>All Study Programs by Country | Next Stop Global</title>
+        <title>All Study Programs by Country | ManaraScholars</title>
         <meta name="description" content="Explore our complete catalog of study programs available across China, Hungary, and Italy. Find your perfect major with detailed information about each program." />
       </Head>
       <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">

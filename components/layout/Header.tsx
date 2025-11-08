@@ -1,9 +1,9 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { GraduationCap } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import Image from "next/image"
 
 export default function Header() {
   const pathname = usePathname()
@@ -17,8 +17,15 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-            <GraduationCap className="h-8 w-8 text-orange-500" />
-            <span className="text-xl font-bold text-[#101828]">Next Stop Global</span>
+            <Image
+              src="/logo.png"
+              alt="ManaraScholars logo"
+              width={40}
+              height={40}
+              className="h-10 w-10"
+              priority
+            />
+            <span className="text-xl font-bold text-[#101828]">ManaraScholars</span>
           </Link>
           
           <div className="hidden md:flex items-center space-x-8">

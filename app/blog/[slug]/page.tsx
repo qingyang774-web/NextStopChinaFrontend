@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: `${post.title} - Next Stop China Blog`,
+    title: `${post.title} - ManaraScholars Blog`,
     description: post.excerpt,
   }
 }

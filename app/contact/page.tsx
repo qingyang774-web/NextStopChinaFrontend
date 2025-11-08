@@ -80,7 +80,7 @@ export default function ContactPage() {
               Get In Touch
             </Badge>
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Contact <span className="text-primary">Next Stop Global</span>
+              Contact <span className="text-primary">ManaraScholars</span>
             </h1>
             <p className="text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed">
               Ready to start your journey to studying in China, Hungary, or Italy? Our expert consultants are here to help you every step
@@ -97,7 +97,7 @@ export default function ContactPage() {
                 <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
                   <Mail className="h-5 w-5 text-primary" />
                 </div>
-                <span className="font-semibold text-gray-900">info@nextstopglobal.com</span>
+                <span className="font-semibold text-gray-900">info@manarascholars.com</span>
               </div>
             </div>
           </div>
@@ -144,7 +144,7 @@ export default function ContactPage() {
                       <div className="space-y-1">
                         <h3 className="font-semibold text-lg">Email Support</h3>
                         <p className="text-muted-foreground">Send us detailed inquiries</p>
-                        <p className="text-primary font-medium">info@nextstopglobal.com</p>
+                        <p className="text-primary font-medium">info@manarascholars.com</p>
                         <p className="text-sm text-muted-foreground">Response within 24 hours</p>
                       </div>
                     </div>
@@ -414,7 +414,7 @@ export default function ContactPage() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Next Stop Global Office Location - Zhengzhou, China"
+                  title="ManaraScholars Office Location - Zhengzhou, China"
                 ></iframe>
               </div>
             </div>
@@ -428,7 +428,7 @@ export default function ContactPage() {
                       <MapPin className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <CardTitle className="text-xl">Next Stop Global Office</CardTitle>
+                      <CardTitle className="text-xl">ManaraScholars Office</CardTitle>
                       <CardDescription>Zhengzhou, Henan Province</CardDescription>
                     </div>
                   </div>
