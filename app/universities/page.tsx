@@ -152,7 +152,7 @@ export default function UniversitiesPage() {
                 </CardHeader>
 
                 <CardContent className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                     <div className="flex items-center space-x-2">
                       <MapPin className="h-4 w-4 text-[orange-600]" />
                       <span className="text-gray-600">Location:</span>

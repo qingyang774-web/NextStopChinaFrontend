@@ -10,15 +10,14 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 h-25">
               <Image
                 src="/logo.png"
                 alt="ManaraScholars logo"
                 width={40}
                 height={40}
-                className="h-10 w-10"
+                className="h-25 w-25 object-contain"
               />
-              <span className="text-xl font-bold">ManaraScholars</span>
             </div>
             <p className="text-gray-300 leading-relaxed">
               ManaraScholars makes higher education in China, Hungary, and Italy affordable and accessible for international students worldwide.

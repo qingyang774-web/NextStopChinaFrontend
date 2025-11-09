@@ -206,7 +206,7 @@ export default function MastersScholarshipsPage() {
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                     <div className="space-y-2">
                       <div className="flex items-center space-x-2">
                         <DollarSign className="h-4 w-4 text-primary" />

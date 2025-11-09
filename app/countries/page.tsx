@@ -152,7 +152,7 @@ export default function CountriesPage() {
                     </p>
 
                     {/* Stats Grid */}
-                    <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-2 p-3 bg-white rounded-lg shadow-sm border border-gray-100">
                         <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                           <MapPin className="h-4 w-4 text-primary" />

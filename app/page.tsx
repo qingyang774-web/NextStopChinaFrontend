@@ -818,7 +818,7 @@ export default function HomePage() {
                   <p className="text-gray-600 leading-relaxed">
                     World-class universities with cutting-edge research facilities and extensive scholarship programs.
                   </p>
-                  <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                     <div className="bg-gray-50 rounded-lg p-3">
                       <div className="font-semibold text-gray-900">Tuition</div>
                       <div className="text-primary">Full/Partial Scholarship</div>
@@ -856,7 +856,7 @@ export default function HomePage() {
                   <p className="text-gray-600 leading-relaxed">
                     Affordable European education with Stipendium Hungaricum scholarships and rich cultural experience.
                   </p>
-                  <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                     <div className="bg-gray-50 rounded-lg p-3">
                       <div className="font-semibold text-gray-900">Tuition</div>
                       <div className="text-primary">€2,000-8,000/yr</div>
@@ -894,7 +894,7 @@ export default function HomePage() {
                   <p className="text-gray-600 leading-relaxed">
                     Historic universities with world-renowned arts, design programs, and government scholarships.
                   </p>
-                  <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                     <div className="bg-gray-50 rounded-lg p-3">
                       <div className="font-semibold text-gray-900">Tuition</div>
                       <div className="text-primary">€2,500-4,000/yr</div>
@@ -952,7 +952,7 @@ export default function HomePage() {
                   {/* Floating Stats */}
                   <div className="absolute bottom-6 left-6 right-6">
                     <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
-                      <div className="grid grid-cols-3 gap-4 text-center">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
                         <div>
                           <div className="text-2xl font-bold text-primary">150+</div>
                           <div className="text-xs text-gray-600 font-medium">Students Placed</div>
