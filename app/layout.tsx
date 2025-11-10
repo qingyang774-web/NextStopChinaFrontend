@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   description:
     "ManaraScholars helps students apply for bachelor's, master's, and PhD scholarships in China. Free consultancy, scholarship guidance, and application support.",
   generator: "ManaraScholars",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+    shortcut: "/logo.png",
+  },
 }
 
 export default function RootLayout({
