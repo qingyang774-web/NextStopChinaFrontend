@@ -29,7 +29,7 @@ export default function Header() {
   return (
     <nav className="border-b bg-white sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-22">
           <Link
             href="/"
             className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
@@ -38,12 +38,11 @@ export default function Header() {
             <Image
               src="/logo.png"
               alt="ManaraScholars logo"
-              width={40}
-              height={40}
-              className="h-10 w-10"
+              width={100}
+              height={100}
+              className="h-22 w-22 object-contain"
               priority
             />
-            <span className="text-xl font-bold text-[#101828]">ManaraScholars</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
