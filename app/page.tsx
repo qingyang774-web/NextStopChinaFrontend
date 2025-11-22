@@ -1967,7 +1967,7 @@ export default function HomePage() {
                 <p className="text-lg font-bold text-white mb-2">Support Available</p>
                 <p className="text-gray-300 text-sm mb-4">Message us on WhatsApp</p>
                 <Button size="sm" className="w-full bg-green-600 hover:bg-green-700 text-white">
-                  <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">Contact Us</a>
+                  <a href="https://wa.me/8616696171337?text=Hi, I am interested in studying abroad with ManaraScholars" target="_blank" rel="noopener noreferrer">Contact Us</a>
                 </Button>
               </div>
             </div>
@@ -1983,7 +1983,7 @@ export default function HomePage() {
                 <p className="text-lg font-bold text-white mb-2">Updates & Tips</p>
                 <p className="text-gray-300 text-sm mb-4">Follow us on Instagram</p>
                 <Button size="sm" className="w-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white">
-                  <a href="https://instagram.com/manarascholars" target="_blank" rel="noopener noreferrer">Follow</a>
+                  <a href="https://www.instagram.com/manarascholars24h" target="_blank" rel="noopener noreferrer">Follow</a>
                 </Button>
               </div>
             </div>
@@ -1999,7 +1999,7 @@ export default function HomePage() {
                 <p className="text-lg font-bold text-white mb-2">Support & News</p>
                 <p className="text-gray-300 text-sm mb-4">Follow us on Facebook</p>
                 <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                  <a href="https://facebook.com/manarascholars" target="_blank" rel="noopener noreferrer">Follow</a>
+                  <a href="https://www.facebook.com/ManaraScholars24h" target="_blank" rel="noopener noreferrer">Follow</a>
                 </Button>
               </div>
             </div>

@@ -7,7 +7,7 @@ function FloatingActionButton() {
   const [isFABExpanded, setIsFABExpanded] = useState(false)
 
   const openWhatsApp = () => {
-    window.open('https://wa.me/923464876094?text=Hi, I am interested in studying abroad with ManaraScholars', '_blank')
+    window.open('https://wa.me/8616696171337?text=Hi, I am interested in studying abroad with ManaraScholars', '_blank')
   }
 
   const openTelegram = () => {
@@ -15,11 +15,11 @@ function FloatingActionButton() {
   }
 
   const openFacebook = () => {
-    window.open('https://facebook.com/manarascholars', '_blank')
+    window.open('https://www.facebook.com/ManaraScholars24h', '_blank')
   }
 
   const openInstagram = () => {
-    window.open('https://instagram.com/manarascholars', '_blank')
+    window.open('https://www.instagram.com/manarascholars24h', '_blank')
   }
 
   const openEmail = () => {
